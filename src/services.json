@@ -1,0 +1,40 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "heading": "Core IT Services",
+      "para": "Reliable IT solutions ensuring secure, stable, and scalable business technology operations.",
+      "icon": "Shield"
+    },
+    {
+      "id": "2",
+      "heading": "Security & Protection",
+      "para": "Advanced cybersecurity solutions protecting data, networks, systems from evolving digital threats.",
+      "icon": "Lock"
+    },
+    {
+      "id": "3",
+      "heading": "Device Management",
+      "para": "Comprehensive device monitoring, updates, optimization ensuring consistent performance and system stability.",
+      "icon": "TvMinimal"
+    },
+    {
+      "id": "4",
+      "heading": "Network & Connectivity",
+      "para": "Secure network infrastructure delivering fast, reliable, and uninterrupted business connectivity solutions.",
+      "icon": "Globe"
+    },
+    {
+      "id": "5",
+      "heading": "Business Productivity",
+      "para": "Reliable IT solutions ensuring secure, stable, and scalable business technology operations.",
+      "icon": "Cloud"
+    },
+    {
+      "id": "6",
+      "heading": "Support & Maintenance",
+      "para": "Proactive technical support and maintenance minimizing downtime and operational disruptions.",
+      "icon": "HeadsetIcon"
+    }
+  ]
+}
