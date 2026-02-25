@@ -6,8 +6,8 @@ import { Navlinks } from "@/index";
 
 const navlinks: Navlinks[] = [
   {
-    title: "Why us",
-    href: "#whyUs",
+    title: "About us",
+    href: "/about",
   },
   {
     title: "How It Works",

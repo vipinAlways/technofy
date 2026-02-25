@@ -1,7 +1,13 @@
 import { ServiceOverViewData } from "@/index";
 import React from "react";
 
-const OverView = ({ overViewData }: { overViewData: ServiceOverViewData }) => {
+const OverView = ({
+  overViewData,
+  subTitle,
+}: {
+  overViewData: ServiceOverViewData;
+  subTitle: string;
+}) => {
   const { heading, para1, para2 } = overViewData;
   return (
     <section
@@ -9,12 +15,12 @@ const OverView = ({ overViewData }: { overViewData: ServiceOverViewData }) => {
       className="w-full flex items-center justify-center max-h-fit"
     >
       <div className="flex w-full md:flex-row flex-col max-md:gap-6 items-center justify-between ">
-        <div className="flex flex-col gap-6 items-start md:w-1/2">
+        <div className="flex flex-col gap-6 items-start md:max-w-xl px-3">
           <h3 className="text-accent font-medium md:leading-[100%] md:text-xl text-lg">
-            Service OverView
+            {subTitle}
           </h3>
 
-          <h1 className="text-primary font-medium md:text-4xl text-2xl leading-[100%]">
+          <h1 className="text-primary font-medium md:text-4xl  text-2xl leading-[100%]">
             {heading}
           </h1>
         </div>

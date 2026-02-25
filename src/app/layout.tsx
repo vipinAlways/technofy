@@ -44,7 +44,7 @@ export default function RootLayout({
           <main className="max-w-full">{children}</main>
         </Provider>
 
-        <footer>
+        <footer className="bg-[#0E052A] flex items-center justify-center px-22">
           <Footer />
         </footer>
       </body>

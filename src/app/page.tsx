@@ -121,7 +121,7 @@ export default function Home() {
           </Button>
         </div>
       </section>
-      <div className="gap-20 w-full max-w-7xl px-16 pb-24 flex flex-col items-center">
+      <div className="gap-20 w-full max-w-7xl px-14 pb-24 flex flex-col items-center">
         <section id="StatsSection" className="w-full">
           <div className="flex justify-between items-stretch min-w-full border-b  border-border py-12 ">
             {statsSectionData.map((data, index) => (
@@ -141,27 +141,29 @@ export default function Home() {
           </div>
         </section>
 
-        <ServiceSection id="services" data={serviceData}>
-          <div className="flex flex-wrap gap-8 items-stretch justify-center">
-            {serviceCardData.map((item) => {
-              return (
-                <ServiceCard
-                  key={item.heading}
-                  cardData={{
-                    heading: item.heading,
-                    icon: item.icon,
-                    para: item.para,
-                    id: item.id,
-                  }}
-                  href={`/services/${item.heading
-                    .replace(/\u00A0/g, "")
-                    .replace(/\s+/g, "")
-                    .trim()}`}
-                />
-              );
-            })}
-          </div>
-        </ServiceSection>
+        <div className="py-10">
+          <ServiceSection id="services" data={serviceData}>
+            <div className="flex flex-wrap gap-8 items-stretch justify-center">
+              {serviceCardData.map((item) => {
+                return (
+                  <ServiceCard
+                    key={item.heading}
+                    cardData={{
+                      heading: item.heading,
+                      icon: item.icon,
+                      para: item.para,
+                      id: item.id,
+                    }}
+                    href={`/services/${item.heading
+                      .replace(/\u00A0/g, "")
+                      .replace(/\s+/g, "")
+                      .trim()}`}
+                  />
+                );
+              })}
+            </div>
+          </ServiceSection>
+        </div>
 
         <WhyCard className="flex-row-reverse" whyCardData={whyCardData} />
 

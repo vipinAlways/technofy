@@ -51,7 +51,7 @@ const footerLink: Navlinks[] = [
 ];
 const Footer = () => {
   return (
-    <div className="px-20 w-full flex flex-col items-center gap-5 py-6 bg-[#0E052A]">
+    <div className="max-w-7xl w-full flex flex-col items-center gap-5 py-6  px-1.5 ">
       <div className="py-3 px-1.5 flex justify-between text-border w-full">
         <div>
           <img
@@ -82,7 +82,7 @@ const Footer = () => {
           ))}
         </ul>
       </div>
-            <hr className="h-px w-4/5 bg-muted text-muted"/>
+      <hr className="h-px w-4/5 bg-muted text-muted" />
       <div className="">
         <p className="text-center text-muted">
           Copyright &copy;{new Date().getFullYear()} Technofy. All Rights

@@ -1,0 +1,95 @@
+{
+  "data": {
+    "problem": {
+      "heading": "Endpoint Vulnerabilities Put Your Entire Business at Risk",
+      "solutions": [
+        {
+          "title": "Proactive Infrastructure Management",
+          "para": "We continuously monitor and optimize your systems to prevent issues before they impact your business."
+        },
+        {
+          "title": "Proactive Infrastructure Management",
+          "para": "We continuously monitor and optimize your systems to prevent issues before they impact your business."
+        },
+        {
+          "title": "Proactive Infrastructure Management",
+          "para": "We continuously monitor and optimize your systems to prevent issues before they impact your business."
+        },
+        {
+          "title": "Proactive Infrastructure Management",
+          "para": "We continuously monitor and optimize your systems to prevent issues before they impact your business."
+        },
+        {
+          "title": "Proactive Infrastructure Management",
+          "para": "We continuously monitor and optimize your systems to prevent issues before they impact your business."
+        }
+      ]
+    },
+    "solution": [
+      {
+        "heading": "Advanced Threat Protection",
+        "para": "We proactively defend your endpoints against modern cyber threats using next-generation protection technologies that go beyond traditional antivirus solutions.",
+        "conclusion": [
+          "Next-Generation Antivirus & Anti-Malware",
+          "Behavioral Threat Analysis",
+          "Ransomware Protection",
+          "Device Encryption & Data Protection"
+        ]
+      },
+      {
+        "heading": "Advanced Threat Protection",
+        "para": "We proactively defend your endpoints against modern cyber threats using next-generation protection technologies that go beyond traditional antivirus solutions.",
+        "conclusion": [
+          "Next-Generation Antivirus & Anti-Malware",
+          "Behavioral Threat Analysis",
+          "Ransomware Protection",
+          "Device Encryption & Data Protection"
+        ]
+      },
+      {
+        "heading": "Advanced Threat Protection",
+        "para": "We proactively defend your endpoints against modern cyber threats using next-generation protection technologies that go beyond traditional antivirus solutions.",
+        "conclusion": [
+          "Next-Generation Antivirus & Anti-Malware",
+          "Behavioral Threat Analysis",
+          "Ransomware Protection",
+          "Device Encryption & Data Protection"
+        ]
+      },
+      {
+        "heading": "Advanced Threat Protection",
+        "para": "We proactively defend your endpoints against modern cyber threats using next-generation protection technologies that go beyond traditional antivirus solutions.",
+        "conclusion": [
+          "Next-Generation Antivirus & Anti-Malware",
+          "Behavioral Threat Analysis",
+          "Ransomware Protection",
+          "Device Encryption & Data Protection"
+        ]
+      }
+    ],
+    "whySection": {
+      "image": "/images/services-why.png",
+
+      "heading": "Advantage",
+      "para": "We combine technical expertise with a proactive approach to deliver stable, secure, and performance-driven IT environments.",
+      "fetures": [
+        {
+          "title": "Proactive Infrastructure Management",
+          "para": "We continuously monitor and optimize your systems to prevent issues before they impact your business."
+        },
+        {
+          "title": "Enterprise-Grade Security Standards",
+          "para": "Advanced protection strategies safeguard your network, devices, and data from evolving threats."
+        },
+        {
+          "title": "Scalable & Future-Ready Architecture",
+          "para": "Our solutions grow with your business, ensuring long-term performance and flexibility."
+        },
+        {
+          "title": "24/7 Expert Support",
+          "para": "Our experienced IT specialists are always available to keep your operations running smoothly."
+        }
+      ]
+    }
+  }
+}

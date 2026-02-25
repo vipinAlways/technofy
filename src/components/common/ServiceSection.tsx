@@ -12,7 +12,7 @@ export default function ServiceSection({
   id,
 }: ServiceSectionProps) {
   return (
-    <section id={id} className="w-full flex flex-col gap-20 py-10">
+    <section id={id} className="w-full flex flex-col gap-20 ">
       <div className="text-center flex flex-col gap-4">
         <h1 className="font-semibold text-4xl text-primary">
           {data.heading}
