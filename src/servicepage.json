@@ -3,9 +3,10 @@
     "heroSection": {
       "heading": "Secure & Scalable IT Infrastructure for Growing Businesses",
       "para": "We design, secure, and manage your IT infrastructure with proactive monitoring, advanced security, and 24/7 support — so you can focus on growing your business.",
-      "button": "Schedule a Free Consultation"
+      "button": "Schedule a Free Consultation",
+      "image": "/images/service-hero.png"
     },
-    "overrView": {
+    "overView": {
       "heading": "Strengthening Your IT Foundation For Secure & Scalable Growth",
       "para1": "A strong IT backbone is essential for operational continuity and business scalability. Techofy’s Core IT Services provide comprehensive infrastructure management, proactive system monitoring.",
       "para2": "Our team designs, implements, and maintains secure IT ecosystems tailored to your business requirements — minimizing risks, reducing downtime, and enabling sustainable digital transformation."
@@ -43,29 +44,28 @@
       }
     ],
     "whySection": {
-      "image": "",
-      "text": {
-        "heading": "The Core IT Advantage",
-        "para": "We combine technical expertise with a proactive approach to deliver stable, secure, and performance-driven IT environments.",
-        "listData": [
-          {
-            "heading": "Proactive Infrastructure Management",
-            "para": "We continuously monitor and optimize your systems to prevent issues before they impact your business."
-          },
-          {
-            "heading": "Enterprise-Grade Security Standards",
-            "para": "Advanced protection strategies safeguard your network, devices, and data from evolving threats."
-          },
-          {
-            "heading": "Scalable & Future-Ready Architecture",
-            "para": "Our solutions grow with your business, ensuring long-term performance and flexibility."
-          },
-          {
-            "heading": "24/7 Expert Support",
-            "para": "Our experienced IT specialists are always available to keep your operations running smoothly."
-          }
-        ]
-      }
+      "image": "/images/services-why.png",
+
+      "heading": "The Core IT Advantage",
+      "para": "We combine technical expertise with a proactive approach to deliver stable, secure, and performance-driven IT environments.",
+      "fetures": [
+        {
+          "title": "Proactive Infrastructure Management",
+          "para": "We continuously monitor and optimize your systems to prevent issues before they impact your business."
+        },
+        {
+          "title": "Enterprise-Grade Security Standards",
+          "para": "Advanced protection strategies safeguard your network, devices, and data from evolving threats."
+        },
+        {
+          "title": "Scalable & Future-Ready Architecture",
+          "para": "Our solutions grow with your business, ensuring long-term performance and flexibility."
+        },
+        {
+          "title": "24/7 Expert Support",
+          "para": "Our experienced IT specialists are always available to keep your operations running smoothly."
+        }
+      ]
     }
   }
 }

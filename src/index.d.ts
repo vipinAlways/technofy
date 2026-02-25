@@ -12,8 +12,8 @@ export interface StatsSection {
 }
 
 export interface ServiceCardData {
-  id:string
-  icon: LucideIcon;
+  id?: string;
+  icon: string;
   heading: string;
   para: string;
 }
@@ -27,9 +27,21 @@ export interface ServiceSectionData {
 export interface WhycardData {
   heading: string;
   image: string;
-  para:string
+  para: string;
   fetures: {
     title: string;
     para: string;
   }[];
+}
+
+export interface ServiceHeroSection {
+  heading: string;
+  para: string;
+  button: string;
+  image: string;
+}
+export interface ServiceOverViewData {
+  heading: string;
+  para1: string;
+  para2: string;
 }

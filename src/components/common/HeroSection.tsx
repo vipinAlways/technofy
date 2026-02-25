@@ -3,14 +3,22 @@ import { Button } from "../ui/button";
 import Link from "next/link";
 import { MoveRightIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ServiceHeroSection } from "@/index";
 
-const HeroSection = ({ className }: { className: string }) => {
+const HeroSection = ({
+  className,
+  data,
+}: {
+  className: string;
+  data: ServiceHeroSection;
+}) => {
+  const { button, heading, image, para } = data;
   return (
     <section
       id="#hero"
       className={cn(
         className,
-        "relative w-full h-screen bg-[url('/images/hero-background.png')] bg-cover bg-center flex  justify-center",
+        `relative w-full h-screen ${image && `bg-[url(${image})]`} bg-cover bg-center flex  justify-center`,
       )}
     >
       {/* Dark Overlay */}
@@ -26,13 +34,9 @@ const HeroSection = ({ className }: { className: string }) => {
       >
         <div className="text-center gap-3">
           <h1 className="text-6xl leading-17 font-bold text-white">
-            Smart IT Solutions That Drive <br /> Business Growth
+            {heading}
           </h1>
-          <p className="text-lg  leading-7 text-muted-foreground">
-            We design, secure, and manage your technology so you can focus on
-            scaling your business
-            <br />— without IT stress{" "}
-          </p>
+          <p className="text-lg  leading-7 text-muted-foreground">{para}</p>
         </div>
 
         <Button
@@ -40,7 +44,8 @@ const HeroSection = ({ className }: { className: string }) => {
           asChild
         >
           <Link href={"/contact"} className="flex items-center gap-4">
-            Get a Free Consultation <MoveRightIcon className="size-6" />{" "}
+            {button}
+            <MoveRightIcon className="size-6" />{" "}
           </Link>
         </Button>
       </div>

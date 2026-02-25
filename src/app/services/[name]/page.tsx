@@ -1,4 +1,6 @@
-import { data as serviceData } from "@/services.json";
+import servicesData from "@/servicepage.json";
+
+import Service from "./Service";
 
 type PageProps = {
   params: {
@@ -13,6 +15,10 @@ export default async function Page({
   params: Promise<{ name: string }>;
 }) {
   const { name } = await params;
-  const data = serviceData[Number(name) - 1];
-  return <div></div>;
+console.log(name);
+  return (
+    <div className="w-full flex  justify-center">
+      <Service href={name} data={servicesData.data} />
+    </div>
+  );
 }

@@ -1,20 +1,20 @@
 import { ServiceCardData } from "@/index";
-import { Lightbulb, LucideIcon, MessageSquare, Rocket } from "lucide-react";
-import React from "react";
+import { IconMap } from "@/lib/Icons";
+import { LucideIcon } from "lucide-react";
 
 const cardData: ServiceCardData[] = [
   {
-    icon: MessageSquare,
+    icon: "MessageSquare",
     heading: "Consultation",
     para: "We listen to your challenges and understand your business goals in a free discovery call.",
   },
   {
-    icon: Lightbulb,
+    icon: "Lightbulb",
     heading: "Strategy & Planning",
     para: "Our team designs a tailored roadmap with clear milestones and transparent timelines.",
   },
   {
-    icon: Rocket,
+    icon: "Rocket",
     heading: "Implementation & Support",
     para: "We deploy your solution and provide ongoing management, monitoring, and support.",
   },
@@ -29,33 +29,37 @@ const HowItWorks = ({ id }: { id: string }) => {
         </p>
       </div>
 
-      <div className="w-full flex ">
-        {cardData.map((data, index) => (
-          <div
-            key={index}
-            className="bg-white rounded-2xl p-6 flex flex-col items-center gap-6 relative group"
-          >
-            <div className="size-20 flex items-center justify-center rounded-full bg-accent/20  group-hover:bg-accent p-6 relative transition-all duration-200 ease-linear">
-              <data.icon className="size-6 text-accent group-hover:text-white transition-all duration-200 ease-linear" />
-              {index !== 0 && (
-                <hr className="h-0.5  bg-linear-to-r from-[#3853A4]/20 via-[#3853A4] to-[#3853A4]/20 absolute right-24 top-1/2 w-70" />
-              )}
-            </div>
-            <div className="flex flex-col items-center gap-4 p-3">
-              <h2 className="text-[#F47B25] leading-6 font-bold text-xl">
-                STEP 0{index + 1}
-              </h2>
-              <div className="flex gap-3 flex-col items-center">
-                <h2 className="font-medium text-xl leading-7 ">
-                  {data.heading}
+      <div className="w-full flex md:flex-row flex-col ">
+        {cardData.map((data, index) => {
+          const Icon: LucideIcon = IconMap[data.icon as keyof typeof IconMap];
+
+          return (
+            <div
+              key={index}
+              className="bg-white rounded-2xl p-6 flex flex-col items-center gap-6 relative group"
+            >
+              <div className="size-20 flex items-center justify-center rounded-full bg-accent/20  group-hover:bg-accent p-6 relative transition-all duration-200 ease-linear">
+                <Icon className="size-6 text-accent group-hover:text-white transition-all duration-200 ease-linear" />
+                {index !== 0 && (
+                  <hr className="h-0.5  bg-linear-to-r from-[#3853A4]/20 via-[#3853A4] to-[#3853A4]/20 absolute md:right-24 md:top-1/2 max-md;bottom-24 max-md:left-1/2 max-md:-translate-x-1/2 md:w-70 w-20 max-md:rotate-90" />
+                )}
+              </div>
+              <div className="flex flex-col items-center gap-4 p-3">
+                <h2 className="text-[#F47B25] leading-6 font-bold text-xl">
+                  STEP 0{index + 1}
                 </h2>
-                <p className="text-wrap text-center text-base leading-6 text-muted">
-                  {data.para}
-                </p>
+                <div className="flex gap-3 flex-col items-center">
+                  <h2 className="font-medium text-xl leading-7 ">
+                    {data.heading}
+                  </h2>
+                  <p className="text-wrap text-center text-base leading-6 text-muted">
+                    {data.para}
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );

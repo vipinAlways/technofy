@@ -13,7 +13,7 @@ const bodyFont = Inter({
 
 const headingFont = Poppins({
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
+  weight: ["400", "600", "700", "500"],
   variable: "--font-heading",
 });
 
@@ -35,13 +35,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${headingFont.variable} ${bodyFont.variable} antialiased bg-[#F9FAFB]`}
+        className={`${headingFont.variable} ${bodyFont.variable} antialiased bg-[#F9FAFB] relative w-screen overflow-x-hidden`}
       >
-        <header className="fixed px-20 top-6 z-50 max-w-8xl w-full">
+        <header className="fixed  left-0  px-22 w-full top-6  z-50   flex items-center justify-center">
           <Nav />
         </header>
         <Provider>
-          <main className="w-full">{children}</main>
+          <main className="max-w-full">{children}</main>
         </Provider>
 
         <footer>

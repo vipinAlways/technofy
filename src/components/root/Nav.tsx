@@ -14,14 +14,14 @@ const navlinks: Navlinks[] = [
     href: "#",
   },
   {
-    title: "Cotact",
-    href: "/contact",
+    title: "Blog",
+    href: "#",
   },
 ];
 
 const Nav = () => {
   return (
-    <nav className="py-3 px-1.5 rounded-md bg-white w-full flex justify-between items-center border border-border">
+    <nav className="py-3 px-1.5 rounded-md bg-white w-full max-w-7xl flex justify-between items-center border border-border">
       <div>
      <Link href={"/"}>
         <img
@@ -45,7 +45,7 @@ const Nav = () => {
 
       <Button asChild className="py-4 text-base leading-6 font-semibold px-5">
         <Link href={"#"} >
-        Free Counsulation</Link>
+        Contact</Link>
       </Button>
     </nav>
   );

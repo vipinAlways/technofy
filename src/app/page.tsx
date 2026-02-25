@@ -52,15 +52,6 @@ const statsSectionData: StatsSection[] = [
   },
 ];
 
-export const serviceCardIconMap = {
-  Shield,
-  Lock,
-  TvMinimal,
-  Globe,
-  Cloud,
-  HeadsetIcon,
-};
-
 const serviceData: ServiceSectionData = {
   heading: "Our Services",
   para: "Enterprise-grade technology solutions designed to empower your business at every stage.",
@@ -94,7 +85,7 @@ const whyCardData: WhycardData = {
 };
 export default function Home() {
   return (
-    <div className="w-full">
+    <div className="w-full flex flex-col items-center">
       <section
         id="#hero"
         className="relative w-full h-screen bg-[url('/images/hero-background.png')] bg-cover bg-center flex  justify-center"
@@ -130,9 +121,9 @@ export default function Home() {
           </Button>
         </div>
       </section>
-      <div className="space-y-22 px-20">
-        <section id="StatsSection">
-          <div className="flex justify-between items-stretch w-full border-b  border-border py-12 ">
+      <div className="gap-20 w-full max-w-7xl px-16 pb-24 flex flex-col items-center">
+        <section id="StatsSection" className="w-full">
+          <div className="flex justify-between items-stretch min-w-full border-b  border-border py-12 ">
             {statsSectionData.map((data, index) => (
               <div key={index} className="flex flex-col items-center gap-4">
                 <data.icon className="size-8 text-muted" />
@@ -153,29 +144,26 @@ export default function Home() {
         <ServiceSection id="services" data={serviceData}>
           <div className="flex flex-wrap gap-8 items-stretch justify-center">
             {serviceCardData.map((item) => {
-              const Icon =
-                serviceCardIconMap[
-                  item.icon as keyof typeof serviceCardIconMap
-                ];
-
               return (
                 <ServiceCard
                   key={item.heading}
                   cardData={{
                     heading: item.heading,
-                    icon: Icon,
+                    icon: item.icon,
                     para: item.para,
                     id: item.id,
                   }}
+                  href={`/services/${item.heading
+                    .replace(/\u00A0/g, "")
+                    .replace(/\s+/g, "")
+                    .trim()}`}
                 />
               );
             })}
           </div>
         </ServiceSection>
 
-        <section id="whyUs">
-          <WhyCard whyCardData={whyCardData} />
-        </section>
+        <WhyCard className="flex-row-reverse" whyCardData={whyCardData} />
 
         <HowItWorks id="howItWorks" />
 

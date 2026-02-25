@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const CTA = () => {
   return (
-    <section id="cta" className="mb-22 relative">
+    <section id="cta" className="relative min-w-full">
       <div className="relative z-10  h-92 flex items-center justify-center flex-col gap-10  w-full rounded-2xl bg-[url('/images/technology-background.png')] bg-cover bg-center flex items-center justify-center p-20">
        <div className="absolute inset-0 bg-black/80 -z-10 rounded-2xl"></div>
         <div className="items-center flex flex-col gap-5">
