@@ -3,7 +3,6 @@ import HowItWorks from "@/components/common/HowItWorks";
 import ServiceCard from "@/components/common/ServiceCard";
 import ServiceSection from "@/components/common/ServiceSection";
 import WhyCard from "@/components/common/WhyCard";
-import FAQ from "@/components/services/FAQ";
 import HeroSection from "@/components/services/HeroSection";
 import OverView from "@/components/common/OverView";
 import { ServiceCardData, ServiceOverViewData } from "@/index";
@@ -18,12 +17,15 @@ const Service = ({ data, href }: { data: any; href: string }) => {
           )}
 
           {data.overView && (
-            <OverView subTitle="Service OverView" overViewData={data.overView as ServiceOverViewData} />
+            <OverView
+              subTitle="Service OverView"
+              overViewData={data.overView as ServiceOverViewData}
+            />
           )}
         </div>
       </div>
 
-      <div className="w-full bg-accent/10">
+      <div className="w-full bg-accent/10 py-10">
         <div className="max-w-7xl mx-auto md:px-14 px-6">
           <ServiceSection
             id="service"

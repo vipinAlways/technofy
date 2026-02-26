@@ -15,7 +15,7 @@ const navlinks: Navlinks[] = [
   },
   {
     title: "Blog",
-    href: "#",
+    href: "/blog",
   },
 ];
 
@@ -23,29 +23,31 @@ const Nav = () => {
   return (
     <nav className="py-3 px-1.5 rounded-md bg-white w-full max-w-7xl flex justify-between items-center border border-border">
       <div>
-     <Link href={"/"}>
-        <img
-          src={"/images/logo.png"}
-          alt="technofy.png"
-          width={140}
-          height={35}
-          className="aspect-[4:1] "
-          loading="lazy"
-        /></Link>
+        <Link href={"/"}>
+          <img
+            src={"/images/logo.png"}
+            alt="technofy.png"
+            width={140}
+            height={35}
+            className="aspect-[4:1] "
+            loading="lazy"
+          />
+        </Link>
       </div>
       <ul className="flex gap-6 items-center test-base leading-6 text-muted">
         <li>Services</li>
 
         {navlinks.map((links, index) => (
           <li key={index}>
-            <Link href={links.href} className=" ">{links.title}</Link>
+            <Link href={links.href} className=" ">
+              {links.title}
+            </Link>
           </li>
         ))}
       </ul>
 
       <Button asChild className="py-4 text-base leading-6 font-semibold px-5">
-        <Link href={"#"} >
-        Contact</Link>
+        <Link href={"/contact"}>Contact</Link>
       </Button>
     </nav>
   );

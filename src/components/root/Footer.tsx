@@ -45,8 +45,8 @@ const footerLink: Navlinks[] = [
     title: "Contact",
   },
   {
-    href: "#",
-    title: "Privacy Police",
+    href: "/privacy-policy",
+    title: "Privacy Policy",
   },
 ];
 const Footer = () => {

@@ -26,7 +26,7 @@ const SolutionCard = ({
           </h2>
           <ul className="flex flex-col gap-2 pl-5 list-disc">
             {conclusion.map((item, index) => (
-              <li className="text-muted text-base leading-6">{item}</li>
+              <li className="text-muted text-base leading-6" key={index}>{item}</li>
             ))}
           </ul>
         </div>
