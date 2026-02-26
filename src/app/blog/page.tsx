@@ -2,6 +2,50 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import React from "react";
 
+const blogData: {
+  image: string;
+  info: string;
+  heading: string;
+  para: string;
+}[] = [
+  {
+    image: "/images/blog.png",
+    info: "Posted by Karan on 24 Feb 2026",
+    heading: "Boost Your Business with Smart IT Solutions",
+    para: "In today’s digital world, reliable IT services are essential for business growth. From cloud solutions and cybersecurity to network management and technical support.",
+  },
+  {
+    image: "/images/blog.png",
+    info: "Posted by Karan on 24 Feb 2026",
+    heading: "Boost Your Business with Smart IT Solutions",
+    para: "In today’s digital world, reliable IT services are essential for business growth. From cloud solutions and cybersecurity to network management and technical support.",
+  },
+  {
+    image: "/images/blog.png",
+    info: "Posted by Karan on 24 Feb 2026",
+    heading: "Boost Your Business with Smart IT Solutions",
+    para: "In today’s digital world, reliable IT services are essential for business growth. From cloud solutions and cybersecurity to network management and technical support.",
+  },
+  {
+    image: "/images/blog.png",
+    info: "Posted by Karan on 24 Feb 2026",
+    heading: "Boost Your Business with Smart IT Solutions",
+    para: "In today’s digital world, reliable IT services are essential for business growth. From cloud solutions and cybersecurity to network management and technical support.",
+  },
+  {
+    image: "/images/blog.png",
+    info: "Posted by Karan on 24 Feb 2026",
+    heading: "Boost Your Business with Smart IT Solutions",
+    para: "In today’s digital world, reliable IT services are essential for business growth. From cloud solutions and cybersecurity to network management and technical support.",
+  },
+  {
+    image: "/images/blog.png",
+    info: "Posted by Karan on 24 Feb 2026",
+    heading: "Boost Your Business with Smart IT Solutions",
+    para: "In today’s digital world, reliable IT services are essential for business growth. From cloud solutions and cybersecurity to network management and technical support.",
+  },
+];
+
 const Page = () => {
   return (
     <div className="flex flex-col gap-24 py-24 ">
@@ -55,7 +99,7 @@ const Page = () => {
         <h1>Read our Latest Blogs</h1>
 
         <div className="flex w-full ">
-          <div className="w-4/5"></div>
+          <div className="w-4/5 flex flex-wrap items-center"></div>
           <div className="sticky top-2 bg-accent ">
             <div>
               <h3 className="text-2xl leading-7 font-medium">
