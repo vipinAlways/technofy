@@ -51,7 +51,7 @@ const Page = () => {
   return (
     <div className="flex flex-col gap-24 py-24 ">
       <section
-        id="#hero"
+        id="hero"
         className={"max-w-7xl mx-auto md:px-14 px-6 space-y-4"}
       >
         {/* Dark Overlay */}
@@ -65,7 +65,7 @@ const Page = () => {
             }
           >
             <div className="text-center gap-3">
-              <h1 className="text-6xl leading-17 font-bold ">
+              <h1 className="text-6xl leading-[4.25rem] font-bold ">
                 <span className="text-accent">Insights</span> &{" "}
                 <span className="text-accent">Resources</span> for Smarter IT
                 Decisions
@@ -78,7 +78,7 @@ const Page = () => {
             </div>
           </div>
         </div>
-        <div className="flex relative items-end  w-full  bg-[url('/images/blog-hero.png')] bg-cover bg-center aspect-32/15 p-15 rounded-3xl ">
+        <div className="flex relative items-end  w-full  bg-[url('/images/blog-hero.png')] bg-cover bg-center aspect-[32/15] p-[3.75rem] rounded-3xl ">
           <div className="absolute inset-0 bg-black/20 rounded-3xl"></div>
 
           <div className="flex flex-col gap-3 h-fit max-w-3xl w-full text-white">

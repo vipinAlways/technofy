@@ -94,7 +94,7 @@ const Page = () => {
           }
         >
           <div className="text-center gap-3">
-            <h1 className="text-6xl leading-17 font-bold text-white">
+            <h1 className="text-6xl leading-[4.25rem] font-bold text-white">
               Building Secure & Scalable IT Foundations
             </h1>
             <p className="text-lg  leading-7 text-muted-foreground">

@@ -38,7 +38,7 @@ const SubService = ({
             }
           >
             <div className="text-start gap-3">
-              <h1 className="text-5xl leading-17 font-bold text-white">
+              <h1 className="text-5xl leading-[4.25rem] font-bold text-white">
                 Advanced {serivceName} That <br />
                 Protects Every Device
               </h1>

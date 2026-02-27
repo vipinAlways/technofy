@@ -31,7 +31,7 @@ const Blog = ({
       <section className="max-w-7xl mx-auto w-full flex flex-col md:px-14 px-6 md:gap-24 gap-12 items-stretch">
         <div className="flex w-full flex-col gap-10">
           <div className="flex flex-col gap-3 ">
-            <h1 className="font-bold text-primary text-5xl leading-17  max-w-5xl">
+            <h1 className="font-bold text-primary text-5xl leading-[4.25rem]  max-w-5xl">
               {heading}
             </h1>
             <p className="text-accent w-full flex items-center justify-between ">

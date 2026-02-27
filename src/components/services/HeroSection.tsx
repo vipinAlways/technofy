@@ -17,7 +17,7 @@ const HeroSection = ({
       <div className="flex items-center bg-accent justify-center p-10 rounded-2xl h-fit gap-8 w-full">
         <div className="flex flex-col items-start gap-8 flex-1 ">
           <div className="flex flex-col items-start gap-3">
-            <h1 className="font-bold md:text-5xl text-2xl md:leading-17 leading-8 text-white">
+            <h1 className="font-bold md:text-5xl text-2xl md:leading-[4.25rem] leading-8 text-white">
               {heading}
             </h1>
             <p className="md:text-lg font-normal text-muted-foreground leading-7">

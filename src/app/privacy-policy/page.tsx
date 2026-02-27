@@ -17,7 +17,7 @@ const Page = () => {
 
             <div className="relative z-10 flex w-full max-w-7xl flex-col items-center justify-center gap-8 px-6  text-white">
               <div className="text-center flex flex-col gap-3 max-w-xl items-center justify-center ">
-                <h1 className="text-6xl md:text-6xl leading-17 font-bold">
+                <h1 className="text-6xl md:text-6xl leading-[4.25rem] font-bold">
                   Privacy Policy
                 </h1>
 

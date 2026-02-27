@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
-import {Provider} from "@/components/root/Provider";
+import { Provider } from "@/components/root/Provider";
 import Nav from "@/components/root/Nav";
 import Footer from "@/components/root/Footer";
-import { Toaster } from "sonner";
-
+import { Toaster } from "@/components/ui/sonner";
 
 const bodyFont = Inter({
   subsets: ["latin"],
@@ -39,15 +38,15 @@ export default function RootLayout({
       <body
         className={`${headingFont.variable} ${bodyFont.variable} antialiased bg-[#F9FAFB] relative w-screen overflow-x-hidden`}
       >
-        <header className="fixed  left-0  px-22 w-full top-6  z-50   flex items-center justify-center">
+        <header className="fixed  left-0  px-[5.5rem] w-full top-6  z-50   flex items-center justify-center">
           <Nav />
         </header>
         <Provider>
           <main className="max-w-full">{children}</main>
-          <Toaster/>
+          <Toaster />
         </Provider>
 
-        <footer className="bg-[#0E052A] flex items-center justify-center px-22">
+        <footer className="bg-[#0E052A] flex items-center justify-center px-[5.5rem]">
           <Footer />
         </footer>
       </body>

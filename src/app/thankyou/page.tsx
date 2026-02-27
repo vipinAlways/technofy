@@ -8,7 +8,7 @@ const Page = () => {
     <div className="w-full  flex min-h-screen flex-col  items-center justify-center px-14 py-24">
       <div className="md:max-w-7xl w-full mx-auto flex flex-col md:px-14 px-6 gap-18 items-stretch">
         <div className="bg-accent w-full flex flex-col items-center justify-center rounded-2xl px-20 py-10 ">
-          <h2 className="text-white font-bold text-5xl leading-17 text-center">
+          <h2 className="text-white font-bold text-5xl leading-[4.25rem] text-center">
             Let’s Strengthen Your IT Together
           </h2>
           <p className=" text-lg leading-6 font-normal text-center text-[#F9F9F9]">

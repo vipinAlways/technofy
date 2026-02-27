@@ -29,7 +29,7 @@ const Nav = () => {
             alt="technofy.png"
             width={140}
             height={35}
-            className="aspect-[4:1] "
+            className="aspect-[4/1] "
             loading="lazy"
           />
         </Link>

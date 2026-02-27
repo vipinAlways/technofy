@@ -25,7 +25,7 @@ const HeroSection = ({ className }: { className: string }) => {
         )}
       >
         <div className="text-center gap-3">
-          <h1 className="text-6xl leading-17 font-bold text-white">
+          <h1 className="text-6xl leading-[4.25rem] font-bold text-white">
             Smart IT Solutions That Drive <br /> Business Growth
           </h1>
           <p className="text-lg  leading-7 text-muted-foreground">
