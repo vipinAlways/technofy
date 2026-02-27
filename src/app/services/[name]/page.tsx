@@ -2,11 +2,7 @@ import servicesData from "@/servicepage.json";
 
 import Service from "./Service";
 
-type PageProps = {
-  params: {
-    name: string;
-  };
-};
+
 
 // console.log("params:", params);
 export default async function Page({

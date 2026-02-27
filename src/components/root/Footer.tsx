@@ -37,11 +37,11 @@ const footerLink: Navlinks[] = [
     title: "Serices",
   },
   {
-    href: "#",
+    href: "/about",
     title: "About Us",
   },
   {
-    href: "#",
+    href: "/contact",
     title: "Contact",
   },
   {
@@ -53,7 +53,7 @@ const Footer = () => {
   return (
     <div className="max-w-7xl w-full flex flex-col items-center gap-5 py-6  px-1.5 ">
       <div className="py-3 px-1.5 flex justify-between text-border w-full">
-        <div>
+        <Link href={"/"}>
           <img
             src={"/images/logo.png"}
             alt="technofy"
@@ -62,7 +62,7 @@ const Footer = () => {
             className="aspect-[4:1] "
             loading="lazy"
           />
-        </div>
+        </Link>
         <ul className="flex gap-12 items-center test-base leading-6 text-muted">
           {footerLink.map((links, index) => (
             <li key={index}>

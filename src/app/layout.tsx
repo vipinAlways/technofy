@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
-import Provider from "@/components/root/Provider";
+import {Provider} from "@/components/root/Provider";
 import Nav from "@/components/root/Nav";
 import Footer from "@/components/root/Footer";
+import { Toaster } from "sonner";
+
 
 const bodyFont = Inter({
   subsets: ["latin"],
@@ -42,6 +44,7 @@ export default function RootLayout({
         </header>
         <Provider>
           <main className="max-w-full">{children}</main>
+          <Toaster/>
         </Provider>
 
         <footer className="bg-[#0E052A] flex items-center justify-center px-22">

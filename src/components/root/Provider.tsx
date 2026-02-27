@@ -1,22 +1,19 @@
-'use client'
-import React, { useEffect, useState } from 'react'
+"use client";
+import { atom, useSetAtom } from "jotai";
+import { useEffect } from "react";
 
-const Provider = ({children}:{children:React.ReactNode}) => {
-    const [maunt,setMaunt] = useState(false)
+export const entryUrlAtom = atom("");
+export const sessionIdAtom = atom("");
 
+export function Provider({ children }: { children: React.ReactNode }) {
+  const setEntryUrl = useSetAtom(entryUrlAtom);
+  const setSessionId = useSetAtom(sessionIdAtom);
 
-    useEffect(()=>{
-        setTimeout(() => {
-            setMaunt(true)
-        }, 300);
-    },[])
-
-    if(!maunt) return null
-  return (
-    <>
-      {children}
-    </>
-  )
+  useEffect(() => {
+    setEntryUrl(window.location.href);
+  }, []);
+  useEffect(() => {
+    setSessionId(window?.crypto?.randomUUID?.());
+  }, []);
+  return <>{children}</>;
 }
-
-export default Provider

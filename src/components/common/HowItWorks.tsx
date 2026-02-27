@@ -29,7 +29,7 @@ const HowItWorks = ({ id }: { id: string }) => {
         </p>
       </div>
 
-      <div className="w-full flex md:flex-row flex-col ">
+      <div className="w-full flex md:flex-row flex-col justify-between gap-6">
         {cardData.map((data, index) => {
           const Icon: LucideIcon = IconMap[data.icon as keyof typeof IconMap];
 

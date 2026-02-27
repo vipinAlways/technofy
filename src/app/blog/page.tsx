@@ -1,3 +1,4 @@
+import BlogCard from "@/components/blog/BlogCard";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import React from "react";
@@ -94,24 +95,32 @@ const Page = () => {
 
       <section
         id="blogs"
-        className={"max-w-7xl mx-auto md:px-14 px-6 space-y-4"}
+        className="max-w-7xl mx-auto md:px-14 px-6 flex flex-col gap-20"
       >
-        <h1>Read our Latest Blogs</h1>
+        <h1 className="font-semibold text-primary text-4xl leading-10">
+          Read our Latest Blogs
+        </h1>
 
-        <div className="flex w-full ">
-          <div className="w-4/5 flex flex-wrap items-center"></div>
-          <div className="sticky top-2 bg-accent ">
-            <div>
-              <h3 className="text-2xl leading-7 font-medium">
+        <div className="flex w-full items-start gap-8">
+          {/* Blog Grid */}
+          <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6">
+            {blogData.map((data, index) => (
+              <BlogCard key={index} blogCardData={data} />
+            ))}
+          </div>
+
+          {/* Sidebar */}
+          <div className="sticky top-24 bg-accent rounded-xl p-4 gap-5 flex flex-col h-fit">
+            <div className="flex flex-col gap-3">
+              <h3 className="text-2xl leading-7 font-medium text-white">
                 Need IT Solutions?
               </h3>
-              <p className="text-lg leading-7 font-normal">
-                {" "}
+              <p className="text-lg leading-7 font-normal text-muted-foreground">
                 Let us help you grow your business with smart technology.
               </p>
             </div>
 
-            <Button asChild className="px-6 py-4 text-lg leading-[100%] ">
+            <Button asChild className="px-6 py-4 text-lg leading-[100%]">
               <Link href="/contact">Free Consultation</Link>
             </Button>
           </div>

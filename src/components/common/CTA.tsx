@@ -19,7 +19,7 @@ const CTA = () => {
         </div>
 
         <Button className="px-6 py-4 font-semibold text-base leading-[100%]">
-          <Link href={"#"}>Get a Free Consultation </Link>
+          <Link href={"/contact"}>Get a Free Consultation </Link>
         </Button>
       </div>
     </section>

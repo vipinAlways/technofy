@@ -154,9 +154,11 @@ const Page = () => {
 
             <div className="text-primary text-lg flex flex-col gap-2 ">
               <a href="mailto:support@technofy.com">
-                Email: support@technofy.com
+                <p> Email: support@technofy.com</p>
               </a>
-              <a href="tel:00000000">Phone: +91 XXXXX XXXXX</a>
+              <a href="tel:00000000">
+                <p>Phone: +91 XXXXX XXXXX</p>
+              </a>
             </div>
           </div>
         </section>

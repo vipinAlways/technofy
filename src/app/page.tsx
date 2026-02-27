@@ -143,7 +143,7 @@ export default function Home() {
 
         <div className="py-10">
           <ServiceSection id="services" data={serviceData}>
-            <div className="flex flex-wrap gap-8 items-stretch justify-center">
+            <div className="flex flex-wrap gap-8 items-stretch justify-center ">
               {serviceCardData.map((item) => {
                 return (
                   <ServiceCard
