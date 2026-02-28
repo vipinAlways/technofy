@@ -3,7 +3,7 @@ import React from "react";
 const Page = () => {
   return (
     <div className="w-full flex flex-col md:gap-24 gap-12 pb-24">
-      <div className="w-full bg-[url('/images/about-hero.png')] bg-cover bg-center relative h-[70vh] flex items-center justify-center">
+      <div className="w-full bg-[url('/images/about-hero.png')] bg-cover bg-center relative h-[60vh] flex items-center justify-center">
         <div className="absolute inset-0 bg-black/80"></div>
         {/*  */}
         <div className="pointer-events-none absolute left-0 right-0 -bottom-4 h-16 bg-linear-to-b from-black/0 to-white blur-xl" />
@@ -16,7 +16,7 @@ const Page = () => {
             {/* Dark Overlay */}
 
             <div className="relative z-10 flex w-full max-w-7xl flex-col items-center justify-center gap-8 px-6  text-white">
-              <div className="text-center flex flex-col gap-3 max-w-xl items-center justify-center ">
+              <div className="text-center flex flex-col gap-3 max-w-2xl items-center justify-center ">
                 <h1 className="text-6xl md:text-6xl leading-[4.25rem] font-bold">
                   Privacy Policy
                 </h1>

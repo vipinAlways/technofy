@@ -81,10 +81,10 @@ const Page = () => {
     <div className="w-full flex flex-col gap-24 items-center pb-24">
       <section
         id="#hero"
-        className="relative w-full h-screen bg-[url('/images/about-hero.png')] bg-cover bg-center flex  justify-center"
+        className="relative w-full h-[90vh] bg-[url('/images/about-hero.png')] bg-cover bg-center flex  justify-center"
       >
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="absolute inset-0 bg-black/60 backdrop-blur-[0.1rem]"></div>
         {/*  */}
         <div className="pointer-events-none absolute left-0 right-0 -bottom-4 h-16 bg-linear-to-b from-black/0 to-white blur-xl" />
         {/* Content */}
@@ -107,10 +107,10 @@ const Page = () => {
           </div>
 
           <Button
-            className="px-6 py-4 font-semibold text-lg leading-[100%]"
+            className="py-5 text-base leading-[100%] font-semibold px-5 "
             asChild
           >
-            <Link href={"/contact"} className="flex items-center gap-4">
+            <Link href={"/contact"} className="flex items-center gap-4 ">
               Get a Free Consultation <MoveRightIcon className="size-6" />{" "}
             </Link>
           </Button>
@@ -133,11 +133,9 @@ const Page = () => {
         </div>
       </div>
 
-      <div className="w-full bg-accent/10 py-10">
+      <div className="w-full bg-accent-foreground py-10">
         <div className="max-w-7xl mx-auto md:px-14 px-6 space-y-4">
-          <h3 className="text-accent text-xl leading-7 text-center">
-            Solution
-          </h3>
+          
           <ServiceSection
             id="service"
             data={{
@@ -145,11 +143,11 @@ const Page = () => {
               para: "We are driven by a clear purpose and a long-term outlook — delivering secure, scalable IT solutions today while building a foundation for sustainable digital growth tomorrow.",
             }}
           >
-            <div className="flex flex-wrap gap-4 items-stretch max-w-full w-full ">
+            <div className="flex flex-wrap gap-8 justify-between items-stretch max-w-full w-full ">
               {vision.map((item, index: any) => {
                 return (
-                  <div className=" max-w-xl w-full" key={index}>
-                    <div className="bg-white rounded-2xl p-6 flex flex-col gap-8 w-full">
+                  <div className=" max-w-[35rem] w-full border " key={index}>
+                    <div className="bg-white rounded-2xl border-border  p-6 flex flex-col gap-8 w-full">
                       <h2 className="text-accent font-semibold text-xl">
                         Our Vision
                       </h2>

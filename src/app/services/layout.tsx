@@ -8,7 +8,7 @@ const layout = ({ children }: { children: React.ReactNode }) => {
     <div className="relative">
       {children}
       <div className="w-full space-y-24">
-        <div className="w-full bg-accent/10">
+        <div className="w-full bg-accent-foreground">
           <div className="max-w-7xl mx-auto md:px-14 px-6 flex justify-center">
             <FAQ />
           </div>

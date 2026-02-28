@@ -54,7 +54,8 @@ const config: Config = {
           /* Maps to --accent: #3853a4 in globals.css (highlight color) */
           DEFAULT: "var(--accent)",
           /* Maps to --accent-foreground in globals.css */
-          foreground: "hsl(var(--accent-foreground))",
+          foreground: "#E7E9F2",
+          
         },
 
         destructive: {

@@ -6,7 +6,7 @@ const CTA = () => {
   return (
     <section id="cta" className="relative min-w-full">
       <div className="relative z-10  h-92 flex items-center justify-center flex-col gap-10  w-full rounded-2xl bg-[url('/images/technology-background.png')] bg-cover bg-center flex items-center justify-center p-20">
-       <div className="absolute inset-0 bg-black/80 -z-10 rounded-2xl"></div>
+       <div className="absolute inset-0 bg-black/75 -z-10 rounded-2xl"></div>
         <div className="items-center flex flex-col gap-5">
           <h1 className="text-4xl leading-10  font-bold text-white">
             Ready to Future-Proof Your Business?
@@ -18,7 +18,7 @@ const CTA = () => {
           </p>
         </div>
 
-        <Button className="px-6 py-4 font-semibold text-base leading-[100%]">
+        <Button className="py-5 text-base leading-[100%] font-semibold px-5 rounded-[0.5rem] ">
           <Link href={"/contact"}>Get a Free Consultation </Link>
         </Button>
       </div>

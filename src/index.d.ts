@@ -46,4 +46,29 @@ export interface ServiceOverViewData {
   para2: string;
 }
 
+export type Blog = {
+  title: string | undefined;
+  thumbnail: string | undefined;
+  id: string;
+  seo: {
+    title: string;
+    meta_description: string;
+    og_image: string;
+  };
+  content: string;
+  categories: {
+    check_blogId: {
+      id: number;
+      name: string;
+    };
+  }[];
+  date_created: string;
+  date_updated: string;
+  slug: string;
+};
 
+interface serviceNav {
+  service: {
+    subService: string[];
+  };
+}

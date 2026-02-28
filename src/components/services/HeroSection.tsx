@@ -25,7 +25,7 @@ const HeroSection = ({
             </p>
           </div>
 
-          <Button className="py-4 px-6 ">
+          <Button className="px-6 py-5 text-base leading-[100%] font-semibold ">
             <Link
               href={"#"}
               className="text-lg font-semibold leading-7 flex justify-center items-center gap-2"

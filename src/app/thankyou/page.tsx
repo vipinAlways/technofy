@@ -7,11 +7,11 @@ const Page = () => {
   return (
     <div className="w-full  flex min-h-screen flex-col  items-center justify-center px-14 py-24">
       <div className="md:max-w-7xl w-full mx-auto flex flex-col md:px-14 px-6 gap-18 items-stretch">
-        <div className="bg-accent w-full flex flex-col items-center justify-center rounded-2xl px-20 py-10 ">
-          <h2 className="text-white font-bold text-5xl leading-[4.25rem] text-center">
-            Let’s Strengthen Your IT Together
+         <div className="bg-accent w-full flex flex-col items-center justify-center rounded-2xl px-20 py-10 gap-4">
+          <h2 className="text-white font-bold text-5xl leading-tight text-center">
+            Let's Strengthen Your IT Together
           </h2>
-          <p className=" text-lg leading-6 font-normal text-center text-[#F9F9F9]">
+          <p className="text-base w-[70%] leading-6 font-normal text-center text-muted-foreground">
             Have questions about cybersecurity, infrastructure, or IT support?
             Share your details below and our team will respond promptly with
             expert guidance and clear next steps.
@@ -31,7 +31,7 @@ const Page = () => {
 
           <Button
             asChild
-            className="w-full sm:w-auto leading-7 rounded-lg px-6 py-4"
+            className="py-5 text-base leading-[100%] font-semibold px-5 rounded-[0.5rem]"
           >
             <Link href="/" className="flex items-center gap-2">
               Back to Home Page

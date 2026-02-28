@@ -2,7 +2,21 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { Button } from "../ui/button";
-import { Navlinks } from "@/index";
+import { Navlinks, serviceNav } from "@/index";
+
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuPortal,
+  DropdownMenuShortcut,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
+  DropdownMenuTrigger,
+} from "../ui/dropdown-menu";
+import Routes from "@/lib/route";
 
 const navlinks: Navlinks[] = [
   {
@@ -19,9 +33,42 @@ const navlinks: Navlinks[] = [
   },
 ];
 
+function DropdownMenuSubmenu() {
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger >
+        Services{" "}
+      </DropdownMenuTrigger>
+      <DropdownMenuContent>
+        <DropdownMenuGroup>
+          <DropdownMenuItem>Team</DropdownMenuItem>
+          <DropdownMenuSub>
+            <DropdownMenuSubTrigger>
+              <Link href={Routes.service("it")}>it Service</Link>
+            </DropdownMenuSubTrigger>
+            <DropdownMenuPortal>
+              <DropdownMenuSubContent>
+                <DropdownMenuItem>service1</DropdownMenuItem>
+                <DropdownMenuItem>service1</DropdownMenuItem>
+                <DropdownMenuItem>service1</DropdownMenuItem>
+                <DropdownMenuItem>service1</DropdownMenuItem>
+                <DropdownMenuItem>service1</DropdownMenuItem>
+              </DropdownMenuSubContent>
+            </DropdownMenuPortal>
+          </DropdownMenuSub>
+          <DropdownMenuItem>
+            New Team
+            <DropdownMenuShortcut>⌘+T</DropdownMenuShortcut>
+          </DropdownMenuItem>
+        </DropdownMenuGroup>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+}
+
 const Nav = () => {
   return (
-    <nav className="py-3 px-1.5 rounded-md bg-white w-full max-w-7xl flex justify-between items-center border border-border ">
+    <nav className="py-3 px-6 rounded-md bg-white w-full max-w-7xl flex justify-between items-center border border-border ">
       <div>
         <Link href={"/"}>
           <img
@@ -35,7 +82,9 @@ const Nav = () => {
         </Link>
       </div>
       <ul className="flex gap-6 items-center test-base leading-6 text-muted">
-        <li>Services</li>
+        <li>
+          <DropdownMenuSubmenu />{" "}
+        </li>
 
         {navlinks.map((links, index) => (
           <li key={index}>
@@ -46,7 +95,7 @@ const Nav = () => {
         ))}
       </ul>
 
-      <Button asChild className="py-4 text-base leading-6 font-semibold px-5">
+      <Button asChild className="py-5 text-base leading-6 font-semibold px-5 rounded-[0.5rem] ">
         <Link href={"/contact"}>Contact</Link>
       </Button>
     </nav>

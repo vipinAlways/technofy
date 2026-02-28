@@ -38,14 +38,14 @@ const HowItWorks = ({ id }: { id: string }) => {
               key={index}
               className=" rounded-2xl p-6 flex flex-col items-center gap-6 relative group"
             >
-             <div className="w-20 h-20 flex items-center justify-center rounded-full bg-[#3853A4]/20 group-hover:bg-[#3853A4] p-6 relative transition-all duration-200 ease-linear">
+              {index !== 0 && (
+                <hr className="h-0.5 bg-gradient-to-r from-[#3853A4]/20 via-[#3853A4] to-[#3853A4]/20 absolute  md:w-60 w-60 top-16       right-1/2 -translate-x-1/3  rotate-90 md:rotate-0 " />
+              )}
+              <div className="w-20 h-20 flex items-center justify-center rounded-full bg-[#E7E9F2] group-hover:bg-[#3853A4] p-6 relative transition-all duration-200 ease-linear">
                 <Icon className="size-6 text-accent group-hover:text-white transition-all duration-200 ease-linear" />
-                {index !== 0 && (
-                 <hr className="h-0.5 bg-gradient-to-r from-[#3853A4]/20 via-[#3853A4] to-[#3853A4]/20 absolute md:right-24 md:top-1/2 md:w-10 w-20 bottom-24 left-1/2 -translate-x-1/2 rotate-90 md:rotate-0 md:left-auto md:translate-x-0" />
-                )}
               </div>
               <div className="flex flex-col items-center gap-4 p-3">
-                <h2 className="text-[#F47B25] leading-6 font-bold text-xl">
+                <h2 className="text-[#F47B25] leading-6 font-bold text-base">
                   STEP 0{index + 1}
                 </h2>
                 <div className="flex gap-3 flex-col items-center">

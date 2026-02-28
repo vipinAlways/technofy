@@ -23,13 +23,13 @@ const SubService = ({
       <section
         id="#hero"
         className={
-          "relative w-full h-screen bg-[url('/images/hero-background.png')] bg-cover bg-center flex  justify-center  items-center"
+          "relative w-full h-[90vh] bg-[url('/images/hero-background.png')] bg-cover bg-center flex  justify-center  items-center"
         }
       >
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="absolute inset-0 bg-black/80"></div>
         {/*  */}
-        <div className="pointer-events-none absolute left-0 right-0 -bottom-4 h-16 bg-linear-to-b from-black/0 to-white blur-xl" />
+        <div className=" absolute left-0 right-0 -bottom-4 h-16 bg-gradient-to-b from-black/0 to-white blur-xl" />
         {/* Content */}
         <div className="flex items-start max-w-7xl w-full  md:px-14 px-6">
           <div
@@ -51,7 +51,7 @@ const SubService = ({
             </div>
 
             <Button
-              className="px-6 py-4 font-semibold text-lg leading-[100%]"
+              className="py-5 text-base leading-[100%] font-semibold px-5 "
               asChild
             >
               <Link href={"/contact"} className="flex items-center gap-4">
@@ -68,9 +68,9 @@ const SubService = ({
           solutions={data.problem.solutions}
         />
       </div>
-      <div className="w-full bg-accent/10 py-10">
+      <div className="w-full bg-accent-foreground py-10">
         <div className="max-w-7xl mx-auto md:px-14 px-6 space-y-4">
-          <h3 className="text-accent text-xl leading-7 text-center">
+          <h3 className="text-accent font-bold text-xl leading-7 text-center">
             Solution
           </h3>
           <ServiceSection
@@ -80,7 +80,7 @@ const SubService = ({
               para: "Enterprise-grade technology solutions designed to empower your business at every stage.",
             }}
           >
-            <div className="flex flex-wrap gap-4 items-stretch max-w-full w-full ">
+            <div className="flex flex-wrap gap-8 items-stretch max-w-full w-full ">
               {data.solution &&
                 data.solution.map((item: any, index: any) => {
                   return <SolutionCard key={index} solutions={item} />;

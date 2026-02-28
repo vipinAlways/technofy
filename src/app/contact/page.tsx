@@ -97,13 +97,13 @@ const Page = () => {
   };
 
   return (
-    <div className="w-full flex min-h-screen flex-col gap-24 items-center justify-center px-14 py-24">
-      <div className="md:max-w-7xl w-full mx-auto flex flex-col md:px-14 px-6 gap-20 items-stretch">
-        <div className="bg-accent w-full flex flex-col items-center justify-center rounded-2xl px-20 py-10">
+    <div className="w-full flex min-h-screen flex-col gap-24 items-center justify-center px-14 pb-24 pt-32 ">
+      <div className="md:max-w-7xl w-full mx-auto flex flex-col md:px-14 px-6 gap-16 items-stretch">
+        <div className="bg-accent w-full flex flex-col items-center justify-center rounded-2xl px-20 py-10 gap-4">
           <h2 className="text-white font-bold text-5xl leading-tight text-center">
             Let's Strengthen Your IT Together
           </h2>
-          <p className="text-lg leading-6 font-normal text-center text-[#F9F9F9]">
+          <p className="text-base w-[70%] leading-6 font-normal text-center text-muted-foreground">
             Have questions about cybersecurity, infrastructure, or IT support?
             Share your details below and our team will respond promptly with
             expert guidance and clear next steps.
@@ -120,7 +120,7 @@ const Page = () => {
             />
           </div>
 
-          <div className="md:w-1/2 w-full text-muted-foreground gap-8 flex flex-col items-start border border-border p-6 rounded-2xl shadow-md">
+          <div className="md:w-1/2 w-full text-muted-foreground gap-8  bg-white flex flex-col items-start border border-border p-6 rounded-2xl shadow-md">
             <div>
               <h1 className="font-medium text-primary md:text-2xl leading-7">
                 Let's Talk About Your IT Goals
@@ -130,18 +130,18 @@ const Page = () => {
             <div className="text-primary w-full">
               <form
                 onSubmit={handleSubmit(onSubmit)}
-                className="flex font-[var(--font-heading)] flex-col gap-4 w-full"
+                className="flex font-[var(--font-heading)] flex-col gap-4 w-full "
               >
                 {/* Name */}
                 <div className="flex flex-col gap-2 w-full">
-                  <label htmlFor="name" className="text-lg">
+                  <label className="text-lg font-medium " htmlFor="name" >
                     Name
                   </label>
                   <input
                     type="text"
                     {...register("name")}
                     placeholder="Name"
-                    className="border border-border p-4 w-full rounded-md"
+                    className="border border-border p-4 w-full rounded-lg"
                     id="name"
                   />
                   {errors.name && (
@@ -153,12 +153,12 @@ const Page = () => {
 
                 {/* Email */}
                 <div className="flex flex-col gap-2 w-full">
-                  <label htmlFor="email">Email</label>
+                  <label className="text-lg font-medium " htmlFor="email">Email</label>
                   <input
                     type="email"
                     {...register("email")}
                     placeholder="Working email id"
-                    className="border border-border p-4 w-full rounded-md"
+                    className="border border-border p-4 w-full rounded-lg"
                     id="email"
                   />
                   {errors.email && (
@@ -178,8 +178,8 @@ const Page = () => {
                         country={countryCode || "in"}
                         value={field.value}
                         onChange={field.onChange}
-                        containerClass="w-full"
-                        inputClass="!w-full p-4 border border-border rounded-md"
+                        containerClass="w-full text-lg font-medium "
+                        inputClass="!w-full p-4 border border-border rounded-lg "
                         buttonClass="!border-border"
                         specialLabel="Phone Number"
                         placeholder="Enter phone number"
@@ -195,11 +195,11 @@ const Page = () => {
 
                 {/* Counselling Type */}
                 <div className="flex flex-col gap-2 w-full">
-                  <label htmlFor="counsellingType">Service Type</label>
+                  <label className="text-lg font-medium " htmlFor="counsellingType">Service Type</label>
                   <select
                     id="counsellingType"
                     {...register("counsellingType")}
-                    className="border border-border p-4 w-full rounded-md"
+                    className="border border-border p-4 w-full rounded-lg"
                   >
                     <option value="">Select a service</option>
                     <option value="cybersecurity">Cybersecurity</option>
@@ -216,17 +216,17 @@ const Page = () => {
 
                 {/* Message */}
                 <div className="flex flex-col gap-2 w-full">
-                  <label htmlFor="message">Message</label>
+                  <label className="text-lg font-medium " htmlFor="message">Message</label>
                   <textarea
                     {...register("message")}
                     placeholder="Tell us how we can help you"
-                    className="border border-border p-4 w-full rounded-md h-20 resize-none"
+                    className="border border-border p-4 w-full rounded-lg h-20 resize-none"
                     id="message"
                   />
                 </div>
 
                 <Button
-                  className="w-full py-4 px-6 text-lg leading-7 rounded-lg font-semibold"
+                  className="w-full text-base leading-[100%] font-semibold px-5 py-6 rounded-[0.5rem]"
                   type="submit"
                 >
                   Send Message

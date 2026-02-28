@@ -34,7 +34,7 @@ const socialLink: {
 const footerLink: Navlinks[] = [
   {
     href: "#",
-    title: "Serices",
+    title: "Services",
   },
   {
     href: "/about",
@@ -51,7 +51,7 @@ const footerLink: Navlinks[] = [
 ];
 const Footer = () => {
   return (
-    <div className="max-w-7xl w-full flex flex-col items-center gap-5 py-6  px-1.5 ">
+    <div className="py-6 px-12 w-full max-w-7xl flex justify-between items-center  flex-col gap-5  ">
       <div className="py-3 px-1.5 flex justify-between text-border w-full">
         <Link href={"/"}>
           <img
@@ -63,7 +63,7 @@ const Footer = () => {
             loading="lazy"
           />
         </Link>
-        <ul className="flex gap-12 items-center test-base leading-6 text-muted">
+        <ul className="flex gap-12 items-center test-base leading-6 text-border">
           {footerLink.map((links, index) => (
             <li key={index}>
               <Link href={links.href} className=" ">
@@ -82,9 +82,9 @@ const Footer = () => {
           ))}
         </ul>
       </div>
-      <hr className="h-px w-4/5 bg-muted text-muted" />
+      <div className="h-px w-full bg-muted " />
       <div className="">
-        <p className="text-center text-muted">
+        <p className="text-center text-sm  text-muted">
           Copyright &copy;{new Date().getFullYear()} Technofy. All Rights
           Reserved
         </p>

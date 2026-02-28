@@ -1,3 +1,4 @@
+import Routes from "@/lib/route";
 import Link from "next/link";
 import React from "react";
 
@@ -9,23 +10,17 @@ const BlogCard = ({
     info: string;
     heading: string;
     para: string;
+    slug: string;
   };
 }) => {
-  const { heading, image, info, para } = blogCardData;
+  const { heading, image, info, para, slug } = blogCardData;
   return (
     <Link
-      href={`/blog/${heading
-        .replace(/\u00A0/g, "")
-        .replace(/\s+/g, "")
-        .trim()}`}
+      href={Routes.blog_post(slug)}
       className="w-full max-w-md rounded-2xl p-4 flex flex-col justify-center border border-border group hover:shadow-[0_4px_8px_rgba(0,0,0,0.2)] transition-all duration-100 ease-linear"
     >
-      <div className="aspect-3/2 rounded-lg">
-        <img
-          src="/images/about-hero.png"
-          alt="weewew"
-          className="w-full h-full rounded-lg"
-        />
+      <div className=" rounded-lg">
+        <img src={image} alt={heading} className="w-full aspect-video object-cover mx-auto sm:mx-0 rounded-lg" />
       </div>
 
       <div className="pt-4 flex flex-col gap-3">

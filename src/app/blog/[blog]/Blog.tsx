@@ -23,11 +23,12 @@ const Blog = ({
     heading: string;
     image: string;
     info: string;
+    content: string;
   };
 }) => {
-  const { heading, image, info } = blogData;
+  const { heading, image, info, content } = blogData;
   return (
-    <div className="w-full flex flex-col gap-24 items-center py-24">
+    <div className="w-full relative flex flex-col gap-24 items-center py-24">
       <section className="max-w-7xl mx-auto w-full flex flex-col md:px-14 px-6 md:gap-24 gap-12 items-stretch">
         <div className="flex w-full flex-col gap-10">
           <div className="flex flex-col gap-3 ">
@@ -43,7 +44,7 @@ const Blog = ({
             <img
               src={image}
               alt={heading}
-              className="w-full h-full rounded-2xl"
+              className="w-full aspect-video object-cover rounded-2xl mx-auto sm:mx-0"
             />
           </div>
         </div>
@@ -51,11 +52,11 @@ const Blog = ({
 
       <div className="max-w-7xl relative mx-auto w-full flex  md:px-14 px-6 md:gap-24 gap-12 items-start">
         <div
-          dangerouslySetInnerHTML={{ __html: blogPost.content || "" }}
+          dangerouslySetInnerHTML={{ __html: content || "" }}
           className="prose lg:prose-xl w-full"
         />
 
-        <div className="flex flex-col gap-5 p-4 rounded-2xl max-w-sm bg-accent/10 sticky top-24   ">
+        <div className="flex flex-col gap-5 p-4 rounded-2xl max-w-sm bg-accent-foreground sticky top-24   ">
           <h1 className=" text-primary font-medium text-2xl leading-7">
             Popular Blog
           </h1>

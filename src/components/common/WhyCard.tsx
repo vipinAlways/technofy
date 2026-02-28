@@ -14,8 +14,8 @@ const WhyCard = ({
   whyCardData: WhycardData;
 }) => {
   return (
-    <section id="whyUs" className="w-full flex items-center justify-center">
-      <div className="rounded-2xl  bg-accent md:p-15 p-8 h-fit">
+    <section id="whyUs" className="w-full flex items-center justify-center ">
+      <div className="rounded-2xl  bg-accent md:p-14 p-8 h-fit">
         <div
           className={cn(`flex ${className} items-stretch flex-1 gap-8 h-fit`)}
         >
@@ -29,11 +29,11 @@ const WhyCard = ({
           </div>
 
           <div className="md:w-1/2 w-full text-muted-foreground gap-8 flex flex-col items-start">
-            <div>
-              <h1 className="font-semibold md:text-4xl text-xl leading-10">
+            <div className="flex flex-col gap-3">
+              <h1 className="font-semibold md:text-4xl  text-xl leading-10 text-white">
                 {whyCardData.heading}
               </h1>
-              <p className="md:text-base text-sm  md:leading-8">
+              <p className="md:text-base text-sm text-muted-foreground  md:leading-6 ">
                 {whyCardData.para}
               </p>
             </div>
@@ -43,7 +43,7 @@ const WhyCard = ({
                 {whyCardData.fetures.map((feature, index) => (
                   <li
                     key={index}
-                    className=" flex  items-start justify-start gap-4"
+                    className=" flex items-start justify-start gap-4"
                   >
                     <img
                       src={"/right-sign.svg"}
@@ -54,10 +54,10 @@ const WhyCard = ({
                       loading="lazy"
                     />
                     <div>
-                      <h3 className="font-semibold md:text-xl text-sm leading-7">
+                      <h3 className="font-semibold md:text-xl text-sm leading-7 text-white">
                         {feature.title}
                       </h3>
-                      <p className="md:text-base text-xs font-normal md:leading-6 ">
+                      <p className="md:text-base text-xs font-normal text-muted-foreground md:leading-6 ">
                         {feature.para}
                       </p>
                     </div>
@@ -66,10 +66,10 @@ const WhyCard = ({
               </ul>
             </div>
 
-            <Button className="w-full " asChild>
+            <Button className="w-full  py-5 text-base leading-[100%] font-semibold px-5 rounded-[0.5rem]" asChild>
               <Link
                 href="/contact"
-                className="min-w-full px-6 py-1 text-lg leading-[100%]"
+              
               >
                 Schedule a Free Consultation <MoveRight className="size-6" />
               </Link>

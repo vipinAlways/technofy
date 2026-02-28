@@ -88,23 +88,23 @@ export default function Home() {
     <div className="w-full flex flex-col items-center">
       <section
         id="#hero"
-        className="relative w-full h-screen bg-[url('/images/hero-background.png')] bg-cover bg-center flex justify-center"
+        className="relative w-full h-[90vh] bg-[url('/images/hero-background.png')] bg-cover bg-center flex justify-center"
       >
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="absolute inset-0 bg-black/75 backdrop-blur-[0.1rem]"></div>
         {/*  */}
-        <div className="pointer-events-none absolute left-0 right-0 -bottom-4 h-16 bg-gradient-to-b from-black/0 to-white blur-xl" />
+        <div className="pointer-events-none absolute left-0 right-0 w-full -bottom-8 h-16 bg-gradient-to-b from-transparent via-white/40 to-white blur-xl" />
         {/* Content */}
         <div
           className={
-            "relative z-10 text-white flex justify-center flex-col gap-8"
+            "relative z-10 text-white flex justify-center items-center flex-col gap-8"
           }
         >
           <div className="text-center gap-3">
             <h1 className="text-6xl leading-[4.25rem] font-bold text-white">
               Smart IT Solutions That Drive <br /> Business Growth
             </h1>
-            <p className="text-lg leading-7 text-muted-foreground">
+            <p className="text-lg leading-7 text-muted-foreground ">
               We design, secure, and manage your technology so you can focus on
               scaling your business
               <br />— without IT stress{" "}
@@ -112,10 +112,10 @@ export default function Home() {
           </div>
 
           <Button
-            className="px-6 py-4 font-semibold text-lg leading-[100%]"
+            className="px-8 py-6 font-semibold text-lg leading-[100%] rounded-[0.5rem]"
             asChild
           >
-            <Link href={"/contact"} className="flex items-center gap-4">
+            <Link href={"/contact"} className="flex items-center gap-2">
               Get a Free Consultation <MoveRightIcon className="w-6 h-6" />{" "}
             </Link>
           </Button>
@@ -126,7 +126,7 @@ export default function Home() {
           <div className="flex justify-between items-stretch min-w-full border-b border-border py-12">
             {statsSectionData.map((data, index) => (
               <div key={index} className="flex flex-col items-center gap-4">
-                <data.icon className="w-8 h-8 text-muted" />
+                <data.icon className="w-8 h-8 text-muted stroke-[1.5px]" />
 
                 <div className="gap-2 flex flex-col items-center">
                   <span className="text-accent text-[2rem] font-bold">

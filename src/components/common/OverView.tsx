@@ -16,7 +16,7 @@ const OverView = ({
     >
       <div className="flex w-full md:flex-row flex-col max-md:gap-6 items-center justify-between ">
         <div className="flex flex-col gap-6 items-start md:max-w-xl px-3">
-          <h3 className="text-accent font-medium md:leading-[100%] md:text-xl text-lg">
+          <h3 className="text-accent font-bold md:leading-[100%] md:text-xl text-lg">
             {subTitle}
           </h3>
 
@@ -26,7 +26,7 @@ const OverView = ({
         </div>
 
         <div
-          className="flex items-start gap-3 flex-col md:max-w-1/2 md:text-lg text-sm text-muted leading-6 font-normal
+          className="flex items-start gap-3 flex-col md:max-w-xl md:text-lg text-sm text-muted leading-6 font-normal
         "
         >
           <p>{para1}</p>

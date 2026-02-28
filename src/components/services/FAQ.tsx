@@ -40,12 +40,13 @@ function AccordionBasic() {
       type="single"
       collapsible
       className="max-w-xl flex flex-col gap-5"
+      defaultValue="item-1"
     >
       {items.map((item) => (
         <AccordionItem
           key={item.value}
           value={item.value}
-          className="flex flex-col gap-4 rounded-xl bg-white p-4 border-border"
+          className="flex flex-col gap-4 rounded-xl bg-white p-4 px-6 border-border"
         >
           <AccordionTrigger className="text-lg font-medium leading-7">
             {item.trigger}
@@ -62,7 +63,7 @@ function AccordionBasic() {
 const FAQ = () => {
   return (
     <section className="flex items-center h-140 w-full max-w-7xl py-10 justify-between">
-      <div className="flex-1 flex items-center  justify-center gap-4">
+      <div className="flex-1 flex items-center max-w-md   justify-center gap-4">
         <div className="flex flex-col items-start gap-4 max-w-xl">
           <h1 className="text-primary text-4xl font-medium leading-[100%]">
             Frequently Asked <br />{" "}
@@ -76,7 +77,7 @@ const FAQ = () => {
         </div>
       </div>
 
-      <div className="flex-1 ">
+      <div className="w-fit ">
         <AccordionBasic />
       </div>
     </section>

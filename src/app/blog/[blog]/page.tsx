@@ -1,29 +1,34 @@
 import React from "react";
 import Blog from "./Blog";
-
-type PageProps = {
-  params: {
-    blog: string;
-  };
-};
+import { Blog as BlogType } from "@/index";
+import { getBlog } from "@/lib/fetchingBlogs";
 
 const Page = async ({ params }: { params: Promise<{ blog: string }> }) => {
   const { blog } = await params;
 
-  const formattedHeading = blog
-    .replace(/([A-Z])/g, " $1")
-    .replace(/_/g, " ")
-    .replace(/\s+/g, " ")
-    .trim()
-    .replace(/^./, (c) => c.toUpperCase());
+  // const formattedHeading = blog
+  //   .replace(/([A-Z])/g, " $1")
+  //   .replace(/_/g, " ")
+  //   .replace(/\s+/g, " ")
+  //   .trim()
+  //   .replace(/^./, (c) => c.toUpperCase());
+
+  const data = await getBlog(blog);
+
+  console.log({ data });
 
   return (
     <div>
       <Blog
         blogData={{
-          heading: formattedHeading,
-          image: "/images/about-hero.png",
-          info: "Posted by Karan on 24 Feb 2026",
+          heading: data.title || "",
+          image: data.seo.og_image,
+          info: new Date(data.date_created).toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+          }),
+          content: data.content,
         }}
       />
     </div>
