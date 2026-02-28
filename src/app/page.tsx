@@ -88,23 +88,23 @@ export default function Home() {
     <div className="w-full flex flex-col items-center">
       <section
         id="#hero"
-        className="relative w-full h-screen bg-[url('/images/hero-background.png')] bg-cover bg-center flex  justify-center"
+        className="relative w-full h-screen bg-[url('/images/hero-background.png')] bg-cover bg-center flex justify-center"
       >
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/60"></div>
         {/*  */}
-        <div className="pointer-events-none absolute left-0 right-0 -bottom-4 h-16 bg-linear-to-b from-black/0 to-white blur-xl" />
+        <div className="pointer-events-none absolute left-0 right-0 -bottom-4 h-16 bg-gradient-to-b from-black/0 to-white blur-xl" />
         {/* Content */}
         <div
           className={
-            "relative z-10 text-white flex  justify-center flex-col gap-8"
+            "relative z-10 text-white flex justify-center flex-col gap-8"
           }
         >
           <div className="text-center gap-3">
             <h1 className="text-6xl leading-[4.25rem] font-bold text-white">
               Smart IT Solutions That Drive <br /> Business Growth
             </h1>
-            <p className="text-lg  leading-7 text-muted-foreground">
+            <p className="text-lg leading-7 text-muted-foreground">
               We design, secure, and manage your technology so you can focus on
               scaling your business
               <br />— without IT stress{" "}
@@ -116,19 +116,19 @@ export default function Home() {
             asChild
           >
             <Link href={"/contact"} className="flex items-center gap-4">
-              Get a Free Consultation <MoveRightIcon className="size-6" />{" "}
+              Get a Free Consultation <MoveRightIcon className="w-6 h-6" />{" "}
             </Link>
           </Button>
         </div>
       </section>
       <div className="gap-20 w-full max-w-7xl px-14 pb-24 flex flex-col items-center">
         <section id="StatsSection" className="w-full">
-          <div className="flex justify-between items-stretch min-w-full border-b  border-border py-12 ">
+          <div className="flex justify-between items-stretch min-w-full border-b border-border py-12">
             {statsSectionData.map((data, index) => (
               <div key={index} className="flex flex-col items-center gap-4">
-                <data.icon className="size-8 text-muted" />
+                <data.icon className="w-8 h-8 text-muted" />
 
-                <div className="gap-2 flex flex-col items-center ">
+                <div className="gap-2 flex flex-col items-center">
                   <span className="text-accent text-[2rem] font-bold">
                     {data.numbers}
                   </span>
@@ -143,7 +143,7 @@ export default function Home() {
 
         <div className="py-10">
           <ServiceSection id="services" data={serviceData}>
-            <div className="flex flex-wrap gap-8 items-stretch justify-center ">
+            <div className="flex flex-wrap gap-8 items-stretch justify-center">
               {serviceCardData.map((item) => {
                 return (
                   <ServiceCard

@@ -110,7 +110,7 @@ const Page = () => {
           </div>
 
           {/* Sidebar */}
-          <div className="sticky top-24 bg-accent rounded-xl p-4 gap-5 flex flex-col h-fit">
+          <div className="sticky top-20 bg-accent rounded-xl p-4 gap-5 flex flex-col h-fit">
             <div className="flex flex-col gap-3">
               <h3 className="text-2xl leading-7 font-medium text-white">
                 Need IT Solutions?

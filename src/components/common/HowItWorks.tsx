@@ -36,12 +36,12 @@ const HowItWorks = ({ id }: { id: string }) => {
           return (
             <div
               key={index}
-              className="bg-white rounded-2xl p-6 flex flex-col items-center gap-6 relative group"
+              className=" rounded-2xl p-6 flex flex-col items-center gap-6 relative group"
             >
-              <div className="size-20 flex items-center justify-center rounded-full bg-accent/20  group-hover:bg-accent p-6 relative transition-all duration-200 ease-linear">
+             <div className="w-20 h-20 flex items-center justify-center rounded-full bg-[#3853A4]/20 group-hover:bg-[#3853A4] p-6 relative transition-all duration-200 ease-linear">
                 <Icon className="size-6 text-accent group-hover:text-white transition-all duration-200 ease-linear" />
                 {index !== 0 && (
-                  <hr className="h-0.5  bg-linear-to-r from-[#3853A4]/20 via-[#3853A4] to-[#3853A4]/20 absolute md:right-24 md:top-1/2 max-md;bottom-24 max-md:left-1/2 max-md:-translate-x-1/2 md:w-70 w-20 max-md:rotate-90" />
+                 <hr className="h-0.5 bg-gradient-to-r from-[#3853A4]/20 via-[#3853A4] to-[#3853A4]/20 absolute md:right-24 md:top-1/2 md:w-10 w-20 bottom-24 left-1/2 -translate-x-1/2 rotate-90 md:rotate-0 md:left-auto md:translate-x-0" />
                 )}
               </div>
               <div className="flex flex-col items-center gap-4 p-3">

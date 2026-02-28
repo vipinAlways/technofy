@@ -21,7 +21,7 @@ const navlinks: Navlinks[] = [
 
 const Nav = () => {
   return (
-    <nav className="py-3 px-1.5 rounded-md bg-white w-full max-w-7xl flex justify-between items-center border border-border">
+    <nav className="py-3 px-1.5 rounded-md bg-white w-full max-w-7xl flex justify-between items-center border border-border ">
       <div>
         <Link href={"/"}>
           <img
