@@ -48,7 +48,7 @@ export default function RootLayout({
           <Toaster />
         </Provider>
 
-        <footer className="bg-[#0E052A] flex items-center justify-center px-[5.5rem]">
+        <footer className="bg-[#0E052A] flex items-center justify-center ">
           <Footer />
         </footer>
       </body>

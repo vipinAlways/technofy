@@ -118,7 +118,7 @@ const Page = () => {
       </section>
 
       <div className="w-full">
-        <div className="max-w-7xl mx-auto w-full flex flex-col md:px-14 px-6 md:gap-24 gap-12 items-stretch">
+        <div className="max-w-7xl mx-auto w-full flex flex-col  md:gap-24 gap-12 items-stretch">
           <OverView
             subTitle="About Technofy"
             overViewData={{
@@ -134,7 +134,7 @@ const Page = () => {
       </div>
 
       <div className="w-full bg-accent-foreground py-10">
-        <div className="max-w-7xl mx-auto md:px-14 px-6 space-y-4">
+        <div className="max-w-7xl mx-auto  space-y-4">
           
           <ServiceSection
             id="service"
@@ -143,10 +143,10 @@ const Page = () => {
               para: "We are driven by a clear purpose and a long-term outlook — delivering secure, scalable IT solutions today while building a foundation for sustainable digital growth tomorrow.",
             }}
           >
-            <div className="flex flex-wrap gap-8 justify-between items-stretch max-w-full w-full ">
+            <div className="flex flex-wrap gap-8 justify-center items-stretch max-w-full w-full ">
               {vision.map((item, index: any) => {
                 return (
-                  <div className=" max-w-[35rem] w-full border " key={index}>
+                  <div className=" max-w-xl w-full border " key={index}>
                     <div className="bg-white rounded-2xl border-border  p-6 flex flex-col gap-8 w-full">
                       <h2 className="text-accent font-semibold text-xl">
                         Our Vision
@@ -165,7 +165,7 @@ const Page = () => {
         </div>
       </div>
 
-      <div className="md:max-w-7xl w-full mx-auto flex flex-col md:px-14 px-6 gap-24 items-stretch">
+      <div className="md:max-w-7xl w-full mx-auto flex flex-col  gap-24 items-stretch">
         <WhyCard whyCardData={WhyCardData} />
         <CTA />
       </div>

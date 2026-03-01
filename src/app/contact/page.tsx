@@ -97,8 +97,8 @@ const Page = () => {
   };
 
   return (
-    <div className="w-full flex min-h-screen flex-col gap-24 items-center justify-center px-14 pb-24 pt-32 ">
-      <div className="md:max-w-7xl w-full mx-auto flex flex-col md:px-14 px-6 gap-16 items-stretch">
+    <div className="w-full flex min-h-screen flex-col gap-24 items-center justify-center  pb-24 pt-32 ">
+      <div className="md:max-w-7xl w-full mx-auto flex flex-col  gap-16 items-stretch">
         <div className="bg-accent w-full flex flex-col items-center justify-center rounded-2xl px-20 py-10 gap-4">
           <h2 className="text-white font-bold text-5xl leading-tight text-center">
             Let's Strengthen Your IT Together

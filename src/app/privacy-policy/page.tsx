@@ -8,7 +8,7 @@ const Page = () => {
         {/*  */}
         <div className="pointer-events-none absolute left-0 right-0 -bottom-4 h-16 bg-linear-to-b from-black/0 to-white blur-xl" />
         {/* Content */}
-        <div className="max-w-7xl mx-auto w-full flex flex-col md:px-14 px-6 md:gap-24 gap-12 items-stretch">
+        <div className="max-w-7xl mx-auto w-full flex flex-col  md:gap-24 gap-12 items-stretch">
           <section
             id="hero"
             className={"relative w-full  flex  justify-center  items-center"}
@@ -31,7 +31,7 @@ const Page = () => {
         </div>
       </div>
 
-      <div className="md:max-w-4xl w-full mx-auto flex flex-col md:px-14 px-6 gap-24 items-stretch">
+      <div className="md:max-w-4xl w-full mx-auto flex flex-col  gap-24 items-stretch">
         <section
           id="clause"
           className="w-full flex  flex-col items-start justify-center gap-10

@@ -11,7 +11,7 @@ const SolutionCard = ({
 }) => {
   const { conclusion, heading, para } = solutions;
   return (
-    <div className=" max-w-[34rem] min-w-60 ">
+    <div className=" max-w-[39rem] min-w-60 ">
       <div className="bg-white rounded-2xl border  border-border  p-6 flex flex-col gap-4 w-full">
         <div className="flex flex-col gap-3">
           <h1 className="text-accent leading-7 font-medium text-2xl">

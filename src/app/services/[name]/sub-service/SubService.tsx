@@ -10,7 +10,6 @@ import { MoveRightIcon } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
-
 const SubService = ({
   serivceName,
   data,
@@ -31,7 +30,7 @@ const SubService = ({
         {/*  */}
         <div className=" absolute left-0 right-0 -bottom-4 h-16 bg-gradient-to-b from-black/0 to-white blur-xl" />
         {/* Content */}
-        <div className="flex items-start max-w-7xl w-full  md:px-14 px-6">
+        <div className="flex items-start max-w-7xl w-full  ">
           <div
             className={
               "relative z-10 text-white flex  justify-center items-start w-[70%] flex-col gap-8"
@@ -62,14 +61,14 @@ const SubService = ({
           </div>
         </div>
       </section>
-      <div className="md:max-w-7xl w-full mx-auto flex flex-col md:px-14 px-6 items-stretch">
+      <div className="md:max-w-7xl w-full mx-auto flex flex-col  items-stretch">
         <Problem
           heading={data.problem.heading}
           solutions={data.problem.solutions}
         />
       </div>
       <div className="w-full bg-accent-foreground py-10">
-        <div className="max-w-7xl mx-auto md:px-14 px-6 space-y-4">
+        <div className="max-w-7xl mx-auto  space-y-4">
           <h3 className="text-accent font-bold text-xl leading-7 text-center">
             Solution
           </h3>
@@ -80,7 +79,7 @@ const SubService = ({
               para: "Enterprise-grade technology solutions designed to empower your business at every stage.",
             }}
           >
-            <div className="flex flex-wrap gap-8 items-stretch max-w-full w-full ">
+            <div className="flex flex-wrap gap-8 items-stretch justify-between  max-w-full w-full ">
               {data.solution &&
                 data.solution.map((item: any, index: any) => {
                   return <SolutionCard key={index} solutions={item} />;
@@ -90,7 +89,7 @@ const SubService = ({
         </div>
       </div>
 
-      <div className="md:max-w-7xl pb-24 w-full mx-auto flex flex-col md:px-14 px-6 gap-24 items-stretch">
+      <div className="md:max-w-7xl pb-24 w-full mx-auto flex flex-col  gap-24 items-stretch">
         <WhyCard whyCardData={data.whySection} className="flex-row-reverse" />
         <HowItWorks id="howItworks" />
       </div>

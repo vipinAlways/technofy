@@ -4,59 +4,59 @@ import Link from "next/link";
 import { getBlogs } from "@/lib/fetchingBlogs";
 
 
-// const blogData: {
-//   image: string;
-//   info: string;
-//   heading: string;
-//   para: string;
-// }[] = [
-//   {
-//     image: "/images/blog.png",
-//     info: "Posted by Karan on 24 Feb 2026",
-//     heading: "Boost Your Business with Smart IT Solutions",
-//     para: "In today’s digital world, reliable IT services are essential for business growth. From cloud solutions and cybersecurity to network management and technical support.",
-//   },
-//   {
-//     image: "/images/blog.png",
-//     info: "Posted by Karan on 24 Feb 2026",
-//     heading: "Boost Your Business with Smart IT Solutions",
-//     para: "In today’s digital world, reliable IT services are essential for business growth. From cloud solutions and cybersecurity to network management and technical support.",
-//   },
-//   {
-//     image: "/images/blog.png",
-//     info: "Posted by Karan on 24 Feb 2026",
-//     heading: "Boost Your Business with Smart IT Solutions",
-//     para: "In today’s digital world, reliable IT services are essential for business growth. From cloud solutions and cybersecurity to network management and technical support.",
-//   },
-//   {
-//     image: "/images/blog.png",
-//     info: "Posted by Karan on 24 Feb 2026",
-//     heading: "Boost Your Business with Smart IT Solutions",
-//     para: "In today’s digital world, reliable IT services are essential for business growth. From cloud solutions and cybersecurity to network management and technical support.",
-//   },
-//   {
-//     image: "/images/blog.png",
-//     info: "Posted by Karan on 24 Feb 2026",
-//     heading: "Boost Your Business with Smart IT Solutions",
-//     para: "In today’s digital world, reliable IT services are essential for business growth. From cloud solutions and cybersecurity to network management and technical support.",
-//   },
-//   {
-//     image: "/images/blog.png",
-//     info: "Posted by Karan on 24 Feb 2026",
-//     heading: "Boost Your Business with Smart IT Solutions",
-//     para: "In today’s digital world, reliable IT services are essential for business growth. From cloud solutions and cybersecurity to network management and technical support.",
-//   },
-// ];
+const blogData: {
+  image: string;
+  info: string;
+  heading: string;
+  para: string;
+}[] = [
+  {
+    image: "/images/blog.png",
+    info: "Posted by Karan on 24 Feb 2026",
+    heading: "Boost Your Business with Smart IT Solutions",
+    para: "In today’s digital world, reliable IT services are essential for business growth. From cloud solutions and cybersecurity to network management and technical support.",
+  },
+  {
+    image: "/images/blog.png",
+    info: "Posted by Karan on 24 Feb 2026",
+    heading: "Boost Your Business with Smart IT Solutions",
+    para: "In today’s digital world, reliable IT services are essential for business growth. From cloud solutions and cybersecurity to network management and technical support.",
+  },
+  {
+    image: "/images/blog.png",
+    info: "Posted by Karan on 24 Feb 2026",
+    heading: "Boost Your Business with Smart IT Solutions",
+    para: "In today’s digital world, reliable IT services are essential for business growth. From cloud solutions and cybersecurity to network management and technical support.",
+  },
+  {
+    image: "/images/blog.png",
+    info: "Posted by Karan on 24 Feb 2026",
+    heading: "Boost Your Business with Smart IT Solutions",
+    para: "In today’s digital world, reliable IT services are essential for business growth. From cloud solutions and cybersecurity to network management and technical support.",
+  },
+  {
+    image: "/images/blog.png",
+    info: "Posted by Karan on 24 Feb 2026",
+    heading: "Boost Your Business with Smart IT Solutions",
+    para: "In today’s digital world, reliable IT services are essential for business growth. From cloud solutions and cybersecurity to network management and technical support.",
+  },
+  {
+    image: "/images/blog.png",
+    info: "Posted by Karan on 24 Feb 2026",
+    heading: "Boost Your Business with Smart IT Solutions",
+    para: "In today’s digital world, reliable IT services are essential for business growth. From cloud solutions and cybersecurity to network management and technical support.",
+  },
+];
 
 const Page = async () => {
-  const { blogs } = await getBlogs();
+  // const { blogs } = await getBlogs();
 
-  console.log({ ...blogs });
+  
   return (
     <div className="flex flex-col gap-24 py-24 ">
       <section
         id="hero"
-        className={"max-w-7xl mx-auto md:px-14 px-6 space-y-4"}
+        className={"max-w-7xl mx-auto  space-y-4"}
       >
         {/* Dark Overlay */}
         {/* <div className="absolute inset-0 bg-black/40"></div> */}
@@ -99,7 +99,7 @@ const Page = async () => {
 
       <section
         id="blogs"
-        className="max-w-7xl mx-auto md:px-14 px-6 flex flex-col gap-20"
+        className="max-w-7xl mx-auto  flex flex-col gap-20"
       >
         <h1 className="font-semibold text-primary text-4xl leading-10">
           Read our Latest Blogs
@@ -108,25 +108,31 @@ const Page = async () => {
         <div className="flex w-full items-start gap-8">
           {/* Blog Grid */}
           <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6">
-            {blogs.map((data, index) => (
+            {blogData.length >0 ? blogData.map((data, index) => (
               <BlogCard
                 key={index}
                 blogCardData={{
-                  heading: data.title ?? "",
-                  image: data.seo.og_image,
-                  info: new Date(data.date_created).toLocaleDateString(
-                    "en-US",
-                    {
-                      year: "numeric",
-                      month: "short",
-                      day: "numeric",
-                    },
-                  ),
-                  para: data.seo.meta_description,
-                  slug: data.slug,
+                  // heading: data.title ?? "",
+                  // image: data.seo.og_image,
+                  // info: new Date(data.date_created).toLocaleDateString(
+                  //   "en-US",
+                  //   {
+                  //     year: "numeric",
+                  //     month: "short",
+                  //     day: "numeric",
+                  //   },
+                  // ),
+                  // para: data.seo.meta_description,
+                  // slug: data.slug,
+
+                  heading:data.heading,
+                  image:"/images/about-hero.png",
+                  info:data.image,
+                  para:data.para,
+                  slug:"check"
                 }}
               />
-            ))}
+            )) : <h1 className="text-primary">No Blog Post Right Now</h1>}
           </div>
 
           {/* Sidebar */}

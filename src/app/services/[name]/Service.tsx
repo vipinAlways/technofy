@@ -11,7 +11,7 @@ const Service = ({ data, href }: { data: any; href: string }) => {
   return (
     <div className="w-full flex flex-col md:gap-24 gap-12 py-32 pb-24">
       <div className="w-full">
-        <div className="max-w-7xl mx-auto w-full flex flex-col md:px-14 px-6 md:gap-24 gap-12 items-stretch">
+        <div className="max-w-7xl mx-auto w-full flex flex-col  md:gap-24 gap-12 items-stretch">
           {data?.heroSection && (
             <HeroSection heroSectionData={data.heroSection} />
           )}
@@ -26,7 +26,7 @@ const Service = ({ data, href }: { data: any; href: string }) => {
       </div>
 
       <div className="w-full bg-accent-foreground py-10">
-        <div className="max-w-7xl mx-auto md:px-14 px-6">
+        <div className="max-w-7xl mx-auto ">
           <ServiceSection
             id="service"
             data={{
@@ -54,7 +54,7 @@ const Service = ({ data, href }: { data: any; href: string }) => {
         </div>
       </div>
 
-      <div className="md:max-w-7xl w-full mx-auto flex flex-col md:px-14 px-6 gap-24 items-stretch">
+      <div className="md:max-w-7xl w-full mx-auto flex flex-col  gap-24 items-stretch">
         <WhyCard whyCardData={data.whySection} />
         <HowItWorks id="howItworks" />
       </div>

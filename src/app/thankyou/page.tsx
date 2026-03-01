@@ -5,8 +5,8 @@ import React from "react";
 
 const Page = () => {
   return (
-    <div className="w-full  flex min-h-screen flex-col  items-center justify-center px-14 py-24">
-      <div className="md:max-w-7xl w-full mx-auto flex flex-col md:px-14 px-6 gap-18 items-stretch">
+    <div className="w-full  flex min-h-screen flex-col  items-center pt-32 justify-center pb-24">
+      <div className="md:max-w-7xl w-full mx-auto flex flex-col  gap-18 items-stretch">
          <div className="bg-accent w-full flex flex-col items-center justify-center rounded-2xl px-20 py-10 gap-4">
           <h2 className="text-white font-bold text-5xl leading-tight text-center">
             Let's Strengthen Your IT Together

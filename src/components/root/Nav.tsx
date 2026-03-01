@@ -15,8 +15,12 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
+  DropdownMenuSeparator,
 } from "../ui/dropdown-menu";
 import Routes from "@/lib/route";
+
+import { data as service } from "@/services.json";
+import { data as subService } from "@/servicepage.json";
 
 const navlinks: Navlinks[] = [
   {
@@ -36,30 +40,44 @@ const navlinks: Navlinks[] = [
 function DropdownMenuSubmenu() {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger >
-        Services{" "}
-      </DropdownMenuTrigger>
-      <DropdownMenuContent>
+      <DropdownMenuTrigger>Services </DropdownMenuTrigger>
+      <DropdownMenuContent className="bg-white border border-border p-2">
         <DropdownMenuGroup>
-          <DropdownMenuItem>Team</DropdownMenuItem>
-          <DropdownMenuSub>
-            <DropdownMenuSubTrigger>
-              <Link href={Routes.service("it")}>it Service</Link>
-            </DropdownMenuSubTrigger>
-            <DropdownMenuPortal>
-              <DropdownMenuSubContent>
-                <DropdownMenuItem>service1</DropdownMenuItem>
-                <DropdownMenuItem>service1</DropdownMenuItem>
-                <DropdownMenuItem>service1</DropdownMenuItem>
-                <DropdownMenuItem>service1</DropdownMenuItem>
-                <DropdownMenuItem>service1</DropdownMenuItem>
-              </DropdownMenuSubContent>
-            </DropdownMenuPortal>
-          </DropdownMenuSub>
-          <DropdownMenuItem>
-            New Team
-            <DropdownMenuShortcut>⌘+T</DropdownMenuShortcut>
-          </DropdownMenuItem>
+          {service.map((serviceItem, serviceIndex, serviceArr) => (
+            <React.Fragment key={serviceIndex}>
+              <DropdownMenuSub>
+                <DropdownMenuSubTrigger>
+                  <Link href={Routes.service(serviceItem.heading)}>{serviceItem.heading}</Link>
+                </DropdownMenuSubTrigger>
+
+                <DropdownMenuPortal>
+                  <DropdownMenuSubContent className="bg-white border border-border p-2">
+                    {subService.subServices.map((subItem, subIndex, subArr) => (
+                      <Link
+                        href={Routes.Subservice(
+                          serviceItem.heading,
+                          subItem.heading,
+                        )}
+                        key={subIndex}
+                      >
+                        <DropdownMenuItem>{subItem.heading}</DropdownMenuItem>
+
+                        {/* Separator only between items */}
+                        {subIndex < subArr.length - 1 && (
+                          <DropdownMenuSeparator className="bg-border h-px" />
+                        )}
+                      </Link>
+                    ))}
+                  </DropdownMenuSubContent>
+                </DropdownMenuPortal>
+              </DropdownMenuSub>
+
+              {/* Separator only between main services */}
+              {serviceIndex < serviceArr.length - 1 && (
+                <DropdownMenuSeparator className="bg-border h-px" />
+              )}
+            </React.Fragment>
+          ))}
         </DropdownMenuGroup>
       </DropdownMenuContent>
     </DropdownMenu>
@@ -68,7 +86,7 @@ function DropdownMenuSubmenu() {
 
 const Nav = () => {
   return (
-    <nav className="py-3 px-6 rounded-md bg-white w-full max-w-7xl flex justify-between items-center border border-border ">
+    <nav className="py-3 px-6 ml-2 rounded-md bg-white w-full max-w-7xl flex justify-between items-center border border-border ">
       <div>
         <Link href={"/"}>
           <img
@@ -95,7 +113,10 @@ const Nav = () => {
         ))}
       </ul>
 
-      <Button asChild className="py-5 text-base leading-6 font-semibold px-5 rounded-[0.5rem] ">
+      <Button
+        asChild
+        className="py-5 text-base leading-6 font-semibold px-5 rounded-[0.5rem] "
+      >
         <Link href={"/contact"}>Contact</Link>
       </Button>
     </nav>

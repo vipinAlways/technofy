@@ -22,9 +22,11 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed  flex items-center  justify-center left-1/2 -translate-x-1/2  pl-16 pr-12  max-w-7xl  w-full  z-50 transition-all duration-300 ${topPosition}`}
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${topPosition}`}
     >
-      <Nav />
+      <div className="max-w-7xl mx-auto ">
+        <Nav />
+      </div>
     </header>
   );
 }

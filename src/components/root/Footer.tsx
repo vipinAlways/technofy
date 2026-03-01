@@ -51,7 +51,7 @@ const footerLink: Navlinks[] = [
 ];
 const Footer = () => {
   return (
-    <div className="py-6 px-12 w-full max-w-7xl flex justify-between items-center  flex-col gap-5  ">
+    <div className="py-6  w-full max-w-7xl flex justify-between items-center  flex-col gap-5  ">
       <div className="py-3 px-1.5 flex justify-between text-border w-full">
         <Link href={"/"}>
           <img
@@ -59,7 +59,7 @@ const Footer = () => {
             alt="technofy"
             width={140}
             height={35}
-            className="aspect-[4:1] "
+            className="aspect-[4/1] "
             loading="lazy"
           />
         </Link>

@@ -121,7 +121,7 @@ export default function Home() {
           </Button>
         </div>
       </section>
-      <div className="gap-20 w-full max-w-7xl px-14 pb-24 flex flex-col items-center">
+      <div className="gap-20 w-full max-w-7xl  pb-24 flex flex-col items-center">
         <section id="StatsSection" className="w-full">
           <div className="flex justify-between items-stretch min-w-full border-b border-border py-12">
             {statsSectionData.map((data, index) => (
@@ -141,9 +141,9 @@ export default function Home() {
           </div>
         </section>
 
-        <div className="py-10">
+        <div className="py-10 border">
           <ServiceSection id="services" data={serviceData}>
-            <div className="flex flex-wrap gap-8 items-stretch justify-center">
+            <div className="flex w-full flex-wrap gap-8 items-stretch justify-between">
               {serviceCardData.map((item) => {
                 return (
                   <ServiceCard
