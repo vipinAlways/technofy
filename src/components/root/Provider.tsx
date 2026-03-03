@@ -10,10 +10,8 @@ export function Provider({ children }: { children: React.ReactNode }) {
   const setSessionId = useSetAtom(sessionIdAtom);
 
   useEffect(() => {
-    setEntryUrl(window.location.href);
-  }, []);
-  useEffect(() => {
     setSessionId(window?.crypto?.randomUUID?.());
+    setEntryUrl(window.location.href);
   }, []);
   return <>{children}</>;
 }

@@ -38,11 +38,7 @@ export default function RootLayout({
       <body
         className={`${headingFont.variable} ${bodyFont.variable} antialiased bg-[#F9FAFB] relative w-screen overflow-x-hidden`}
       >
-        {/* <header className="fixed  left-0  px-[5.5rem] w-full top-6  z-50   flex items-center justify-center">
-          <Nav />
-        </header> */}
-
-        <Header/>
+        <Header />
         <Provider>
           <main className="max-w-full">{children}</main>
           <Toaster />

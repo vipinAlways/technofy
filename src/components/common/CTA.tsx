@@ -5,21 +5,20 @@ import Routes from "@/lib/route";
 
 const CTA = () => {
   return (
-    <section id="cta" className="relative min-w-full">
-      <div className="relative z-10  h-92 flex items-center justify-center flex-col gap-10  w-full rounded-2xl bg-[url('/images/technology-background.png')] bg-cover bg-center flex items-center justify-center p-20">
-       <div className="absolute inset-0 bg-black/75 -z-10 rounded-2xl"></div>
+    <section id="cta" className="w-full flex items-center justify-center ">
+      <div className="relative z-10  h-92 flex items-center  justify-center flex-col gap-10  w-full rounded-2xl bg-[url('/images/technology-background.png')] bg-cover bg-center flex items-center justify-center md:p-20 p-10">
+        <div className="absolute inset-0 bg-black/75 -z-10 rounded-2xl"></div>
         <div className="items-center flex flex-col gap-5">
-          <h1 className="text-4xl leading-10  font-bold text-white">
+          <h1 className="md:text-4xl md:leading-10 text-3xl  md:text-center font-bold text-white">
             Ready to Future-Proof Your Business?
           </h1>
-          <p className="text-lg  leading-7 text-muted-foreground font-normal">
+          <p className="md:text-lg md:w-4/5 md:text-center  md:leading-7 text-base text-muted-foreground font-normal">
             Let's discuss how Technofy can help you achieve your technology{" "}
-            <br />
             goals. No pressure, no obligations — just a conversation.
           </p>
         </div>
 
-        <Button className="py-5 text-base leading-[100%] font-semibold px-5 rounded-[0.5rem] ">
+        <Button className="py-5 text-base leading-[100%] font-semibold max-md:w-full px-5 rounded-[0.5rem] ">
           <Link href={Routes.contact}>Get a Free Consultation </Link>
         </Button>
       </div>

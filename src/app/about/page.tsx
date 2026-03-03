@@ -82,7 +82,7 @@ const Page = () => {
     <div className="w-full flex flex-col gap-24 items-center pb-24">
       <section
         id="#hero"
-        className="relative w-full h-[90vh] bg-[url('/images/about-hero.png')] bg-cover bg-center flex  justify-center"
+        className="relative w-full lg:h-[90vh]  md:h-[60vh] h-[75vh] bg-[url('/images/about-hero.png')] bg-cover bg-center flex  justify-center"
       >
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/60 backdrop-blur-[0.1rem]"></div>

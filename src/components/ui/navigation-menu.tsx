@@ -92,10 +92,9 @@ function NavigationMenuContent({
       className={cn(
         className,
         ` w-full pr-2.5
-transition-all duration-300 ease-in-out
+transition-all duration-100 ease-in-out
 data-[motion=from-end]:translate-x-12
 data-[motion=from-start]:-translate-x-12
-data-[motion=to-end]:translate-x-12
 data-[motion=to-start]:-translate-x-12
 data-[motion^=from-]:opacity-0
 data-[motion^=to-]:opacity-0
@@ -109,7 +108,7 @@ group-data-[viewport=false]/navigation-menu:bg-background
 group-data-[viewport=false]/navigation-menu:text-foreground
 group-data-[viewport=false]/navigation-menu:shadow-lg
 group-data-[viewport=false]/navigation-menu:transition-all
-group-data-[viewport=false]/navigation-menu:duration-200
+group-data-[viewport=false]/navigation-menu:duration-100
 group-data-[viewport=false]/navigation-menu:data-[state=open]:scale-100
 group-data-[viewport=false]/navigation-menu:data-[state=closed]:scale-95 data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:animate-in data-[state=open]:zoom-in-90 `,
       )}

@@ -23,7 +23,7 @@ const SubService = ({
       <section
         id="#hero"
         className={
-          "relative w-full h-[90vh] bg-[url('/images/hero-background.png')] bg-cover bg-center flex  justify-center  items-center"
+          "relative w-full lg:h-[90vh]  md:h-[60vh] h-[75vh] bg-[url('/images/hero-background.png')] bg-cover bg-center flex  justify-center  items-center"
         }
       >
         {/* Dark Overlay */}

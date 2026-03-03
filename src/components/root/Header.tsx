@@ -21,10 +21,8 @@ export default function Header() {
   const topPosition = !scrolled ? "top-6" : "top-0";
 
   return (
-    <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${topPosition}`}
-    >
-      <div className="md:max-w-7xl  lg:px-0 px-6 mx-auto ">
+    <header className="fixed top-0 left-0 w-full z-50 bg-background flex items-center justify-center">
+      <div className="w-full max-w-7xl  px-3 lg:px-0">
         <Nav />
       </div>
     </header>

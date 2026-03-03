@@ -1,42 +1,36 @@
-import { Navlinks } from "@/index";
+import { Navlinks, SocialLink } from "@/index";
 import Routes from "@/lib/route";
-import {
-  Facebook,
-  Instagram,
-  Linkedin,
-  Twitter,
-  type LucideIcon,
-} from "lucide-react";
+import { cn } from "@/lib/utils";
+import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
-const socialLink: {
-  href: string;
-  icon: LucideIcon;
-}[] = [
+export const socialLink: SocialLink[] = [
   {
     href: "#",
     icon: Linkedin,
+    iconClass:
+      "stroke-black fill-black bg-white rounded-[0.1rem]  stroke-[1px] p-0.5",
   },
   {
     href: "#",
     icon: Facebook,
+    iconClass:
+      " stroke-black fill-black bg-white rounded-full  stroke-[1px] p-0.5",
   },
   {
     href: "#",
     icon: Twitter,
+    iconClass: "fill-white  stroke-white ",
   },
   {
     href: "#",
     icon: Instagram,
+    iconClass: " stroke-white fill-black   stroke-[3px]",
   },
 ];
 
 const footerLink: Navlinks[] = [
-  {
-    href: "#",
-    title: "Services",
-  },
   {
     href: "/about",
     title: "About Us",
@@ -52,45 +46,68 @@ const footerLink: Navlinks[] = [
 ];
 const Footer = () => {
   return (
-    <div className="py-6  w-full md:max-w-7xl  lg:px-0 px-6 flex justify-between items-center  flex-col gap-5  ">
-      <div className="py-3 px-1.5 flex justify-between text-border w-full">
-        <Link href={"/"}>
-          <img
-            src={"/images/logo.png"}
-            alt="technofy"
-            width={140}
-            height={35}
-            className="aspect-[4/1] "
-            loading="lazy"
-          />
-        </Link>
-        <ul className="flex gap-12 items-center test-base leading-6 text-border">
-          {footerLink.map((links, index) => (
-            <li key={index}>
-              <Link href={links.href} className=" ">
-                {links.title}
-              </Link>
-            </li>
-          ))}
-        </ul>
-        <ul className="flex gap-3 items-center test-base leading-6 text-muted">
-          {socialLink.map((link, index) => (
-            <li key={index}>
-              <Link href={link.href} className=" ">
-                <link.icon className="size-6" />
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div className="h-px w-full bg-muted " />
-      <div className="">
-        <p className="text-center text-sm  text-muted">
-          Copyright &copy;{new Date().getFullYear()} Technofy. All Rights
-          Reserved
-        </p>
-      </div>
+   <div className="w-full max-w-7xl mx-auto px-6 lg:px-0 py-10 flex flex-col gap-10">
+
+  {/* Top Section */}
+  <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-10 w-full">
+
+    {/* Logo */}                                                          
+    <div className="flex justify-center md:justify-start">
+      <Link href="/" className="block w-36">
+        <img
+          src="/images/logo.png"
+          alt="Technofy"
+          className="block w-full h-auto object-contain"
+          loading="lazy"
+        />
+      </Link>
     </div>
+
+    {/* Navigation Links */}
+    <ul className="flex flex-col items-center md:flex-row md:items-center gap-6 md:gap-12 text-base leading-6">
+      {footerLink.map((links, index) => (
+        <li key={index}>
+          <Link
+            href={links.href}
+            className="text-border transition-colors"
+          >
+            {links.title}
+          </Link>
+        </li>
+      ))}
+    </ul>
+
+    {/* Social Links */}
+    <ul className="flex justify-center md:justify-end gap-5">
+      {socialLink.map((link, index) => {
+        const Icon = link.icon
+        return (
+          <li key={index}>
+            <Link
+              href={link.href}
+              className="hover:scale-110 transition-transform duration-200"
+            >
+              <Icon className={cn("size-6", link.iconClass)} />
+            </Link>
+          </li>
+        )
+      })}
+    </ul>
+
+  </div>
+
+  {/* Divider */}
+  <div className="h-px w-full bg-muted" />
+
+  {/* Bottom Section */}
+  <div>
+    <p className="text-center text-sm text-muted">
+      Copyright &copy; {new Date().getFullYear()} Technofy.
+      All Rights Reserved.
+    </p>
+  </div>
+
+</div>
   );
 };
 

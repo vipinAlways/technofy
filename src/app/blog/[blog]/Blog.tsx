@@ -45,6 +45,7 @@ const Blog = ({
               src={image}
               alt={heading}
               className="w-full aspect-video object-cover rounded-2xl mx-auto sm:mx-0"
+              loading="lazy"
             />
           </div>
         </div>
@@ -71,6 +72,7 @@ const Blog = ({
                   src={blog.image}
                   alt={blog.heading}
                   className="w-full h-full rounded-lg"
+                  loading="lazy"
                 />
               </div>
 

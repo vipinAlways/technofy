@@ -26,6 +26,7 @@ const Page = () => {
               src="/images/thankyou.png"
               className="w-full h-auto"
               alt="technofy thankyou page"
+              loading="lazy"
             />
           </div>
 

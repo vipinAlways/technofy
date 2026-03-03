@@ -21,10 +21,15 @@ const cardData: ServiceCardData[] = [
 ];
 const HowItWorks = ({ id }: { id: string }) => {
   return (
-    <section id={id} className="space-y-20">
+    <section
+      id={id}
+      className="flex flec-col md:gap-20 gap-10 items-center flex-col max-w-full"
+    >
       <div className="flex flex-col items-center gap-4">
-        <h1 className="text-primary text-4xl font-semibold">How It Works</h1>
-        <p className="text-muted text-base leading-6 font-normal">
+        <h1 className="text-primary md:text-4xl text-3xl font-semibold">
+          How It Works
+        </h1>
+        <p className="text-muted text-base leading-6 font-normal text-center">
           Getting started is simple. Three clear steps to transforming your IT.
         </p>
       </div>
@@ -39,17 +44,17 @@ const HowItWorks = ({ id }: { id: string }) => {
               className=" rounded-2xl p-6 flex flex-col items-center gap-6 relative group"
             >
               {index !== 0 && (
-                <hr className="h-0.5 bg-gradient-to-r from-[#3853A4]/20 via-[#3853A4] to-[#3853A4]/20 absolute  md:w-60 w-60 top-16       right-1/2 -translate-x-1/3  rotate-90 md:rotate-0 " />
+                <hr className="h-0.5 max-md:hidden bg-gradient-to-r from-[#3853A4]/20 via-[#3853A4] to-[#3853A4]/20 absolute lg:w-60 w-40  top-16 right-1/2 -translate-x-1/3  md:rotate-0 " />
               )}
               <div className="w-20 h-20 flex items-center justify-center rounded-full bg-[#E7E9F2] group-hover:bg-[#3853A4] p-6 relative transition-all duration-200 ease-linear">
                 <Icon className="size-6 text-accent group-hover:text-white transition-all duration-200 ease-linear" />
               </div>
               <div className="flex flex-col items-center gap-4 p-3">
-                <h2 className="text-[#F47B25] leading-6 font-bold text-base">
+                <h2 className="text-[#F47B25] leading-6 font-bold md:text-base text-xl ">
                   STEP 0{index + 1}
                 </h2>
                 <div className="flex gap-3 flex-col items-center">
-                  <h2 className="font-medium text-xl leading-7 ">
+                  <h2 className="font-medium md:text-xl text-2xl leading-7 text-center">
                     {data.heading}
                   </h2>
                   <p className="text-wrap text-center text-base leading-6 text-muted">

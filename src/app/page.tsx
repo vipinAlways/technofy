@@ -89,7 +89,7 @@ export default function Home() {
     <div className="w-full flex flex-col items-center">
       <section
         id="#hero"
-        className="relative w-full h-[90vh] bg-[url('/images/hero-background.png')] bg-cover bg-center flex justify-center"
+        className="relative w-full lg:h-[90vh]  md:h-[60vh] h-[75vh] bg-[url('/images/hero-background.png')] bg-cover bg-center flex justify-center"
       >
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/75 backdrop-blur-[0.1rem]"></div>
@@ -102,10 +102,10 @@ export default function Home() {
           }
         >
           <div className="text-center gap-3">
-            <h1 className="text-6xl leading-[4.25rem] font-bold text-white">
+            <h1 className="md:text-6xl text-3xl md:leading-[4.25rem] font-bold text-white">
               Smart IT Solutions That Drive <br /> Business Growth
             </h1>
-            <p className="text-lg leading-7 text-muted-foreground ">
+            <p className="md:text-lg text-sm md:leading-7  text-muted-foreground ">
               We design, secure, and manage your technology so you can focus on
               scaling your business
               <br />— without IT stress{" "}
@@ -122,18 +122,18 @@ export default function Home() {
           </Button>
         </div>
       </section>
-      <div className="gap-20 w-full md:max-w-7xl  lg:px-0 px-6   pb-24 flex flex-col items-center">
+      <div className="md:gap-20 gap-12 w-full md:max-w-7xl  lg:px-0 px-4 md:pb-24 pb-12 flex flex-col items-center">
         <section id="StatsSection" className="w-full">
           <div className="flex justify-between items-stretch min-w-full border-b border-border py-12">
             {statsSectionData.map((data, index) => (
-              <div key={index} className="flex flex-col items-center gap-4">
+              <div key={index} className="flex flex-col items-center gap-4 ">
                 <data.icon className="w-8 h-8 text-muted stroke-[1.5px]" />
 
                 <div className="gap-2 flex flex-col items-center">
-                  <span className="text-accent text-[2rem] font-bold">
+                  <span className="text-accent md:text-[2rem] text-lg font-bold">
                     {data.numbers}
                   </span>
-                  <span className="text-muted text-lg leading-7 font-normal">
+                  <span className="text-center text-muted md:text-lg text-sm md:leading-7 font-normal">
                     {data.title}
                   </span>
                 </div>

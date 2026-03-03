@@ -26,7 +26,7 @@ const Service = ({ data, href }: { data: any; href: string }) => {
       </div>
 
       <div className="w-full bg-accent-foreground py-10">
-        <div className="md:max-w-7xl  lg:px-0 px-6 mx-auto ">
+        <div className=" w-full md:max-w-7xl  mx-auto ">
           <ServiceSection
             id="service"
             data={{
@@ -35,11 +35,11 @@ const Service = ({ data, href }: { data: any; href: string }) => {
               Service: "Core IT",
             }}
           >
-            <div className="flex flex-wrap gap-8 items-stretch justify-center">
+            <div className="flex flex-wrap w-full gap-8 items-stretch justify-center">
               {data.subServices &&
                 data.subServices.map((item: ServiceCardData) => {
                   return (
-                    <ServiceCard
+                    <ServiceCard 
                       href={`/services/${href}/sub-service/${item.heading
                         .replace(/\u00A0/g, "")
                         .replace(/\s+/g, "")

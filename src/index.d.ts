@@ -72,3 +72,9 @@ interface serviceNav {
     subService: string[];
   };
 }
+
+interface SocialLink {
+  href:string;
+  icon:LucideIcon;
+  iconClass:string
+}
