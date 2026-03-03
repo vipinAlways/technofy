@@ -1,4 +1,5 @@
 import { Navlinks } from "@/index";
+import Routes from "@/lib/route";
 import {
   Facebook,
   Instagram,
@@ -41,7 +42,7 @@ const footerLink: Navlinks[] = [
     title: "About Us",
   },
   {
-    href: "/contact",
+    href: Routes.contact,
     title: "Contact",
   },
   {
@@ -51,7 +52,7 @@ const footerLink: Navlinks[] = [
 ];
 const Footer = () => {
   return (
-    <div className="py-6  w-full max-w-7xl flex justify-between items-center  flex-col gap-5  ">
+    <div className="py-6  w-full md:max-w-7xl  lg:px-0 px-6 flex justify-between items-center  flex-col gap-5  ">
       <div className="py-3 px-1.5 flex justify-between text-border w-full">
         <Link href={"/"}>
           <img

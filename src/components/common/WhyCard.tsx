@@ -5,6 +5,7 @@ import { MoveRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { WhycardData } from "@/index";
 import Link from "next/link";
+import Routes from "@/lib/route";
 
 const WhyCard = ({
   className,
@@ -68,8 +69,7 @@ const WhyCard = ({
 
             <Button className="w-full  py-5 text-base leading-[100%] font-semibold px-5 rounded-[0.5rem]" asChild>
               <Link
-                href="/contact"
-              
+                href={Routes.contact}
               >
                 Schedule a Free Consultation <MoveRight className="size-6" />
               </Link>

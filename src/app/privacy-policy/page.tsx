@@ -8,14 +8,14 @@ const Page = () => {
         {/*  */}
         <div className="pointer-events-none absolute left-0 right-0 -bottom-4 h-16 bg-linear-to-b from-black/0 to-white blur-xl" />
         {/* Content */}
-        <div className="max-w-7xl mx-auto w-full flex flex-col  md:gap-24 gap-12 items-stretch">
+        <div className="md:max-w-7xl  lg:px-0 px-6 mx-auto w-full flex flex-col  md:gap-24 gap-12 items-stretch">
           <section
             id="hero"
             className={"relative w-full  flex  justify-center  items-center"}
           >
             {/* Dark Overlay */}
 
-            <div className="relative z-10 flex w-full max-w-7xl flex-col items-center justify-center gap-8 px-6  text-white">
+            <div className="relative z-10 flex w-full md:max-w-7xl  lg:px-0 px-6 flex-col items-center justify-center gap-8  text-white">
               <div className="text-center flex flex-col gap-3 max-w-2xl items-center justify-center ">
                 <h1 className="text-6xl md:text-6xl leading-[4.25rem] font-bold">
                   Privacy Policy

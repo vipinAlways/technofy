@@ -2,9 +2,10 @@ import React from "react";
 import Blog from "./Blog";
 import { Blog as BlogType } from "@/index";
 import { getBlog } from "@/lib/fetchingBlogs";
+import { data as HTMLString } from "@/htmlString.json";
 
 const Page = async ({ params }: { params: Promise<{ blog: string }> }) => {
-  const { blog } = await params;
+  // const { blog } = await params;
 
   // const formattedHeading = blog
   //   .replace(/([A-Z])/g, " $1")
@@ -13,23 +14,31 @@ const Page = async ({ params }: { params: Promise<{ blog: string }> }) => {
   //   .trim()
   //   .replace(/^./, (c) => c.toUpperCase());
 
-  const data = await getBlog(blog);
+  // const data = await getBlog(blog);
 
-  console.log({ data });
+  // console.log({ data });
 
   return (
     <div>
       <Blog
-        blogData={{
-          heading: data.title || "",
-          image: data.seo.og_image,
-          info: new Date(data.date_created).toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "short",
-            day: "numeric",
-          }),
-          content: data.content,
-        }}
+        blogData={
+          // {
+          //   heading: data.title || "",
+          //   image: data.seo.og_image,
+          //   info: new Date(data.date_created).toLocaleDateString("en-US", {
+          //     year: "numeric",
+          //     month: "short",
+          //     day: "numeric",
+          //   }),
+          //   content: data.content,
+          // }
+          {
+            content: HTMLString.content,
+            heading:"Boost Your Business with Smart IT Solutions",
+            image:"/images/about-hero.png",
+            info:"Create on 03 march"
+          }
+        }
       />
     </div>
   );

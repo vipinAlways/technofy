@@ -24,7 +24,7 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${topPosition}`}
     >
-      <div className="max-w-7xl mx-auto ">
+      <div className="md:max-w-7xl  lg:px-0 px-6 mx-auto ">
         <Nav />
       </div>
     </header>

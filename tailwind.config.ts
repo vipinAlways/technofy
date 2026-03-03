@@ -1,4 +1,6 @@
 import type { Config } from "tailwindcss";
+import typography from "@tailwindcss/typography";
+import animate from "tailwindcss-animate";
 
 const config: Config = {
   content: ["./src/**/*.{ts,tsx}"],
@@ -55,7 +57,6 @@ const config: Config = {
           DEFAULT: "var(--accent)",
           /* Maps to --accent-foreground in globals.css */
           foreground: "#E7E9F2",
-          
         },
 
         destructive: {
@@ -106,12 +107,23 @@ const config: Config = {
           ring: "hsl(var(--sidebar-ring))",
         },
       },
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+      },
     },
   },
-  plugins: [
-    require("tailwindcss-animate"),
-    require("@tailwindcss/typography"),
-  ],
+  plugins: [typography, animate],
 };
 
 export default config;

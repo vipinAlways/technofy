@@ -48,10 +48,10 @@ function AccordionBasic() {
           value={item.value}
           className="flex flex-col gap-4 rounded-xl bg-white p-4 px-6 border-border"
         >
-          <AccordionTrigger className="text-lg font-medium leading-7">
+          <AccordionTrigger className="text-lg w-[36rem] font-medium leading-7">
             {item.trigger}
           </AccordionTrigger>
-          <AccordionContent className="text-base font-normal text-muted">
+          <AccordionContent className="text-base max-w-max font-normal text-muted">
             {item.content}
           </AccordionContent>
         </AccordionItem>
@@ -62,7 +62,7 @@ function AccordionBasic() {
 
 const FAQ = () => {
   return (
-    <section className="flex items-center h-140 w-full max-w-7xl py-10 justify-between">
+    <section className="flex items-center h-140 w-full md:max-w-7xl  lg:px-0 px-6 py-10 justify-between">
       <div className="flex-1 flex items-center max-w-md   justify-center gap-4">
         <div className="flex flex-col items-start gap-4 max-w-xl">
           <h1 className="text-primary text-4xl font-medium leading-[100%]">

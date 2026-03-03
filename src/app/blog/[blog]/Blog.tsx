@@ -29,7 +29,7 @@ const Blog = ({
   const { heading, image, info, content } = blogData;
   return (
     <div className="w-full relative flex flex-col gap-24 items-center py-24">
-      <section className="max-w-7xl mx-auto w-full flex flex-col  md:gap-24 gap-12 items-stretch">
+      <section className="md:max-w-7xl  lg:px-0 px-6 mx-auto w-full flex flex-col  md:gap-24 gap-12 items-stretch">
         <div className="flex w-full flex-col gap-10">
           <div className="flex flex-col gap-3 ">
             <h1 className="font-bold text-primary text-5xl leading-[4.25rem]  max-w-5xl">
@@ -50,7 +50,7 @@ const Blog = ({
         </div>
       </section>
 
-      <div className="max-w-7xl relative mx-auto w-full flex   md:gap-24 gap-12 items-start">
+      <div className="md:max-w-7xl  lg:px-0 px-6 relative mx-auto w-full flex   md:gap-24 gap-12 items-start">
         <div
           dangerouslySetInnerHTML={{ __html: content || "" }}
           className="prose lg:prose-xl w-full"
@@ -81,7 +81,7 @@ const Blog = ({
           ))}
         </div>
       </div>
-      <section className="max-w-7xl mx-auto w-full flex flex-col  md:gap-24 gap-12 items-stretch">
+      <section className="md:max-w-7xl  lg:px-0 px-6 mx-auto w-full flex flex-col  md:gap-24 gap-12 items-stretch">
         <CTA />
       </section>
     </div>

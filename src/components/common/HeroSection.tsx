@@ -3,6 +3,7 @@ import { Button } from "../ui/button";
 import Link from "next/link";
 import { MoveRightIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Routes from "@/lib/route";
 
 const HeroSection = ({ className }: { className: string }) => {
   return (
@@ -39,7 +40,7 @@ const HeroSection = ({ className }: { className: string }) => {
           className="px-6 py-4 font-semibold text-lg leading-[100%]"
           asChild
         >
-          <Link href={"/contact"} className="flex items-center gap-4">
+          <Link href={Routes.contact} className="flex items-center gap-4">
             Get a Free Consultation <MoveRightIcon className="size-6" />{" "}
           </Link>
         </Button>

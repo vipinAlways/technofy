@@ -28,6 +28,7 @@ import HeroSection from "@/components/common/HeroSection";
 import { data as serviceCardData } from "./../services.json";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Routes from "@/lib/route";
 
 const statsSectionData: StatsSection[] = [
   {
@@ -97,7 +98,7 @@ export default function Home() {
         {/* Content */}
         <div
           className={
-            "relative z-10 text-white flex justify-center items-center flex-col gap-8"
+            "relative z-10 text-white flex justify-center md:max-w-7xl  lg:px-0 px-6  items-center flex-col gap-8"
           }
         >
           <div className="text-center gap-3">
@@ -115,13 +116,13 @@ export default function Home() {
             className="px-8 py-6 font-semibold text-lg leading-[100%] rounded-[0.5rem]"
             asChild
           >
-            <Link href={"/contact"} className="flex items-center gap-2">
+            <Link href={Routes.contact} className="flex items-center gap-2">
               Get a Free Consultation <MoveRightIcon className="w-6 h-6" />{" "}
             </Link>
           </Button>
         </div>
       </section>
-      <div className="gap-20 w-full max-w-7xl  pb-24 flex flex-col items-center">
+      <div className="gap-20 w-full md:max-w-7xl  lg:px-0 px-6   pb-24 flex flex-col items-center">
         <section id="StatsSection" className="w-full">
           <div className="flex justify-between items-stretch min-w-full border-b border-border py-12">
             {statsSectionData.map((data, index) => (
@@ -141,9 +142,9 @@ export default function Home() {
           </div>
         </section>
 
-        <div className="py-10 border">
+        <div className="py-10 ">
           <ServiceSection id="services" data={serviceData}>
-            <div className="flex w-full flex-wrap gap-8 items-stretch justify-between">
+            <div className="flex w-full flex-wrap gap-8 items-stretch justify-center">
               {serviceCardData.map((item) => {
                 return (
                   <ServiceCard

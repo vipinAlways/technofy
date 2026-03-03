@@ -4,6 +4,7 @@ import React from "react";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { MoveRight } from "lucide-react";
+import Routes from "@/lib/route";
 
 const HeroSection = ({
   heroSectionData,
@@ -27,7 +28,7 @@ const HeroSection = ({
 
           <Button className="px-6 py-5 text-base leading-[100%] font-semibold ">
             <Link
-              href={"#"}
+              href={Routes.contact}
               className="text-lg font-semibold leading-7 flex justify-center items-center gap-2"
             >
               {button} <MoveRight className="size-6" />

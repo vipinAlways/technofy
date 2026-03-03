@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import Routes from "@/lib/route";
 
 const CTA = () => {
   return (
@@ -19,7 +20,7 @@ const CTA = () => {
         </div>
 
         <Button className="py-5 text-base leading-[100%] font-semibold px-5 rounded-[0.5rem] ">
-          <Link href={"/contact"}>Get a Free Consultation </Link>
+          <Link href={Routes.contact}>Get a Free Consultation </Link>
         </Button>
       </div>
     </section>

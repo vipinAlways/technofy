@@ -26,6 +26,7 @@ const Page = () => {
   const entryUrl = useAtomValue(entryUrlAtom);
   const sessionId = useAtomValue(sessionIdAtom);
   const router = useRouter();
+  const [disabled, setDisable] = useState<boolean>(false);
   const {
     register,
     handleSubmit,
@@ -57,6 +58,7 @@ const Page = () => {
   }, []);
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    setDisable(true);
     const toastId = toast.loading("Submitting form...");
 
     try {
@@ -93,12 +95,14 @@ const Page = () => {
         error instanceof Error ? error.message : "Error submitting form",
         { id: toastId },
       );
+    } finally {
+      setDisable(false);
     }
   };
 
   return (
     <div className="w-full flex min-h-screen flex-col gap-24 items-center justify-center  pb-24 pt-32 ">
-      <div className="md:max-w-7xl w-full mx-auto flex flex-col  gap-16 items-stretch">
+      <div className="md:max-w-7xl  lg:px-0 px-6 w-full mx-auto flex flex-col  gap-16 items-stretch">
         <div className="bg-accent w-full flex flex-col items-center justify-center rounded-2xl px-20 py-10 gap-4">
           <h2 className="text-white font-bold text-5xl leading-tight text-center">
             Let's Strengthen Your IT Together
@@ -134,7 +138,7 @@ const Page = () => {
               >
                 {/* Name */}
                 <div className="flex flex-col gap-2 w-full">
-                  <label className="text-lg font-medium " htmlFor="name" >
+                  <label className="text-lg font-medium " htmlFor="name">
                     Name
                   </label>
                   <input
@@ -153,7 +157,9 @@ const Page = () => {
 
                 {/* Email */}
                 <div className="flex flex-col gap-2 w-full">
-                  <label className="text-lg font-medium " htmlFor="email">Email</label>
+                  <label className="text-lg font-medium " htmlFor="email">
+                    Email
+                  </label>
                   <input
                     type="email"
                     {...register("email")}
@@ -195,7 +201,12 @@ const Page = () => {
 
                 {/* Counselling Type */}
                 <div className="flex flex-col gap-2 w-full">
-                  <label className="text-lg font-medium " htmlFor="counsellingType">Service Type</label>
+                  <label
+                    className="text-lg font-medium "
+                    htmlFor="counsellingType"
+                  >
+                    Service Type
+                  </label>
                   <select
                     id="counsellingType"
                     {...register("counsellingType")}
@@ -216,7 +227,9 @@ const Page = () => {
 
                 {/* Message */}
                 <div className="flex flex-col gap-2 w-full">
-                  <label className="text-lg font-medium " htmlFor="message">Message</label>
+                  <label className="text-lg font-medium " htmlFor="message">
+                    Message
+                  </label>
                   <textarea
                     {...register("message")}
                     placeholder="Tell us how we can help you"
@@ -228,6 +241,7 @@ const Page = () => {
                 <Button
                   className="w-full text-base leading-[100%] font-semibold px-5 py-6 rounded-[0.5rem]"
                   type="submit"
+                  disabled={disabled}
                 >
                   Send Message
                 </Button>

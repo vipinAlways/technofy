@@ -2,6 +2,7 @@ import BlogCard from "@/components/blog/BlogCard";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { getBlogs } from "@/lib/fetchingBlogs";
+import Routes from "@/lib/route";
 
 
 const blogData: {
@@ -56,7 +57,7 @@ const Page = async () => {
     <div className="flex flex-col gap-24 py-24 ">
       <section
         id="hero"
-        className={"max-w-7xl mx-auto  space-y-4"}
+        className={"md:max-w-7xl  lg:px-0 px-6  mx-auto  space-y-4"}
       >
         {/* Dark Overlay */}
         {/* <div className="absolute inset-0 bg-black/40"></div> */}
@@ -99,7 +100,7 @@ const Page = async () => {
 
       <section
         id="blogs"
-        className="max-w-7xl mx-auto  flex flex-col gap-20"
+        className="md:max-w-7xl  lg:px-0 px-6 mx-auto  flex flex-col gap-20"
       >
         <h1 className="font-semibold text-primary text-4xl leading-10">
           Read our Latest Blogs
@@ -147,7 +148,7 @@ const Page = async () => {
             </div>
 
             <Button asChild className="px-6 py-4 text-lg leading-[100%]">
-              <Link href="/contact">Free Consultation</Link>
+              <Link href={Routes.contact}>Free Consultation</Link>
             </Button>
           </div>
         </div>
