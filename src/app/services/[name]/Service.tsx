@@ -9,9 +9,9 @@ import { ServiceCardData, ServiceOverViewData } from "@/index";
 
 const Service = ({ data, href }: { data: any; href: string }) => {
   return (
-    <div className="w-full flex flex-col md:gap-24 gap-12 py-32 pb-24">
+    <div className="w-full flex flex-col md:gap-24 gap-12 md:py-32 py-28 pb-24">
       <div className="w-full">
-        <div className="md:max-w-7xl  lg:px-0 px-6 mx-auto w-full flex flex-col  md:gap-24 gap-12 items-stretch">
+        <div className="md:max-w-7xl  lg:px-0 px-4 mx-auto w-full flex flex-col  md:gap-24 gap-12 items-stretch">
           {data?.heroSection && (
             <HeroSection heroSectionData={data.heroSection} />
           )}
@@ -25,36 +25,34 @@ const Service = ({ data, href }: { data: any; href: string }) => {
         </div>
       </div>
 
-      <div className="w-full bg-accent-foreground py-10">
-        <div className=" w-full md:max-w-7xl  mx-auto ">
-          <ServiceSection
-            id="service"
-            data={{
-              heading: "Services Included in",
-              para: "Enterprise-grade technology solutions designed to empower your business at every stage.",
-              Service: "Core IT",
-            }}
-          >
-            <div className="flex flex-wrap w-full gap-8 items-stretch justify-center">
-              {data.subServices &&
-                data.subServices.map((item: ServiceCardData) => {
-                  return (
-                    <ServiceCard 
-                      href={`/services/${href}/sub-service/${item.heading
-                        .replace(/\u00A0/g, "")
-                        .replace(/\s+/g, "")
-                        .trim()}`}
-                      key={item.heading}
-                      cardData={item}
-                    />
-                  );
-                })}
-            </div>
-          </ServiceSection>
-        </div>
+      <div className="bg-accent-foreground py-10 px-4">
+        <ServiceSection
+          id="service"
+          data={{
+            heading: "Services Included in",
+            para: "Enterprise-grade technology solutions designed to empower your business at every stage.",
+            Service: "Core IT",
+          }}
+        >
+          <div className="flex w-full flex-wrap gap-8 items-stretch justify-center">
+            {data.subServices &&
+              data.subServices.map((item: ServiceCardData) => {
+                return (
+                  <ServiceCard
+                    href={`/services/${href}/sub-service/${item.heading
+                      .replace(/\u00A0/g, "")
+                      .replace(/\s+/g, "")
+                      .trim()}`}
+                    key={item.heading}
+                    cardData={item}
+                  />
+                );
+              })}
+          </div>
+        </ServiceSection>
       </div>
 
-      <div className="md:max-w-7xl  lg:px-0 px-6 w-full mx-auto flex flex-col  gap-24 items-stretch">
+      <div className="md:max-w-7xl  lg:px-0 px-4 w-full mx-auto flex flex-col  gap-24 items-stretch">
         <WhyCard whyCardData={data.whySection} />
         <HowItWorks id="howItworks" />
       </div>

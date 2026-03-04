@@ -3,7 +3,7 @@ import React from "react";
 const Page = () => {
   return (
     <div className="w-full flex flex-col md:gap-24 gap-12 pb-24">
-      <div className="w-full bg-[url('/images/about-hero.png')] bg-cover bg-center relative h-[60vh] flex items-center justify-center">
+      <div className="w-full bg-[url('/images/about-hero.png')] bg-cover bg-center relative h-[60vh]  flex items-center justify-center">
         <div className="absolute inset-0 bg-black/80"></div>
         {/*  */}
         <div className="pointer-events-none absolute left-0 right-0 -bottom-4 h-16 bg-linear-to-b from-black/0 to-white blur-xl" />
@@ -17,11 +17,11 @@ const Page = () => {
 
             <div className="relative z-10 flex w-full md:max-w-7xl  lg:px-0 px-6 flex-col items-center justify-center gap-8  text-white">
               <div className="text-center flex flex-col gap-3 max-w-2xl items-center justify-center ">
-                <h1 className="text-6xl md:text-6xl leading-[4.25rem] font-bold">
+                <h1 className="text-4xl md:text-6xl md:leading-[4.25rem] font-bold">
                   Privacy Policy
                 </h1>
 
-                <p className="text-lg md:text-xl leading-relaxed text-muted-foreground">
+                <p className="text-base md:text-xl md:leading-relaxed text-muted-foreground">
                   We value your privacy and are committed to protecting your
                   personal information with transparency and integrity.
                 </p>
@@ -31,7 +31,7 @@ const Page = () => {
         </div>
       </div>
 
-      <div className="md:max-w-4xl w-full mx-auto flex flex-col  gap-24 items-stretch">
+      <div className="md:max-w-4xl w-full mx-auto flex flex-col   lg:px-0 px-4   gap-24 items-stretch">
         <section
           id="clause"
           className="w-full flex  flex-col items-start justify-center gap-10
@@ -48,7 +48,7 @@ const Page = () => {
             </p>
           </div>
           <div className="flex flex-col gap-3 items-startw-full ">
-            <h1 className="text-primary font-medium leading- text-2xl">
+            <h1 className="text-primary font-medium leading-7 text-2xl">
               Information We Collect
             </h1>
             <ul className="list-disc flex flex-col gap-3 pl-5">

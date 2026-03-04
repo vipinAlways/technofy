@@ -19,9 +19,9 @@ const SubService = ({
   data: any;
 }) => {
   return (
-    <div className="w-full flex flex-col gap-24 items-center">
+    <div className="w-full flex flex-col md:gap-24 gap-12 items-center">
       <section
-        id="#hero"
+        id="hero"
         className={
           "relative w-full lg:h-[90vh]  md:h-[60vh] h-[75vh] bg-[url('/images/hero-background.png')] bg-cover bg-center flex  justify-center  items-center"
         }
@@ -31,18 +31,18 @@ const SubService = ({
         {/*  */}
         <div className=" absolute left-0 right-0 -bottom-4 h-16 bg-gradient-to-b from-black/0 to-white blur-xl" />
         {/* Content */}
-        <div className="flex items-start md:max-w-7xl  lg:px-0 px-6 w-full  ">
+        <div className="flex items-start md:max-w-7xl  lg:px-0  w-full  ">
           <div
             className={
-              "relative z-10 text-white flex  justify-center items-start w-[70%] flex-col gap-8"
+              "relative z-10 text-white flex  justify-center items-start  md:w-3/5 px-4 lg:px-0 w-full flex-col gap-8"
             }
           >
             <div className="text-start gap-3">
-              <h1 className="text-5xl leading-[4.25rem] font-bold text-white">
-                Advanced {serivceName} That <br />
+              <h1 className="md:text-6xl text-2xl md:leading-[4.25rem] font-bold text-white">
+                Advanced {serivceName.replace("%20", " ")} That <br />
                 Protects Every Device
               </h1>
-              <p className="text-lg  leading-7 text-muted-foreground">
+              <p className="md:text-lg text-sm md:leading-7  text-muted-foreground">
                 We secure laptops, desktops, and mobile devices with proactive
                 threat detection, real-time monitoring, and rapid incident
                 response — ensuring your business stays protected against modern
@@ -51,7 +51,7 @@ const SubService = ({
             </div>
 
             <Button
-              className="py-5 text-base leading-[100%] font-semibold px-5 "
+              className="py-5 text-base leading-[100%] font-semibold px-5 max-w-full"
               asChild
             >
               <Link href={Routes.contact} className="flex items-center gap-4">
@@ -62,25 +62,25 @@ const SubService = ({
           </div>
         </div>
       </section>
-      <div className="md:max-w-7xl  lg:px-0 px-6 w-full mx-auto flex flex-col  items-stretch">
+      <div className="md:max-w-7xl  lg:px-0 px-4 w-full mx-auto flex flex-col  items-stretch">
         <Problem
           heading={data.problem.heading}
           solutions={data.problem.solutions}
         />
       </div>
       <div className="w-full bg-accent-foreground py-10">
-        <div className="md:max-w-7xl  lg:px-0 px-6 mx-auto  space-y-4">
+        <div className="md:max-w-7xl  lg:px-0 px-4 mx-auto  space-y-4">
           <h3 className="text-accent font-bold text-xl leading-7 text-center">
             Solution
           </h3>
           <ServiceSection
             id="service"
             data={{
-              heading: `Our ${serivceName} Architecture`,
+              heading: `Our ${serivceName.replaceAll("%20"," ")} Architecture`,
               para: "Enterprise-grade technology solutions designed to empower your business at every stage.",
             }}
           >
-            <div className="flex flex-wrap gap-8 items-stretch justify-center  max-w-full w-full ">
+            <div className="flex flex-wrap gap-8 items-stretch justify-center  max-w-full w-full  ">
               {data.solution &&
                 data.solution.map((item: any, index: any) => {
                   return <SolutionCard key={index} solutions={item} />;
@@ -90,7 +90,7 @@ const SubService = ({
         </div>
       </div>
 
-      <div className="md:max-w-7xl  lg:px-0 px-6 pb-24 w-full mx-auto flex flex-col  gap-24 items-stretch">
+      <div className="md:max-w-7xl  lg:px-0 px-4 md:pb-24 pb-12 w-full mx-auto flex flex-col  gap-24 items-stretch">
         <WhyCard whyCardData={data.whySection} className="flex-row-reverse" />
         <HowItWorks id="howItworks" />
       </div>

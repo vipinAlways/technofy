@@ -62,7 +62,7 @@ function AccordionBasic() {
 
 const FAQ = () => {
   return (
-    <section className="flex lg:items-center lg:flex-row flex-col max-lg:gap-6   h-140 w-full md:max-w-7xl  lg:px-0  py-10 justify-between">
+    <section className="flex lg:items-center lg:flex-row flex-col max-lg:gap-10   h-140 w-full md:max-w-7xl  lg:px-0  py-10 justify-between">
       <div className="flex-1 flex lg:items-center lg:max-w-md w-full lg:justify-center gap-4">
         <div className="flex flex-col items-start md:gap-4 gap-2 max-w-xl">
           <h1 className="text-primary md:text-4xl text-xl font-medium md:leading-[100%]">

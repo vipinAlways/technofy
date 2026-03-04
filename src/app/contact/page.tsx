@@ -101,13 +101,13 @@ const Page = () => {
   };
 
   return (
-    <div className="w-full flex min-h-screen flex-col gap-24 items-center justify-center  pb-24 pt-32 ">
-      <div className="md:max-w-7xl  lg:px-0 px-6 w-full mx-auto flex flex-col  gap-16 items-stretch">
-        <div className="bg-accent w-full flex flex-col items-center justify-center rounded-2xl px-20 py-10 gap-4">
-          <h2 className="text-white font-bold text-5xl leading-tight text-center">
+    <div className="w-full flex min-h-screen flex-col gap-24 items-center justify-center  md:pb-24 pb-12 md:pt-32 pt-28 ">
+      <div className="md:max-w-7xl  lg:px-0 px-4 w-full mx-auto flex flex-col  md:gap-16 gap-10  items-stretch">
+        <div className="bg-accent w-full flex flex-col items-center justify-center rounded-2xl md:px-20 px-6 py-10 gap-4">
+          <h2 className="text-white font-bold md:text-5xl text-2xl leading-tight md:text-center">
             Let's Strengthen Your IT Together
           </h2>
-          <p className="text-base w-[70%] leading-6 font-normal text-center text-muted-foreground">
+          <p className="text-base md:w-[70%] leading-6 font-normal md:text-center text-muted-foreground">
             Have questions about cybersecurity, infrastructure, or IT support?
             Share your details below and our team will respond promptly with
             expert guidance and clear next steps.
@@ -126,7 +126,7 @@ const Page = () => {
 
           <div className="md:w-1/2 w-full text-muted-foreground gap-8  bg-white flex flex-col items-start border border-border p-6 rounded-2xl shadow-md">
             <div>
-              <h1 className="font-medium text-primary md:text-2xl leading-7">
+              <h1 className="font-medium text-primary md:text-2xl text-xl leading-7">
                 Let's Talk About Your IT Goals
               </h1>
             </div>
@@ -210,7 +210,7 @@ const Page = () => {
                   <select
                     id="counsellingType"
                     {...register("counsellingType")}
-                    className="border border-border p-4 w-full rounded-lg"
+                    className="border border-border p-4 w-full rounded-lg bg-white"
                   >
                     <option value="">Select a service</option>
                     <option value="cybersecurity">Cybersecurity</option>

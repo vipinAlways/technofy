@@ -12,13 +12,15 @@ export default function ServiceSection({
   id,
 }: ServiceSectionProps) {
   return (
-    <section id={id} className="w-full flex flex-col gap-20 ">
+    <section id={id} className="w-full flex flex-col md:gap-20 gap-12 ">
       <div className="text-center flex flex-col gap-4 items-center">
         <h1 className="font-semibold md:text-4xl text-3xl  text-primary">
           {data.heading}
           {data.Service && <span className="text-accent"> {data.Service}</span>}
         </h1>
-        <p className="text-muted text-base max-w-2xl w-full text-center">{data.para}</p>
+        <p className="text-muted text-base max-w-2xl w-full text-center">
+          {data.para}
+        </p>
       </div>
 
       {children}

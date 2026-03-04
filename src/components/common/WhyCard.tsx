@@ -29,7 +29,7 @@ const WhyCard = ({
             />
           </div>
 
-          <div className="md:w-1/2 w-full text-muted-foreground gap-8 flex flex-col items-start">
+          <div className="md:w-1/2 w-full text-muted-foreground gap-8 flex flex-col items-start max-md:text-center">
             <div className="flex flex-col gap-3">
               <h1 className="font-semibold md:text-4xl  text-2xl md:leading-10 text-white">
                 {whyCardData.heading}
@@ -40,7 +40,7 @@ const WhyCard = ({
             </div>
 
             <div>
-              <ul className="flex flex-col gap-5">
+              <ul className="flex flex-col gap-5 text-start">
                 {whyCardData.fetures.map((feature, index) => (
                   <li
                     key={index}

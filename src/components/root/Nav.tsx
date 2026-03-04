@@ -159,7 +159,7 @@ export function NavSheet() {
 
       <SheetContent
         side="top"
-        className="w-full max-h-[90vh] transition-all duration-0 ease-linear no-scrollbar overflow-y-auto px-6 bg-white"
+        className="w-full max-h-[90vh] transition-all duration-0 ease-linear no-scrollbar overflow-y-auto px-6 bg-white pb-5"
       >
         {/* Logo */}
         <SheetHeader className="px-1">
@@ -192,7 +192,11 @@ export function NavSheet() {
               </AccordionTrigger>
 
               <AccordionContent className="pt-2 space-y-4 no-scrollbar overflow-y-auto">
-                <Accordion type="single" className="w-full space-y-3" collapsible>
+                <Accordion
+                  type="single"
+                  className="w-full space-y-3"
+                  collapsible
+                >
                   {service.map((serviceData) => (
                     <AccordionItem
                       key={serviceData.heading}
@@ -248,6 +252,15 @@ export function NavSheet() {
             ))}
           </div>
         </div>
+
+        <SheetClose
+          asChild
+          className="py-3 text-xl w-full leading-6 font-semibold px-5 rounded-[0.5rem] bg-[#F79420] text-[#132039] hover:bg-[#D9730C]  "
+        >
+          <Link href={Routes.contact} className="text-center">
+            <h1>Contact</h1>
+          </Link>
+        </SheetClose>
       </SheetContent>
     </Sheet>
   );

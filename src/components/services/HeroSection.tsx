@@ -15,18 +15,18 @@ const HeroSection = ({
   const { heading, image, para, button } = heroSectionData;
   return (
     <section className=" w-full flex items-center justify-center">
-      <div className="flex items-center bg-accent justify-center p-10 rounded-2xl h-fit gap-8 w-full">
-        <div className="flex flex-col items-start gap-8 flex-1 ">
+      <div className="flex items-center bg-accent justify-center md:p-10 p-6 rounded-2xl  h-fit gap-8 w-full">
+        <div className="flex flex-col items-start gap-8 flex-1 w-full">
           <div className="flex flex-col items-start gap-3">
             <h1 className="font-bold md:text-5xl text-2xl md:leading-[4.25rem] leading-8 text-white">
               {heading}
             </h1>
-            <p className="md:text-lg font-normal text-muted-foreground leading-7">
+            <p className="md:text-lg font-normal text-muted-foreground md:leading-7">
               {para}
             </p>
           </div>
 
-          <Button className="px-6 py-5 text-base leading-[100%] font-semibold ">
+          <Button className="px-6 py-5 text-base leading-[100%] font-semibold w-full ">
             <Link
               href={Routes.contact}
               className="text-lg font-semibold leading-7 flex justify-center items-center gap-2"

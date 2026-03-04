@@ -15,7 +15,7 @@ const OverView = ({
       className="w-full flex items-center justify-center max-h-fit"
     >
       <div className="flex w-full md:flex-row flex-col max-md:gap-6 items-center justify-between ">
-        <div className="flex flex-col gap-6 items-start md:max-w-xl px-3">
+        <div className="flex flex-col gap-6 items-start md:max-w-xl md:px-3">
           <h3 className="text-accent font-bold md:leading-[100%] md:text-xl text-lg">
             {subTitle}
           </h3>
