@@ -82,12 +82,24 @@ const Page = () => {
     <div className="w-full flex flex-col gap-24 items-center pb-24">
       <section
         id="#hero"
-        className="relative w-full lg:h-[90vh]  md:h-[60vh] h-[75vh] bg-[url('/images/about-hero.png')] bg-cover bg-center flex  justify-center"
+        className="relative w-full lg:h-[90vh]  md:h-[60vh] h-[75vh] flex  justify-center"
       >
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/60 backdrop-blur-[0.1rem]"></div>
+        <div
+          className="absolute inset-0 bg-black/60 backdrop-blur-[0.1rem] z-10
+        "
+        ></div>
         {/*  */}
-        <div className="pointer-events-none absolute left-0 right-0 -bottom-4 h-16 bg-linear-to-b from-black/0 to-white blur-xl" />
+        <div className="pointer-events-none absolute left-0 right-0 -bottom-4 h-16 bg-linear-to-b  from-black/0 to-white blur-xl" />
+        <div className="w-full h-full absolute top-0 left-0">
+          <img
+            src="/images/about-hero.png"
+            alt=" Smart IT Solutions That Drive Business Growth"
+            className="
+          w-full h-full object-cover object-center -z-20"
+            loading="eager"
+          />
+        </div>
         {/* Content */}
         <div
           className={

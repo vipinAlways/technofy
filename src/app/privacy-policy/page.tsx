@@ -3,11 +3,20 @@ import React from "react";
 const Page = () => {
   return (
     <div className="w-full flex flex-col md:gap-24 gap-12 pb-24">
-      <div className="w-full bg-[url('/images/about-hero.png')] bg-cover bg-center relative h-[60vh]  flex items-center justify-center">
-        <div className="absolute inset-0 bg-black/80"></div>
+      <div className="w-full relative h-[60vh]  flex items-center justify-center">
+        <div className="absolute inset-0 bg-black/80 z-10"></div>
         {/*  */}
         <div className="pointer-events-none absolute left-0 right-0 -bottom-4 h-16 bg-linear-to-b from-black/0 to-white blur-xl" />
         {/* Content */}
+        <div className="w-full h-full absolute top-0 left-0">
+          <img
+            src="/images/about-hero.png"
+            alt=" Smart IT Solutions That Drive Business Growth"
+            className="
+          w-full h-full object-cover object-center -z-20"
+            loading="eager"
+          />
+        </div>
         <div className="md:max-w-7xl  lg:px-0 px-6 mx-auto w-full flex flex-col  md:gap-24 gap-12 items-stretch">
           <section
             id="hero"

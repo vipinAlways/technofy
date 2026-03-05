@@ -59,7 +59,7 @@ function NavigationMenuItem({
 }
 
 const navigationMenuTriggerStyle = cva(
-  "group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-[color,box-shadow] outline-none  focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50 ",
+  "group inline-flex h-9 items-center justify-center rounded-md  py-2 text-sm font-medium transition-all outline-none  focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50 ",
 );
 
 function NavigationMenuTrigger({
@@ -75,7 +75,7 @@ function NavigationMenuTrigger({
     >
       {children}{" "}
       <ChevronDownIcon
-        className="relative top-[1px] ml-1 size-3 transition duration-300 group-data-[state=open]:rotate-180"
+        className="relative top-[1px] ml-1 size-3 transition duration-100 group-data-[state=open]:rotate-180  ease-linear"
         aria-hidden="true"
       />
     </NavigationMenuPrimitive.Trigger>
@@ -92,25 +92,13 @@ function NavigationMenuContent({
       className={cn(
         className,
         ` w-full pr-2.5
-transition-all duration-100 ease-in-out
+transition-all duration-75 ease-linear
 data-[motion=from-end]:translate-x-12
 data-[motion=from-start]:-translate-x-12
 data-[motion=to-start]:-translate-x-12
-data-[motion^=from-]:opacity-0
-data-[motion^=to-]:opacity-0
-md:absolute md:w-auto
-group-data-[viewport=false]/navigation-menu:top-full
-group-data-[viewport=false]/navigation-menu:mt-2
-group-data-[viewport=false]/navigation-menu:overflow-hidden
-group-data-[viewport=false]/navigation-menu:rounded-md
-group-data-[viewport=false]/navigation-menu:border
-group-data-[viewport=false]/navigation-menu:bg-background
-group-data-[viewport=false]/navigation-menu:text-foreground
-group-data-[viewport=false]/navigation-menu:shadow-lg
-group-data-[viewport=false]/navigation-menu:transition-all
-group-data-[viewport=false]/navigation-menu:duration-100
-group-data-[viewport=false]/navigation-menu:data-[state=open]:scale-100
-group-data-[viewport=false]/navigation-menu:data-[state=closed]:scale-95 data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:animate-in data-[state=open]:zoom-in-90 `,
+
+md:absolute 
+ `,
       )}
       {...props}
     />

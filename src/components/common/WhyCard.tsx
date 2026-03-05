@@ -20,7 +20,7 @@ const WhyCard = ({
         <div
           className={cn(`flex ${className} items-stretch flex-1 gap-8 h-fit`)}
         >
-          <div className="w-1/2 relative aspect-[9/10] max-md:hidden">
+          <div className="w-1/2 relative max-md:hidden">
             <img
               src={whyCardData.image}
               alt="why-us"
@@ -66,7 +66,7 @@ const WhyCard = ({
             </div>
 
             <Button
-              className="w-full  py-5 text-base leading-[100%] font-semibold px-5 rounded-[0.5rem]"
+              className="w-full  py-5 text-base leading-[100%] font-semibold px-8 rounded-[0.5rem]"
               asChild
             >
               <Link href={Routes.contact}>

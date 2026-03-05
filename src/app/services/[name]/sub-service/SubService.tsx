@@ -23,11 +23,20 @@ const SubService = ({
       <section
         id="hero"
         className={
-          "relative w-full lg:h-[90vh]  md:h-[60vh] h-[75vh] bg-[url('/images/hero-background.png')] bg-cover bg-center flex  justify-center  items-center"
+          "relative w-full lg:h-[90vh]  md:h-[60vh] h-[75vh]  flex  justify-center  items-center"
         }
       >
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/80"></div>
+        <div className="absolute inset-0 bg-black/80 z-10"></div>
+        <div className="w-full h-full absolute top-0 left-0">
+          <img
+            src="/images/hero-background.png"
+            alt="Advanced Protects Every Device"
+            className="
+          w-full h-full object-cover object-center -z-20"
+            loading="eager"
+          />
+        </div>
         {/*  */}
         <div className=" absolute left-0 right-0 -bottom-4 h-16 bg-gradient-to-b from-black/0 to-white blur-xl" />
         {/* Content */}

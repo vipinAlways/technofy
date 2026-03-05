@@ -4,7 +4,6 @@ import Link from "next/link";
 import { getBlogs } from "@/lib/fetchingBlogs";
 import Routes from "@/lib/route";
 
-
 const blogData: {
   image: string;
   info: string;
@@ -52,7 +51,6 @@ const blogData: {
 const Page = async () => {
   // const { blogs } = await getBlogs();
 
-  
   return (
     <div className="flex flex-col gap-24 py-24 ">
       <section
@@ -83,10 +81,18 @@ const Page = async () => {
             </div>
           </div>
         </div>
-        <div className="flex relative items-end  w-full  bg-[url('/images/blog-hero.png')] bg-cover bg-center aspect-[32/15] p-[3.75rem] rounded-3xl ">
-          <div className="absolute inset-0 bg-black/20 rounded-3xl"></div>
-
-          <div className="flex flex-col gap-3 h-fit max-w-3xl w-full text-white">
+        <div className="flex relative items-end  w-full  aspect-[32/15] p-[3.75rem] rounded-3xl ">
+          <div className="absolute inset-0 bg-black/20 rounded-3xl z-10"></div>
+          <div className="w-full h-full absolute top-0 left-0 ">
+            <img
+              src="/images/blog-hero.png"
+              alt=" Smart IT Solutions That Drive Business Growth"
+              className="
+          w-full h-full object-cover object-center -z-20 rounded-3xl"
+              loading="eager"
+            />
+          </div>
+          <div className="flex flex-col gap-3 h-fit max-w-3xl w-full text-white z-10">
             <h1>sdjekfug ewfgey fed dhvc</h1>
             <p>
               eqwfgyehfkjwerhfbrbgjnr enqvehfyugqeugjfjefhk feufhuiq
@@ -109,31 +115,35 @@ const Page = async () => {
         <div className="flex w-full items-start gap-8">
           {/* Blog Grid */}
           <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6">
-            {blogData.length >0 ? blogData.map((data, index) => (
-              <BlogCard
-                key={index}
-                blogCardData={{
-                  // heading: data.title ?? "",
-                  // image: data.seo.og_image,
-                  // info: new Date(data.date_created).toLocaleDateString(
-                  //   "en-US",
-                  //   {
-                  //     year: "numeric",
-                  //     month: "short",
-                  //     day: "numeric",
-                  //   },
-                  // ),
-                  // para: data.seo.meta_description,
-                  // slug: data.slug,
+            {blogData.length > 0 ? (
+              blogData.map((data, index) => (
+                <BlogCard
+                  key={index}
+                  blogCardData={{
+                    // heading: data.title ?? "",
+                    // image: data.seo.og_image,
+                    // info: new Date(data.date_created).toLocaleDateString(
+                    //   "en-US",
+                    //   {
+                    //     year: "numeric",
+                    //     month: "short",
+                    //     day: "numeric",
+                    //   },
+                    // ),
+                    // para: data.seo.meta_description,
+                    // slug: data.slug,
 
-                  heading:data.heading,
-                  image:"/images/about-hero.png",
-                  info:data.image,
-                  para:data.para,
-                  slug:"check"
-                }}
-              />
-            )) : <h1 className="text-primary">No Blog Post Right Now</h1>}
+                    heading: data.heading,
+                    image: "/images/about-hero.png",
+                    info: data.image,
+                    para: data.para,
+                    slug: "check",
+                  }}
+                />
+              ))
+            ) : (
+              <h1 className="text-primary">No Blog Post Right Now</h1>
+            )}
           </div>
 
           {/* Sidebar */}

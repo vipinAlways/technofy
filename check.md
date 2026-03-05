@@ -176,7 +176,7 @@
         {/*  */}
         <div className="pointer-events-none absolute left-0 right-0 -bottom-4 h-16 bg-linear-to-b from-black/0 to-white blur-xl" />
         {/* Content */}
-        <div className="relative z-10 flex w-full md:max-w-7xl  lg:px-0 px-6 flex-col items-center justify-center gap-8 px-6  text-white">
+        <div className="relative z-10 flex w-full md:max-w-7xl  md:px-0 px-6 flex-col items-center justify-center gap-8   text-white">
           <div className="text-center flex flex-col gap-3 max-w-xl items-center justify-center ">
             <h1 className="text-6xl md:text-6xl leading-[4.25rem] font-bold">
               Privacy Policy

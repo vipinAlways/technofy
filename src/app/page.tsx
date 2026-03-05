@@ -89,10 +89,14 @@ export default function Home() {
     <div className="w-full flex flex-col items-center">
       <section
         id="#hero"
-        className="relative w-full lg:h-[90vh]  md:h-[60vh] h-[75vh] bg-[url('/images/hero-background.png')] bg-cover bg-center flex justify-center"
+        className="relative w-full lg:h-[90vh]  md:h-[60vh] h-[75vh]  flex justify-center"
       >
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/75 backdrop-blur-[0.1rem]"></div>
+        <div className="absolute inset-0 bg-black/75 backdrop-blur-[0.1rem] z-10"></div>
+        <div className="w-full h-full absolute top-0 left-0">
+          <img src="/images/hero-background.png" alt=" Smart IT Solutions That Drive Business Growth" className="
+          w-full h-full object-cover -z-20" loading="eager"/>
+        </div>
         {/*  */}
         <div className="pointer-events-none absolute left-0 right-0 w-full -bottom-8 h-16 bg-gradient-to-b from-transparent via-white/40 to-white blur-xl" />
         {/* Content */}

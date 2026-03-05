@@ -65,12 +65,14 @@ const navlinks: Navlinks[] = [
 
 function ServiceSubMenu() {
   return (
-    <NavigationMenu className="relative max-w-2xl">
+    <NavigationMenu className="relative max-w-2xl ">
       <NavigationMenuList className="flex items-center gap-6">
-        <NavigationMenuItem className="relative">
-          <NavigationMenuTrigger>Services</NavigationMenuTrigger>
+        <NavigationMenuItem className="relative m-0">
+          <NavigationMenuTrigger className="text-base font-normal hover:text-accent transition-all duration-75 text-muted">
+            <p>Services</p>
+          </NavigationMenuTrigger>
 
-          <NavigationMenuContent className="min-w-max  bg-white text-muted  absolute  rounded-lg left-1/2 -translate-x-1/2 top-10">
+          <NavigationMenuContent className="min-w-max border border-border bg-white text-muted  absolute  rounded-lg left-1/2 -translate-x-1/2 top-10">
             <div className="p-4 h-full w-full">
               <ul className="grid gap-4 h-full max-2xl md:grid-cols-2 ">
                 {service.map((serviceData) => (
@@ -81,37 +83,36 @@ function ServiceSubMenu() {
                     {/* Service Trigger */}
                     <NavigationMenu className="relative  ">
                       <NavigationMenuList>
-                        <NavigationMenuItem className="relative ">
+                        <NavigationMenuItem className="relative max-w-full ">
                           <NavigationMenuTrigger className="w-80 p-0   hover:bg-accent-foreground transition-all duration-100 ease-out h-fit">
                             <Link
                               href={Routes.service(serviceData.heading)}
                               className="flex items-start gap-4 p-3 rounded-lg"
                             >
                               {/* Image */}
-                              <div className="relative w-24 aspect-video flex-none overflow-hidden rounded-md">
+                              <div className="relative w-24 h-[54px] flex-none overflow-hidden rounded-md">
                                 <img
                                   src="/images/service-hero.png"
                                   alt={serviceData.heading}
-                                  className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                                  loading="lazy"
+                                  className="h-full w-full object-cover object-center"
                                 />
                               </div>
 
                               {/* Text */}
-                              <div className="flex flex-col flex-1">
-                                <h3 className="text-sm font-semibold text-primary leading-none">
+                              <div className="flex flex-col flex-1 items-start gap-1">
+                                <h3 className="text-sm font-semibold text-primary text-start leading-none">
                                   {serviceData.heading}
                                 </h3>
 
-                                <p className="mt-1 text-xs text-muted line-clamp-2 leading-relaxed">
+                                <p className="mt-1 text-xs text-muted line-clamp-2 text-start leading-2">
                                   {serviceData.para}
                                 </p>
                               </div>
                             </Link>
                           </NavigationMenuTrigger>
 
-                          <NavigationMenuContent className="min-w-max bg-white z-40 rounded-lg -top-1/2 -left-1/2">
-                            <ul className="p-3 space-y-2">
+                          <NavigationMenuContent className="max-w-60 min-w-max border border-border bg-white z-40 rounded-lg -top-1/2 -left-1/2">
+                            <ul className="p-3 space-y-2 ">
                               {subService.subServices?.map((sub) => (
                                 <li key={sub.heading}>
                                   <NavigationMenuLink asChild>
@@ -139,8 +140,13 @@ function ServiceSubMenu() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         {navlinks.map((links, index) => (
-          <NavigationMenuItem key={index} className="flex items-center gap-6">
-            <Link href={links.href}>{links.title}</Link>
+          <NavigationMenuItem
+            key={index}
+            className="flex items-center text-muted font-normal hover:text-accent transition-all duration-75   gap-6 text-base "
+          >
+            <Link href={links.href}>
+              <p>{links.title}</p>
+            </Link>
           </NavigationMenuItem>
         ))}
       </NavigationMenuList>
@@ -269,7 +275,7 @@ export function NavSheet() {
 const Nav = () => {
   return (
     <>
-      <nav className="py-3 lg:flex hidden px-6 ml-2 rounded-md bg-white w-full md:max-w-7xl justify-between items-center border border-border relative">
+      <nav className="py-3 lg:flex hidden px-6 ml-2    rounded-md bg-white w-full md:max-w-7xl justify-between items-center border border-border relative">
         <div>
           <Link href={"/"} className="block w-36 ">
             <img
