@@ -1,4 +1,4 @@
-"use client";
+"use server";
 
 import {
   Award,
@@ -29,6 +29,7 @@ import { data as serviceCardData } from "./../services.json";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Routes from "@/lib/route";
+import { getAllParentServices } from "@/lib/fetchServices";
 
 const statsSectionData: StatsSection[] = [
   {
@@ -63,28 +64,30 @@ const whyCardData: WhycardData = {
   image: "/images/root-why.png",
   fetures: [
     {
-      title: "Business-First Approach",
-      para: "We align every technology solution with your business objectives — not just technical requirements.",
+      heading: "Business-First Approach",
+      description: "We align every technology solution with your business objectives — not just technical requirements.",
     },
 
     {
-      title: "Business-First Approach",
-      para: "We align every technology solution with your business objectives — not just technical requirements.",
+      heading: "Business-First Approach",
+      description: "We align every technology solution with your business objectives — not just technical requirements.",
     },
 
     {
-      title: "Business-First Approach",
-      para: "We align every technology solution with your business objectives — not just technical requirements.",
+      heading: "Business-First Approach",
+      description: "We align every technology solution with your business objectives — not just technical requirements.",
     },
 
     {
-      title: "Business-First Approach",
-      para: "We align every technology solution with your business objectives — not just technical requirements.",
+      heading: "Business-First Approach",
+      description: "We align every technology solution with your business objectives — not just technical requirements.",
     },
   ],
   para: "We combine technical excellence with a client-first approach to deliver solutions that truly make a difference.",
 };
-export default function Home() {
+
+export default async function Home() {
+  const { serviceCard } = await getAllParentServices();
   return (
     <div className="w-full flex flex-col items-center">
       <section
@@ -94,8 +97,13 @@ export default function Home() {
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/75 backdrop-blur-[0.1rem] z-10"></div>
         <div className="w-full h-full absolute top-0 left-0">
-          <img src="/images/hero-background.png" alt=" Smart IT Solutions That Drive Business Growth" className="
-          w-full h-full object-cover -z-20" loading="eager"/>
+          <img
+            src="/images/hero-background.png"
+            alt=" Smart IT Solutions That Drive Business Growth"
+            className="
+          w-full h-full object-cover -z-20"
+            loading="eager"
+          />
         </div>
         {/*  */}
         <div className="pointer-events-none absolute left-0 right-0 w-full -bottom-8 h-16 bg-gradient-to-b from-transparent via-white/40 to-white blur-xl" />
@@ -149,20 +157,17 @@ export default function Home() {
         <div className="py-10 ">
           <ServiceSection id="services" data={serviceData}>
             <div className="flex w-full flex-wrap gap-8 items-stretch justify-center">
-              {serviceCardData.map((item) => {
+              {serviceCard.map((item) => {
                 return (
                   <ServiceCard
-                    key={item.heading}
+                    key={item.slug}
                     cardData={{
-                      heading: item.heading,
-                      icon: item.icon,
-                      para: item.para,
-                      id: item.id,
+                      service_icon: item.service_icon,
+                      service_name: item.service_name,
+                      short_description: item.short_description,
+                      slug: item.slug,
                     }}
-                    href={`/services/${item.heading
-                      .replace(/\u00A0/g, "")
-                      .replace(/\s+/g, "")
-                      .trim()}`}
+                    href={Routes.service(item.slug)}
                   />
                 );
               })}

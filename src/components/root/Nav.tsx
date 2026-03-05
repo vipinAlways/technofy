@@ -1,23 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+
 import { Button } from "../ui/button";
-import { Navlinks } from "@/index";
-
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuItem,
-  DropdownMenuPortal,
-  DropdownMenuShortcut,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
-  DropdownMenuTrigger,
-  DropdownMenuSeparator,
-} from "../ui/dropdown-menu";
-
+import { Navlinks, ServiceCardData } from "@/index";
 import { data as service } from "@/services.json";
 import { data as subService } from "@/servicepage.json";
 import {
@@ -47,6 +32,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "../ui/accordion";
+import { getAllParentServices } from "@/lib/fetchServices";
 
 const navlinks: Navlinks[] = [
   {
@@ -63,7 +49,7 @@ const navlinks: Navlinks[] = [
   },
 ];
 
-function ServiceSubMenu() {
+function ServiceSubMenu({ services }: { services: ServiceCardData[] }) {
   return (
     <NavigationMenu className="relative max-w-2xl ">
       <NavigationMenuList className="flex items-center gap-6">
@@ -75,25 +61,22 @@ function ServiceSubMenu() {
           <NavigationMenuContent className="min-w-max border border-border bg-white text-muted  absolute  rounded-lg left-1/2 -translate-x-1/2 top-10">
             <div className="p-4 h-full w-full">
               <ul className="grid gap-4 h-full max-2xl md:grid-cols-2 ">
-                {service.map((serviceData) => (
-                  <li
-                    key={serviceData.heading}
-                    className="relative  p-2 max-w-96"
-                  >
+                {services.map((serviceData) => (
+                  <li key={serviceData.slug} className="relative  p-2 max-w-96">
                     {/* Service Trigger */}
                     <NavigationMenu className="relative  ">
                       <NavigationMenuList>
                         <NavigationMenuItem className="relative max-w-full ">
                           <NavigationMenuTrigger className="w-80 p-0   hover:bg-accent-foreground transition-all duration-100 ease-out h-fit">
                             <Link
-                              href={Routes.service(serviceData.heading)}
+                              href={Routes.service(serviceData.service_name)}
                               className="flex items-start gap-4 p-3 rounded-lg"
                             >
                               {/* Image */}
                               <div className="relative w-24 h-[54px] flex-none overflow-hidden rounded-md">
                                 <img
-                                  src="/images/service-hero.png"
-                                  alt={serviceData.heading}
+                                  src={serviceData.image}
+                                  alt={serviceData.service_name}
                                   className="h-full w-full object-cover object-center"
                                 />
                               </div>
@@ -101,11 +84,11 @@ function ServiceSubMenu() {
                               {/* Text */}
                               <div className="flex flex-col flex-1 items-start gap-1">
                                 <h3 className="text-sm font-semibold text-primary text-start leading-none">
-                                  {serviceData.heading}
+                                  {serviceData.service_name}
                                 </h3>
 
                                 <p className="mt-1 text-xs text-muted line-clamp-2 text-start leading-2">
-                                  {serviceData.para}
+                                  {serviceData.short_description}
                                 </p>
                               </div>
                             </Link>
@@ -113,17 +96,17 @@ function ServiceSubMenu() {
 
                           <NavigationMenuContent className="max-w-60 min-w-max border border-border bg-white z-40 rounded-lg -top-1/2 -left-1/2">
                             <ul className="p-3 space-y-2 ">
-                              {subService.subServices?.map((sub) => (
-                                <li key={sub.heading}>
+                              {serviceData.subServicesSlug?.map((sub) => (
+                                <li key={sub.slug}>
                                   <NavigationMenuLink asChild>
                                     <Link
                                       href={Routes.Subservice(
-                                        serviceData.heading,
-                                        sub.heading,
+                                        serviceData.slug,
+                                        sub.slug,
                                       )}
                                       className="block text-sm text-muted hover:bg-accent-foreground duration-100 ease-out  hover:text-primary transition-colors"
                                     >
-                                      {sub.heading}
+                                      {sub.name}
                                     </Link>
                                   </NavigationMenuLink>
                                 </li>
@@ -154,7 +137,7 @@ function ServiceSubMenu() {
   );
 }
 
-export function NavSheet() {
+export function NavSheet({ services }: { services: ServiceCardData[] }) {
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -272,7 +255,9 @@ export function NavSheet() {
   );
 }
 
-const Nav = () => {
+const Nav = ({ services }: { services: ServiceCardData[] }) => {
+ 
+
   return (
     <>
       <nav className="py-3 lg:flex hidden px-6 ml-2    rounded-md bg-white w-full md:max-w-7xl justify-between items-center border border-border relative">
@@ -287,7 +272,7 @@ const Nav = () => {
           </Link>
         </div>
         <ul className="flex gap-6 items-center test-base leading-6 text-muted">
-          <ServiceSubMenu />{" "}
+          <ServiceSubMenu services={services} />{" "}
         </ul>
 
         <Button
@@ -313,7 +298,7 @@ const Nav = () => {
           asChild
           className="py-5 text-base leading-6 font-semibold px-5 rounded-[0.5rem] "
         >
-          <NavSheet />
+          <NavSheet services={services} />
         </Button>
       </nav>
     </>

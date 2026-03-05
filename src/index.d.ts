@@ -12,10 +12,15 @@ export interface StatsSection {
 }
 
 export interface ServiceCardData {
-  id?: string;
-  icon: string;
-  heading: string;
-  para: string;
+  slug: string;
+  service_name: string;
+  service_icon: string;
+  short_description: string;
+  image?: string;
+  subServicesSlug?: {
+    slug: string;
+    name: string;
+  }[];
 }
 
 export interface ServiceSectionData {
@@ -29,21 +34,19 @@ export interface WhycardData {
   image: string;
   para: string;
   fetures: {
-    title: string;
-    para: string;
+    heading: string;
+    description: string;
   }[];
 }
 
 export interface ServiceHeroSection {
   heading: string;
   para: string;
-  button: string;
   image: string;
 }
 export interface ServiceOverViewData {
   heading: string;
-  para1: string;
-  para2: string;
+  para: string;
 }
 
 export type Blog = {
@@ -74,7 +77,94 @@ interface serviceNav {
 }
 
 interface SocialLink {
-  href:string;
-  icon:LucideIcon;
-  iconClass:string
+  href: string;
+  icon: LucideIcon;
+  iconClass: string;
+}
+
+export interface FAQ {
+  question: string;
+  answer: string;
+}
+export interface Advantages {
+  heading: string;
+  description: string;
+}
+export interface Service {
+  id: string;
+  user_created: string;
+  date_created: string;
+  user_updated: string | null;
+  date_updated: string | null;
+
+  slug: string;
+  service_name: string;
+  heading: string;
+  description: string;
+  short_description: string;
+
+  overview_heading: string;
+  overview_description: string;
+
+  service_icon: string;
+
+  service_image: string;
+  whyCard_image: string;
+  sub_Services: {
+    slug: string;
+    service_name: string;
+    service_icon: string;
+    short_description: string;
+  }[];
+  whyCard_heading: string;
+  whyCard_description: string;
+
+  faq: FAQ[];
+
+  advantages: Advantages[];
+}
+
+export interface Problem {
+  problem: string;
+  solution: string;
+}
+
+export interface Solution {
+  heading: string;
+  description: string;
+  includes: {
+    data: string[];
+  };
+}
+
+export interface SubService {
+  id: number;
+
+  user_created: string;
+  date_created: string;
+
+  user_updated: string;
+  date_updated: string;
+
+  slug: string;
+
+  service_name: string;
+  service_icon: string;
+  service_image: string;
+  short_description: string;
+  heading: string;
+  description: string;
+  Problem_heading: string;
+  problems: Problem[];
+  solutions: Solution[];
+  whycard_description: string;
+  whycard_image: string;
+  advantages: Advantage[];
+  faq: FAQ[];
+}
+
+export interface HowCardData{
+  icon:string;
+  heading:string;
+  para:string
 }

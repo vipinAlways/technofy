@@ -6,7 +6,7 @@ const Problem = ({
   solutions = [],
 }: {
   heading: string;
-  solutions: { title: string; para: string }[];
+  solutions: { problem: string; solution: string;  }[];
 }) => {
   return (
     <div className="flex md:flex-row flex-col max-md:gap-6 md:justify-between ">

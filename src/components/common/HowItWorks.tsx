@@ -1,8 +1,8 @@
-import { ServiceCardData } from "@/index";
+import { HowCardData, ServiceCardData } from "@/index";
 import { IconMap } from "@/lib/Icons";
 import { LucideIcon } from "lucide-react";
 
-const cardData: ServiceCardData[] = [
+const cardData: HowCardData[] = [
   {
     icon: "MessageSquare",
     heading: "Consultation",

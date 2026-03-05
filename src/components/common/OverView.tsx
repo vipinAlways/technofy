@@ -8,7 +8,7 @@ const OverView = ({
   overViewData: ServiceOverViewData;
   subTitle: string;
 }) => {
-  const { heading, para1, para2 } = overViewData;
+  const { heading, para } = overViewData;
   return (
     <section
       id="overView"
@@ -29,8 +29,8 @@ const OverView = ({
           className="flex items-start gap-3 flex-col md:max-w-xl md:text-lg text-sm text-muted leading-6 font-normal
         "
         >
-          <p>{para1}</p>
-          <p>{para2}</p>
+          <p>{para}</p>
+         
         </div>
       </div>
     </section>

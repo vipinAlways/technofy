@@ -1,22 +1,21 @@
-import HeroSection from "@/components/common/HeroSection";
 import HowItWorks from "@/components/common/HowItWorks";
 import ServiceSection from "@/components/common/ServiceSection";
 import WhyCard from "@/components/common/WhyCard";
 import Problem from "@/components/services/subService/Problem";
 import SolutionCard from "@/components/services/subService/SolutionCard";
 import { Button } from "@/components/ui/button";
-import { ServiceHeroSection } from "@/index";
+import {  type SubService } from "@/index";
 import Routes from "@/lib/route";
 import { MoveRightIcon } from "lucide-react";
 import Link from "next/link";
-import React from "react";
+
 
 const SubService = ({
   serivceName,
   data,
 }: {
   serivceName: string;
-  data: any;
+  data: SubService;
 }) => {
   return (
     <div className="w-full flex flex-col md:gap-24 gap-12 items-center">
@@ -30,8 +29,8 @@ const SubService = ({
         <div className="absolute inset-0 bg-black/80 z-10"></div>
         <div className="w-full h-full absolute top-0 left-0">
           <img
-            src="/images/hero-background.png"
-            alt="Advanced Protects Every Device"
+            src={`${process.env.NEXT_PUBLIC_DIRECTUS_ASSETS_URL}/${data.service_image}`}
+            alt={data.heading}
             className="
           w-full h-full object-cover object-center -z-20"
             loading="eager"
@@ -48,14 +47,10 @@ const SubService = ({
           >
             <div className="text-start gap-3">
               <h1 className="md:text-6xl text-2xl md:leading-[4.25rem] font-bold text-white">
-                Advanced {serivceName.replace("%20", " ")} That <br />
-                Protects Every Device
+                {data.heading}
               </h1>
               <p className="md:text-lg text-sm md:leading-7  text-muted-foreground">
-                We secure laptops, desktops, and mobile devices with proactive
-                threat detection, real-time monitoring, and rapid incident
-                response — ensuring your business stays protected against modern
-                cyber threats.
+                {data.description}
               </p>
             </div>
 
@@ -72,10 +67,7 @@ const SubService = ({
         </div>
       </section>
       <div className="md:max-w-7xl  lg:px-0 px-4 w-full mx-auto flex flex-col  items-stretch">
-        <Problem
-          heading={data.problem.heading}
-          solutions={data.problem.solutions}
-        />
+        <Problem heading={data.Problem_heading} solutions={data.problems} />
       </div>
       <div className="w-full bg-accent-foreground py-10">
         <div className="md:max-w-7xl  lg:px-0 px-4 mx-auto  space-y-4">
@@ -85,13 +77,13 @@ const SubService = ({
           <ServiceSection
             id="service"
             data={{
-              heading: `Our ${serivceName.replaceAll("%20"," ")} Architecture`,
+              heading: `Our ${serivceName.replaceAll("%20", " ")} Architecture`,
               para: "Enterprise-grade technology solutions designed to empower your business at every stage.",
             }}
           >
             <div className="flex flex-wrap gap-8 items-stretch justify-center  max-w-full w-full  ">
-              {data.solution &&
-                data.solution.map((item: any, index: any) => {
+              {data.solutions &&
+                data.solutions.map((item: any, index: any) => {
                   return <SolutionCard key={index} solutions={item} />;
                 })}
             </div>
@@ -100,7 +92,15 @@ const SubService = ({
       </div>
 
       <div className="md:max-w-7xl  lg:px-0 px-4 md:pb-24 pb-12 w-full mx-auto flex flex-col  gap-24 items-stretch">
-        <WhyCard whyCardData={data.whySection} className="flex-row-reverse" />
+        <WhyCard
+          whyCardData={{
+            heading: "Our Core Values",
+            image: data.whycard_image,
+            para: "We combine technical excellence with a client-first approach to deliver solutions that truly make a difference.",
+            fetures: data.advantages,
+          }}
+          className="flex-row-reverse"
+        />
         <HowItWorks id="howItworks" />
       </div>
     </div>

@@ -14,40 +14,40 @@ const vision = [
   {
     data: [
       {
-        title: "Proactive IT Management",
-        para: "Continuously monitor and optimize systems to prevent disruptions before they occur.",
+        problem: "Proactive IT Management",
+        solution: "Continuously monitor and optimize systems to prevent disruptions before they occur.",
       },
       {
-        title: "Enterprise-Grade Security",
-        para: "Implement layered cybersecurity strategies to protect networks, devices, and data.",
+        problem: "Enterprise-Grade Security",
+        solution: "Implement layered cybersecurity strategies to protect networks, devices, and data.",
       },
       {
-        title: "Scalable Infrastructure Design",
-        para: "Build flexible IT environments that support long-term growth and evolving needs.",
+        problem: "Scalable Infrastructure Design",
+        solution: "Build flexible IT environments that support long-term growth and evolving needs.",
       },
       {
-        title: "Operational Reliability",
-        para: "Ensure stable, high-performance systems that minimize downtime and business risk..",
+        problem: "Operational Reliability",
+        solution: "Ensure stable, high-performance systems that minimize downtime and business risk..",
       },
     ],
   },
   {
     data: [
       {
-        title: "Trusted Technology Partnership",
-        para: "Continuously monitor and optimize systems to prevent disruptions before they occur.",
+        problem: "Trusted Technology Partnership",
+        solution: "Continuously monitor and optimize systems to prevent disruptions before they occur.",
       },
       {
-        title: "Innovation with Purpose",
-        para: "Implement layered cybersecurity strategies to protect networks, devices, and data.",
+        problem: "Innovation with Purpose",
+        solution: "Implement layered cybersecurity strategies to protect networks, devices, and data.",
       },
       {
-        title: "Digital Resilience",
-        para: "Build flexible IT environments that support long-term growth and evolving needs.",
+        problem: "Digital Resilience",
+        solution: "Build flexible IT environments that support long-term growth and evolving needs.",
       },
       {
-        title: "Sustainable Growth Enablement",
-        para: "Ensure stable, high-performance systems that minimize downtime and business risk..",
+        problem: "Sustainable Growth Enablement",
+        solution: "Ensure stable, high-performance systems that minimize downtime and business risk..",
       },
     ],
   },
@@ -57,20 +57,20 @@ const WhyCardData: WhycardData = {
   image: "/images/about-why.png",
   fetures: [
     {
-      title: "Proactive Excellence",
-      para: "We align every technology solution with your business objectives — not just technical requirements.",
+      heading: "Proactive Excellence",
+      description: "We align every technology solution with your business objectives — not just technical requirements.",
     },
     {
-      title: "Security-First Mindset",
-      para: "Our solutions grow with your business, ensuring long-term performance and flexibility.",
+      heading: "Security-First Mindset",
+      description: "Our solutions grow with your business, ensuring long-term performance and flexibility.",
     },
     {
-      title: "Long-Term Partnership",
-      para: "Our solutions grow with your business, ensuring long-term performance and flexibility.",
+      heading: "Long-Term Partnership",
+      description: "Our solutions grow with your business, ensuring long-term performance and flexibility.",
     },
     {
-      title: "Structured Transparency",
-      para: "No hidden costs. Clear communication and pricing you can trust.",
+      heading: "Structured Transparency",
+      description: "No hidden costs. Clear communication and pricing you can trust.",
     },
   ],
   heading: "Our Core Values",
@@ -137,10 +137,9 @@ const Page = () => {
             overViewData={{
               heading:
                 "Delivering Structured, Secure IT Solutions for Growing Businesses",
-              para1:
+              para:
                 "Technofy is an IT services partner committed to delivering reliable, secure, and performance-driven technology solutions. We work closely with businesses to strengthen their IT infrastructure, protect critical assets, and ensure operational continuity.",
-              para2:
-                "Through proactive management and strategic planning, we design environments that minimize risk, reduce downtime, and support long-term growth.",
+              
             }}
           />
         </div>

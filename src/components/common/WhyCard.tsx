@@ -22,7 +22,7 @@ const WhyCard = ({
         >
           <div className="w-1/2 relative max-md:hidden">
             <img
-              src={whyCardData.image}
+              src={`${process.env.NEXT_PUBLIC_DIRECTUS_ASSETS_URL}/${whyCardData.image}`}
               alt="why-us"
               className="rounded-2xl object-cover h-full w-full"
               loading="lazy"
@@ -41,27 +41,30 @@ const WhyCard = ({
 
             <div>
               <ul className="flex flex-col gap-5 text-start">
-                {whyCardData.fetures.map((feature, index) => (
-                  <li
-                    key={index}
-                    className=" flex items-start justify-start gap-4"
-                  >
-                    <img
-                      src={"/right-sign.svg"}
-                      alt="right-sign.svg"
-                      className="aspect-square size-5"
-                      loading="lazy"
-                    />
-                    <div>
-                      <h3 className="font-semibold md:text-xl text-base leading-7 text-white">
-                        {feature.title}
-                      </h3>
-                      <p className="md:text-base text-sm font-normal text-muted-foreground md:leading-6 ">
-                        {feature.para}
-                      </p>
-                    </div>
-                  </li>
-                ))}
+                {whyCardData.fetures.map((feture, index) => {
+               
+                  return (
+                    <li
+                      key={index}
+                      className=" flex items-start justify-start gap-4"
+                    >
+                      <img
+                        src={"/right-sign.svg"}
+                        alt="right-sign.svg"
+                        className="aspect-square size-5"
+                        loading="lazy"
+                      />
+                      <div>
+                        <h3 className="font-semibold md:text-xl text-base leading-7 text-white">
+                          {feture.heading}
+                        </h3>
+                        <p className="md:text-base text-sm font-normal text-muted-foreground md:leading-6 ">
+                          {feture.description}
+                        </p>
+                      </div>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
 

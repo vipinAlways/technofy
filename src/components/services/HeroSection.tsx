@@ -11,8 +11,8 @@ const HeroSection = ({
 }: {
   heroSectionData: ServiceHeroSection;
 }) => {
-  console.log(heroSectionData);
-  const { heading, image, para, button } = heroSectionData;
+  
+  const { heading, image, para, } = heroSectionData;
   return (
     <section className=" w-full flex items-center justify-center">
       <div className="flex items-center bg-accent justify-center md:p-10 p-6 rounded-2xl  h-fit gap-8 w-full">
@@ -31,14 +31,14 @@ const HeroSection = ({
               href={Routes.contact}
               className="text-lg font-semibold leading-7 flex justify-center items-center gap-2"
             >
-              {button} <MoveRight className="size-6" />
+             Schedule a Free Security Assessment <MoveRight className="size-6" />
             </Link>{" "}
           </Button>
         </div>
 
         <div className="flex-1 max-md:hidden  h-full aspect-12/11 relative">
           <img
-            src={image}
+            src={`${process.env.NEXT_PUBLIC_DIRECTUS_ASSETS_URL}/${image}`}
             alt={heading}
             className="rounded-2xl object-cover h-full w-full"
             loading="lazy"

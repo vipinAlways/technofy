@@ -6,10 +6,13 @@ const SolutionCard = ({
   solutions: {
     heading: string;
     para: string;
-    conclusion: string[];
+    includes: {
+      data: string[];
+    };
   };
 }) => {
-  const { conclusion, heading, para } = solutions;
+  const { includes, heading, para } = solutions;
+
   return (
     <div className=" lg:max-w-[39rem] min-w-60  ">
       <div className="bg-white rounded-2xl border  border-border  p-6 flex flex-col gap-4 w-full">
@@ -20,15 +23,17 @@ const SolutionCard = ({
           <p className="text-muted text-base leading-6">{para}</p>
         </div>
 
-          <div className="h-px w-full bg-border"/>
+        <div className="h-px w-full bg-border" />
 
         <div className="flex flex-col gap-3 items-start">
           <h2 className="text-primary text-xl leading-6 font-medium">
             👉🏻 They Includes
           </h2>
           <ul className="flex flex-col gap-2 pl-5 list-disc">
-            {conclusion.map((item, index) => (
-              <li className="text-muted text-base leading-6" key={index}>{item}</li>
+            {includes.data.map((item, index) => (
+              <li className="text-muted text-base leading-6" key={index}>
+                {item}
+              </li>
             ))}
           </ul>
         </div>
