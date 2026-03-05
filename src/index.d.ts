@@ -31,7 +31,7 @@ export interface ServiceSectionData {
 
 export interface WhycardData {
   heading: string;
-  image: string;
+  image?: string;
   para: string;
   fetures: {
     heading: string;

@@ -61,7 +61,7 @@ const serviceData: ServiceSectionData = {
 
 const whyCardData: WhycardData = {
   heading: " Why Businesses Trust Technofy",
-  image: "/images/root-why.png",
+ 
   fetures: [
     {
       heading: "Business-First Approach",

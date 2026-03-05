@@ -4,11 +4,10 @@ import WhyCard from "@/components/common/WhyCard";
 import Problem from "@/components/services/subService/Problem";
 import SolutionCard from "@/components/services/subService/SolutionCard";
 import { Button } from "@/components/ui/button";
-import {  type SubService } from "@/index";
+import { type SubService } from "@/index";
 import Routes from "@/lib/route";
 import { MoveRightIcon } from "lucide-react";
 import Link from "next/link";
-
 
 const SubService = ({
   serivceName,
@@ -55,7 +54,7 @@ const SubService = ({
             </div>
 
             <Button
-              className="py-5 text-base leading-[100%] font-semibold px-5 max-w-full"
+              className="py-6 text-lg leading-[100%] font-semibold px-8 max-w-full"
               asChild
             >
               <Link href={Routes.contact} className="flex items-center gap-4">
@@ -77,7 +76,7 @@ const SubService = ({
           <ServiceSection
             id="service"
             data={{
-              heading: `Our ${serivceName.replaceAll("%20", " ")} Architecture`,
+              heading: `Our ${data.service_name} Architecture`,
               para: "Enterprise-grade technology solutions designed to empower your business at every stage.",
             }}
           >

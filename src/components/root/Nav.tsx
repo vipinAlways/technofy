@@ -69,7 +69,7 @@ function ServiceSubMenu({ services }: { services: ServiceCardData[] }) {
                         <NavigationMenuItem className="relative max-w-full ">
                           <NavigationMenuTrigger className="w-80 p-0   hover:bg-accent-foreground transition-all duration-100 ease-out h-fit">
                             <Link
-                              href={Routes.service(serviceData.service_name)}
+                              href={Routes.service(serviceData.slug)}
                               className="flex items-start gap-4 p-3 rounded-lg"
                             >
                               {/* Image */}
@@ -260,7 +260,7 @@ const Nav = ({ services }: { services: ServiceCardData[] }) => {
 
   return (
     <>
-      <nav className="py-3 lg:flex hidden px-6 ml-2    rounded-md bg-white w-full md:max-w-7xl justify-between items-center border border-border relative">
+      <nav className="py-3 lg:flex hidden px-6 ml-2    rounded-xl bg-white w-full md:max-w-7xl justify-between items-center border border-border relative">
         <div>
           <Link href={"/"} className="block w-36 ">
             <img

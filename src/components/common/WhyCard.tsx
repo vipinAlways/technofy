@@ -14,6 +14,7 @@ const WhyCard = ({
   className?: string;
   whyCardData: WhycardData;
 }) => {
+  const image = `${process.env.NEXT_PUBLIC_DIRECTUS_ASSETS_URL}/${whyCardData.image}`;
   return (
     <section id="whyUs" className="w-full flex items-center justify-center">
       <div className="rounded-2xl w-full  bg-accent md:p-14 p-8 h-fit">
@@ -22,7 +23,7 @@ const WhyCard = ({
         >
           <div className="w-1/2 relative max-md:hidden">
             <img
-              src={`${process.env.NEXT_PUBLIC_DIRECTUS_ASSETS_URL}/${whyCardData.image}`}
+              src={whyCardData.image ? image : "/images/root-why.png"}
               alt="why-us"
               className="rounded-2xl object-cover h-full w-full"
               loading="lazy"
@@ -42,7 +43,6 @@ const WhyCard = ({
             <div>
               <ul className="flex flex-col gap-5 text-start">
                 {whyCardData.fetures.map((feture, index) => {
-               
                   return (
                     <li
                       key={index}
@@ -69,7 +69,7 @@ const WhyCard = ({
             </div>
 
             <Button
-              className="w-full  py-5 text-base leading-[100%] font-semibold px-8 rounded-[0.5rem]"
+              className="w-full  py-6 text-lg leading-[100%] font-semibold px-8 rounded-[0.5rem]"
               asChild
             >
               <Link href={Routes.contact}>

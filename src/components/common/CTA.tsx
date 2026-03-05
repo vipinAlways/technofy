@@ -27,7 +27,7 @@ const CTA = () => {
           </p>
         </div>
 
-        <Button className="py-5 text-base leading-[100%] font-semibold max-md:w-full px-8 rounded-[0.5rem] z-10 ">
+        <Button className="py-6 text-lg leading-[100%] font-semibold max-md:w-full px-8 rounded-[0.5rem] z-10 ">
           <Link href={Routes.contact}>Get a Free Consultation </Link>
         </Button>
       </div>

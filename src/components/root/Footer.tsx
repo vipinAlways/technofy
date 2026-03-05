@@ -10,23 +10,23 @@ export const socialLink: SocialLink[] = [
     href: "#",
     icon: Linkedin,
     iconClass:
-      "stroke-black fill-black bg-white rounded-[0.1rem]  stroke-[1px] p-0.5",
+      "stroke-black fill-[#0E052A]  bg-white rounded-[0.1rem]  p-0.5",
   },
   {
     href: "#",
     icon: Facebook,
     iconClass:
-      " stroke-black fill-black bg-white rounded-full  stroke-[1px] p-0.5",
+      " stroke-black fill-[#0E052A]  bg-white rounded-full  p-0.5",
   },
   {
     href: "#",
     icon: Twitter,
-    iconClass: "fill-white  stroke-white ",
+    iconClass: "fill-white  stroke-white [-webkit-text-stroke:2px_black]",
   },
   {
     href: "#",
     icon: Instagram,
-    iconClass: " stroke-white fill-black   stroke-[3px]",
+    iconClass: " stroke-white fill-transparent   stroke-[2px]",
   },
 ];
 
@@ -78,7 +78,7 @@ const Footer = () => {
     </ul>
 
     {/* Social Links */}
-    <ul className="flex justify-center md:justify-end gap-5">
+    <ul className="flex justify-center md:justify-end gap-5 ">
       {socialLink.map((link, index) => {
         const Icon = link.icon
         return (

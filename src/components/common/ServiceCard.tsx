@@ -19,7 +19,7 @@ const ServiceCard = ({
       <div className="w-20 h-20 flex items-center justify-center rounded-full bg-accent-foreground group-hover:bg-[#3853A4] p-6 transition-all duration-200 ease-linear">
         {/* <Icon className="w-6 h-6 text-accent group-hover:text-white" /> */}
 
-        <span className="material-symbols-outlined text-4xl text-blue-500">
+        <span className="material-symbols-outlined text-4xl text-accent group-hover:text-white transition-all duration-200 ease-linear">
           {cardData.service_icon}
         </span>
       </div>
