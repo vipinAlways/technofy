@@ -51,11 +51,13 @@ const Blog = ({
         </div>
       </section>
 
-      <div className="md:max-w-7xl  lg:px-0 px-6 relative mx-auto w-full flex   md:gap-24 gap-12 items-start">
-        <div
-          dangerouslySetInnerHTML={{ __html: content || "" }}
-          className="prose lg:prose-xl w-full"
-        />
+      <div className="md:max-w-7xl  lg:px-0 px-6 relative mx-auto w-full flex justify-between   md:gap-10  items-start">
+        <div className="w-full flex-[3] relative">
+          <div
+            dangerouslySetInnerHTML={{ __html: content || "" }}
+            className="prose lg:prose-xl max-w-full "
+          />
+        </div>
 
         <div className="flex flex-col gap-5 p-4 rounded-2xl max-w-sm bg-accent-foreground sticky top-24   ">
           <h1 className=" text-primary font-medium text-2xl leading-7">

@@ -24,12 +24,13 @@ import ServiceCard from "@/components/common/ServiceCard";
 import WhyCard from "@/components/common/WhyCard";
 import HowItWorks from "@/components/common/HowItWorks";
 import CTA from "@/components/common/CTA";
-import HeroSection from "@/components/common/HeroSection";
-import { data as serviceCardData } from "./../services.json";
+
+
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Routes from "@/lib/route";
 import { getAllParentServices } from "@/lib/fetchServices";
+import StatsSectionPage from "@/components/root/StatsSection";
 
 const statsSectionData: StatsSection[] = [
   {
@@ -61,26 +62,30 @@ const serviceData: ServiceSectionData = {
 
 const whyCardData: WhycardData = {
   heading: " Why Businesses Trust Technofy",
- 
+
   fetures: [
     {
       heading: "Business-First Approach",
-      description: "We align every technology solution with your business objectives — not just technical requirements.",
+      description:
+        "We align every technology solution with your business objectives — not just technical requirements.",
     },
 
     {
       heading: "Business-First Approach",
-      description: "We align every technology solution with your business objectives — not just technical requirements.",
+      description:
+        "We align every technology solution with your business objectives — not just technical requirements.",
     },
 
     {
       heading: "Business-First Approach",
-      description: "We align every technology solution with your business objectives — not just technical requirements.",
+      description:
+        "We align every technology solution with your business objectives — not just technical requirements.",
     },
 
     {
       heading: "Business-First Approach",
-      description: "We align every technology solution with your business objectives — not just technical requirements.",
+      description:
+        "We align every technology solution with your business objectives — not just technical requirements.",
     },
   ],
   para: "We combine technical excellence with a client-first approach to deliver solutions that truly make a difference.",
@@ -92,7 +97,7 @@ export default async function Home() {
     <div className="w-full flex flex-col items-center">
       <section
         id="#hero"
-        className="relative w-full lg:h-[90vh]  md:h-[60vh] h-[75vh]  flex justify-center"
+        className="relative w-full lg:h-[90vh]  md:h-[50vh] h-[75vh]  flex justify-center"
       >
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/75 backdrop-blur-[0.1rem] z-10"></div>
@@ -106,26 +111,25 @@ export default async function Home() {
           />
         </div>
         {/*  */}
-        <div className="pointer-events-none absolute left-0 right-0 w-full -bottom-8 h-16 bg-gradient-to-b from-transparent via-white/40 to-white blur-xl" />
+       <div className="pointer-events-none absolute z-40 left-0 w-full -bottom-8 h-16  bg-white blur-md " />
         {/* Content */}
         <div
           className={
             "relative z-10 text-white flex justify-center md:max-w-7xl  lg:px-0 px-6  items-center flex-col gap-8"
           }
         >
-          <div className="text-center gap-3">
-            <h1 className="md:text-6xl text-3xl md:leading-[4.25rem] font-bold text-white">
+          <div className="text-center flex flex-col gap-3 max-md:pt-16">
+            <h1 className="md:text-6xl text-4xl md:leading-[4.25rem] font-bold text-white">
               Smart IT Solutions That Drive <br /> Business Growth
             </h1>
-            <p className="md:text-lg text-sm md:leading-7  text-muted-foreground ">
+            <p className="md:text-lg text-base md:leading-7  text-muted-foreground ">
               We design, secure, and manage your technology so you can focus on
-              scaling your business
-              <br />— without IT stress{" "}
+              scaling your business — without IT stress{" "}
             </p>
           </div>
 
           <Button
-            className="px-8 py-6 font-semibold text-lg leading-[100%] rounded-[0.5rem]"
+            className="px-8 py-6  font-semibold text-lg leading-[100%] rounded-[0.5rem]"
             asChild
           >
             <Link href={Routes.contact} className="flex items-center gap-2">
@@ -136,7 +140,7 @@ export default async function Home() {
       </section>
       <div className="md:gap-20 gap-12 w-full md:max-w-7xl  lg:px-0 px-4 md:pb-24 pb-12 flex flex-col items-center">
         <section id="StatsSection" className="w-full">
-          <div className="flex justify-between items-stretch min-w-full border-b border-border py-12">
+          <div className="flex justify-between max-md:hidden items-stretch min-w-full border-b border-border py-12">
             {statsSectionData.map((data, index) => (
               <div key={index} className="flex flex-col items-center gap-4 ">
                 <data.icon className="w-8 h-8 text-muted stroke-[1.5px]" />
@@ -152,15 +156,23 @@ export default async function Home() {
               </div>
             ))}
           </div>
+
+          <div className="md:hidden flex justify-between items-stretch min-w-full border-b border-border py-12">
+            <StatsSectionPage />
+          </div>
         </section>
 
         <div className="py-10 ">
-          <ServiceSection id="services" data={serviceData}>
+          <ServiceSection
+            id="services"
+            data={serviceData}
+            className="text-center"
+          >
             <div className="flex w-full flex-wrap gap-8 items-stretch justify-center">
-              {serviceCard.map((item) => {
+              {serviceCard.map((item, index) => {
                 return (
                   <ServiceCard
-                    key={item.slug}
+                    key={index}
                     cardData={{
                       service_icon: item.service_icon,
                       service_name: item.service_name,

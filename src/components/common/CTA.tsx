@@ -6,7 +6,7 @@ import Routes from "@/lib/route";
 const CTA = () => {
   return (
     <section id="cta" className="w-full flex items-center justify-center ">
-      <div className="relative  h-92 flex items-center  justify-center flex-col gap-10  w-full rounded-2xl   md:p-20 p-10">
+      <div className="relative  h-92 flex items-center  justify-center flex-col gap-10  w-full rounded-2xl   md:p-20 p-6">
         <div className="absolute inset-0 bg-black/75 z-10 rounded-2xl"></div>
         <div className="w-full h-full absolute top-0 left-0">
           <img

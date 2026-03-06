@@ -11,22 +11,22 @@ const OverView = ({
   const { heading, para } = overViewData;
   return (
     <section
-      id="overView"
+      id="overview"
       className="w-full flex items-center justify-center max-h-fit"
     >
       <div className="flex w-full md:flex-row flex-col max-md:gap-6 items-center justify-between ">
         <div className="flex flex-col gap-6 items-start md:max-w-xl md:px-3">
-          <h3 className="text-accent font-bold md:leading-[100%] md:text-xl text-lg">
+          <h3 className="text-accent font-semibold md:leading-[100%] md:text-xl  text-base">
             {subTitle}
           </h3>
 
-          <h1 className="text-primary font-medium md:text-4xl  text-2xl leading-[100%]">
+          <h1 className="text-primary font-medium md:text-4xl  text-2xl md:leading-[100%] ">
             {heading}
           </h1>
         </div>
 
         <div
-          className="flex items-start gap-3 flex-col md:max-w-xl md:text-lg text-sm text-muted leading-6 font-normal
+          className="flex items-start gap-3 flex-col md:max-w-xl md:text-lg text-base text-muted leading-6 font-normal
         "
         >
           <p>{para}</p>

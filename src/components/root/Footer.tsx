@@ -46,10 +46,10 @@ const footerLink: Navlinks[] = [
 ];
 const Footer = () => {
   return (
-   <div className="w-full max-w-7xl mx-auto px-6 lg:px-0 py-10 flex flex-col gap-10">
+   <div className="w-full max-w-7xl mx-auto px-6 lg:px-0 py-6 flex flex-col gap-5">
 
   {/* Top Section */}
-  <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-10 w-full">
+  <div className="flex flex-col md:flex-row md:justify-between md:items-center items-start gap-10 w-full">
 
     {/* Logo */}                                                          
     <div className="flex justify-center md:justify-start">
@@ -64,12 +64,12 @@ const Footer = () => {
     </div>
 
     {/* Navigation Links */}
-    <ul className="flex flex-col items-center md:flex-row md:items-center gap-6 md:gap-12 text-base leading-6">
+    <ul className="flex flex-col items-start md:flex-row md:items-center gap-6 md:gap-12 text-base leading-6">
       {footerLink.map((links, index) => (
         <li key={index}>
           <Link
             href={links.href}
-            className="text-border transition-colors"
+            className="text-border transition-colors text-base"
           >
             {links.title}
           </Link>

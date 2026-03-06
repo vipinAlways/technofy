@@ -10,6 +10,7 @@ import { toast } from "sonner";
 import { useAtomValue } from "jotai";
 import { entryUrlAtom, sessionIdAtom } from "@/components/root/Provider";
 import { useRouter } from "next/navigation";
+import { ChevronDownIcon } from "lucide-react";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -103,7 +104,7 @@ const Page = () => {
   return (
     <div className="w-full flex min-h-screen flex-col gap-24 items-center justify-center  md:pb-24 pb-12 md:pt-32 pt-28 ">
       <div className="md:max-w-7xl  lg:px-0 px-4 w-full mx-auto flex flex-col  md:gap-16 gap-10  items-stretch">
-        <div className="bg-accent w-full flex flex-col items-center justify-center rounded-2xl md:px-20 px-6 py-10 gap-4">
+        <div className="bg-accent w-full flex flex-col items-center justify-center rounded-2xl md:px-20 p-6 gap-4">
           <h2 className="text-white font-bold md:text-5xl text-2xl leading-tight md:text-center">
             Let's Strengthen Your IT Together
           </h2>
@@ -138,15 +139,18 @@ const Page = () => {
               >
                 {/* Name */}
                 <div className="flex flex-col gap-2 w-full">
-                  <label className="text-lg font-medium " htmlFor="name">
+                  <label
+                    className="md:text-lg text-base font-medium "
+                    htmlFor="name"
+                  >
                     Name
                   </label>
                   <input
                     type="text"
                     {...register("name")}
                     placeholder="Name"
-                    className="border border-border p-4 w-full rounded-lg"
                     id="name"
+                    className="w-full rounded-lg border border-border md:p-4 max-md:px-4 max-md:py-3 md:text-sm focus:ring-1 focus:ring-accent focus:outline-none"
                   />
                   {errors.name && (
                     <p className="text-red-500 text-sm">
@@ -157,14 +161,17 @@ const Page = () => {
 
                 {/* Email */}
                 <div className="flex flex-col gap-2 w-full">
-                  <label className="text-lg font-medium " htmlFor="email">
+                  <label
+                    className="md:text-lg text-base font-medium "
+                    htmlFor="email"
+                  >
                     Email
                   </label>
                   <input
                     type="email"
                     {...register("email")}
                     placeholder="Working email id"
-                    className="border border-border p-4 w-full rounded-lg"
+                    className="w-full rounded-lg border border-border md:p-4 max-md:px-4 max-md:py-3 md:text-sm focus:ring-1 focus:ring-accent focus:outline-none"
                     id="email"
                   />
                   {errors.email && (
@@ -184,8 +191,8 @@ const Page = () => {
                         country={countryCode || "in"}
                         value={field.value}
                         onChange={field.onChange}
-                        containerClass="w-full text-lg font-medium "
-                        inputClass="!w-full p-4 border border-border rounded-lg "
+                        containerClass="w-full  md:text-lg text-base font-medium "
+                        inputClass="w-full mt-2 rounded-lg border border-border md:p-4 max-md:px-4 max-md:py-3 md:text-sm focus:ring-1 focus:ring-accent focus:outline-none"
                         buttonClass="!border-border"
                         specialLabel="Phone Number"
                         placeholder="Enter phone number"
@@ -200,9 +207,9 @@ const Page = () => {
                 </div>
 
                 {/* Counselling Type */}
-                <div className="flex flex-col gap-2 w-full">
+                <div className="flex flex-col gap-2 w-full relative ">
                   <label
-                    className="text-lg font-medium "
+                    className="md:text-lg text-base font-medium "
                     htmlFor="counsellingType"
                   >
                     Service Type
@@ -210,7 +217,7 @@ const Page = () => {
                   <select
                     id="counsellingType"
                     {...register("counsellingType")}
-                    className="border border-border p-4 w-full rounded-lg bg-white"
+                    className="w-full appearance-none border bg-white border-border rounded-lg md:p-4 max-md:py-3 max-md:px-4 pr-10 focus:ring-1 focus:ring-accent focus:outline-none"
                   >
                     <option value="">Select a service</option>
                     <option value="cybersecurity">Cybersecurity</option>
@@ -223,17 +230,23 @@ const Page = () => {
                       {errors.counsellingType.message}
                     </p>
                   )}
+                  <span className="pointer-events-none absolute right-4 top-2/3 -translate-y-1/3 text-primary   transition-all duration-75 ease-linear">
+                   <ChevronDownIcon />
+                  </span>
                 </div>
 
                 {/* Message */}
                 <div className="flex flex-col gap-2 w-full">
-                  <label className="text-lg font-medium " htmlFor="message">
+                  <label
+                    className="md:text-lg text-base font-medium "
+                    htmlFor="message"
+                  >
                     Message
                   </label>
                   <textarea
                     {...register("message")}
-                    placeholder="Tell us how we can help you"
-                    className="border border-border p-4 w-full rounded-lg h-20 resize-none"
+                    placeholder="Tell us how we can help you..."
+                    className="w-full rounded-lg border border-border md:p-4 max-md:px-4 max-md:py-3 md:text-sm focus:ring-1 focus:ring-accent focus:outline-none"
                     id="message"
                   />
                 </div>

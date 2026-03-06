@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { getBlogs } from "@/lib/fetchingBlogs";
 import Routes from "@/lib/route";
+import Pagination from "@/components/blog/Pagination";
 
 // const blogData: {
 //   image: string;
@@ -48,8 +49,18 @@ import Routes from "@/lib/route";
 //   },
 // ];
 
-const Page = async () => {
-  const { blogs } = await getBlogs();
+type PageProps = {
+  searchParams: {
+    page?: string;
+  };
+};
+const Page = async ({ searchParams }: PageProps) => {
+  const page = Number(searchParams?.page) || 1;
+
+  const limit = 12;
+  const offset = (page - 1) * limit;
+
+  const { blogs, total } = await getBlogs(limit, offset);
 
   return (
     <div className="flex flex-col gap-24 py-24 pt-32 ">
@@ -114,36 +125,35 @@ const Page = async () => {
 
         <div className="flex w-full items-start gap-8">
           {/* Blog Grid */}
-          <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6">
-            {blogs.length > 0 ? (
-              blogs.map((data, index) => (
-                <BlogCard
-                  key={index}
-                  blogCardData={{
-                    heading: data.title ?? "",
-                    image: data.seo.og_image,
-                    info: new Date(data.date_created).toLocaleDateString(
-                      "en-US",
-                      {
-                        year: "numeric",
-                        month: "short",
-                        day: "numeric",
-                      },
-                    ),
-                    para: data.seo.meta_description,
-                    slug: data.slug,
+          <div>
+            <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6">
+              {blogs.length > 0 ? (
+                blogs.map((data, index) => (
+                  <BlogCard
+                    key={index}
+                    blogCardData={{
+                      heading: data.title ?? "",
+                      image: data.seo.og_image,
+                      info: new Date(data.date_created).toLocaleDateString(
+                        "en-US",
+                        {
+                          year: "numeric",
+                          month: "short",
+                          day: "numeric",
+                        },
+                      ),
+                      para: data.seo.meta_description,
+                      slug: data.slug,
+                      page: Math.ceil(total / limit),
+                    }}
+                  />
+                ))
+              ) : (
+                <h1 className="text-primary">No Blog Post Right Now</h1>
+              )}
+            </div>
 
-                    // heading: data.heading,
-                    // image: "/images/about-hero.png",
-                    // info: data.image,
-                    // para: data.para,
-                    // slug: "check",
-                  }}
-                />
-              ))
-            ) : (
-              <h1 className="text-primary">No Blog Post Right Now</h1>
-            )}
+            <Pagination page={page} totalPages={Math.ceil(total / limit)} />
           </div>
 
           {/* Sidebar */}

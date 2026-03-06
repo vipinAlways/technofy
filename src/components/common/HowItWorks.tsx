@@ -54,7 +54,7 @@ const HowItWorks = ({ id }: { id: string }) => {
                   STEP 0{index + 1}
                 </h2>
                 <div className="flex gap-3 flex-col items-center">
-                  <h2 className="font-medium md:text-xl text-2xl leading-7 text-center">
+                  <h2 className="font-medium md:text-xl text-2xl text-primary leading-7 text-center">
                     {data.heading}
                   </h2>
                   <p className="text-wrap text-center text-base leading-6 text-muted">

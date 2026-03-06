@@ -82,7 +82,7 @@ const Page = () => {
     <div className="w-full flex flex-col gap-24 items-center pb-24">
       <section
         id="#hero"
-        className="relative w-full lg:h-[90vh]  md:h-[60vh] h-[75vh] flex  justify-center"
+        className="relative w-full lg:h-[90vh]  md:h-[60vh] h-[75vh] lg:px-0 px-6 flex  justify-center"
       >
         {/* Dark Overlay */}
         <div
@@ -90,7 +90,7 @@ const Page = () => {
         "
         ></div>
         {/*  */}
-        <div className="pointer-events-none absolute left-0 right-0 -bottom-4 h-16 bg-linear-to-b  from-black/0 to-white blur-xl" />
+       <div className="pointer-events-none absolute z-40 left-0 w-full -bottom-8 h-16  bg-white blur-md " />
         <div className="w-full h-full absolute top-0 left-0">
           <img
             src="/images/about-hero.png"
@@ -103,14 +103,14 @@ const Page = () => {
         {/* Content */}
         <div
           className={
-            "relative z-10 text-white flex  justify-center  items-center flex-col max-w-5xl w-full gap-8"
+            "relative z-10 text-white flex  justify-center pt-10 items-center flex-col max-w-5xl w-full gap-8"
           }
         >
-          <div className="text-center gap-3">
-            <h1 className="text-6xl leading-[4.25rem] font-bold text-white">
+          <div className="text-center flex flex-col gap-3">
+           <h1 className="md:text-6xl text-4xl md:leading-[4.25rem] font-bold text-white">
               Building Secure & Scalable IT Foundations
             </h1>
-            <p className="text-lg  leading-7 text-muted-foreground">
+            <p className="md:text-lg text-base md:leading-7  text-muted-foreground ">
               Technofy delivers proactive IT management, cybersecurity
               protection, and scalable infrastructure solutions designed to
               support growing businesses. We help organizations operate
@@ -120,7 +120,7 @@ const Page = () => {
           </div>
 
           <Button
-            className="py-5 text-base leading-[100%] font-semibold px-5 "
+            className="px-8 py-6  font-semibold text-lg leading-[100%] rounded-[0.5rem]"
             asChild
           >
             <Link href={Routes.contact} className="flex items-center gap-4 ">
@@ -153,13 +153,14 @@ const Page = () => {
               heading: `Our Mission & Vision`,
               para: "We are driven by a clear purpose and a long-term outlook — delivering secure, scalable IT solutions today while building a foundation for sustainable digital growth tomorrow.",
             }}
+            className="md:items-center items-start"
           >
             <div className="flex flex-wrap gap-8 justify-center items-stretch  w-full ">
               {vision.map((item, index: any) => {
                 return (
                   <div className="max-w-[39rem] w-full border " key={index}>
                     <div className="bg-white rounded-2xl border-border  p-6 flex flex-col gap-8 w-full">
-                      <h2 className="text-accent font-semibold text-xl">
+                      <h2 className="text-accent font-semibold md:text-xl  text-base ">
                         Our Vision
                       </h2>
                       <ul className="flex flex-col justify-center gap-8">

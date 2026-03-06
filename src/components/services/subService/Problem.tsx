@@ -11,11 +11,11 @@ const Problem = ({
   return (
     <div className="flex md:flex-row flex-col max-md:gap-6 md:justify-between ">
       <div className=" md:w-1/2 w-full">
-        <div className="md:w-4/5 w-full flex flex-col gap-6 items-start">
-          <h3 className="font-semibold text-xl text-accent leading-7 ">
+        <div className="md:w-[70%] w-full flex flex-col gap-6 items-start">
+         <h3 className="text-accent font-semibold md:leading-[100%] md:text-xl  text-base">
             Problem
           </h3>
-          <h1 className="text-primary text-wrap md:text-4xl text-2xl font-medium md:leading-[100%]">
+           <h1 className="text-primary font-medium md:text-4xl  text-2xl md:leading-[100%] ">
             {heading}
           </h1>
         </div>

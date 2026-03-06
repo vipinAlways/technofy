@@ -141,8 +141,8 @@ export function NavSheet({ services }: { services: ServiceCardData[] }) {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button className="flex gap-1 items-center ">
-          <h1>Menu</h1> <Menu className="size-4" />
+        <Button className="flex gap-1 p-1 aspect-square items-center bg-transparent ">
+          <Menu className="size-8 stroke-[1.5px] stroke-primary" />
         </Button>
       </SheetTrigger>
 

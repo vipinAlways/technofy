@@ -11,16 +11,17 @@ const BlogCard = ({
     heading: string;
     para: string;
     slug: string;
+    page:number
   };
 }) => {
-  const { heading, image, info, para, slug } = blogCardData;
+  const { heading, image, info, para, slug ,page} = blogCardData;
   return (
     <Link
-      href={Routes.blog_post(slug)}
+      href={Routes.blog_post(slug,page)}
       className="w-full max-w-md rounded-2xl p-4 flex flex-col justify-center border border-border group hover:shadow-[0_4px_8px_rgba(0,0,0,0.2)] transition-all duration-100 ease-linear"
     >
       <div className=" rounded-lg">
-        <img src={image} alt={heading} className="w-full aspect-video object-cover mx-auto sm:mx-0 rounded-lg" loading="lazy"/>
+        <img src={`${process.env.NEXT_PUBLIC_DIRECTUS_ASSETS_URL}/${image}`} alt={heading} className="w-full aspect-video object-cover mx-auto sm:mx-0 rounded-lg" loading="lazy"/>
       </div>
 
       <div className="pt-4 flex flex-col gap-3">

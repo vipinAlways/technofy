@@ -21,7 +21,7 @@ const SubService = ({
       <section
         id="hero"
         className={
-          "relative w-full lg:h-[90vh]  md:h-[60vh] h-[75vh]  flex  justify-center  items-center"
+          "relative w-full lg:h-[80vh] md:h-[65vh] h-[75vh]  flex  justify-center  items-center"
         }
       >
         {/* Dark Overlay */}
@@ -36,30 +36,31 @@ const SubService = ({
           />
         </div>
         {/*  */}
-        <div className=" absolute left-0 right-0 -bottom-4 h-16 bg-gradient-to-b from-black/0 to-white blur-xl" />
+       <div className="pointer-events-none absolute z-40 left-0 w-full -bottom-8 h-16  bg-white blur-md " />
         {/* Content */}
         <div className="flex items-start md:max-w-7xl  lg:px-0  w-full  ">
           <div
             className={
-              "relative z-10 text-white flex  justify-center items-start  md:w-3/5 px-4 lg:px-0 w-full flex-col gap-8"
+              "relative z-10 text-white flex  justify-center items-start pt-10  md:w-3/5 px-4 lg:px-0 w-full flex-col gap-8"
             }
           >
-            <div className="text-start gap-3">
-              <h1 className="md:text-6xl text-2xl md:leading-[4.25rem] font-bold text-white">
+            <div className="text-start flex flex-col gap-3">
+              <h1 className="md:text-6xl text-4xl md:leading-[4.25rem] font-bold text-white">
                 {data.heading}
               </h1>
-              <p className="md:text-lg text-sm md:leading-7  text-muted-foreground">
+
+              <p className="md:text-lg text-base md:leading-7  text-muted-foreground ">
                 {data.description}
               </p>
             </div>
 
             <Button
-              className="py-6 text-lg leading-[100%] font-semibold px-8 max-w-full"
+              className="px-8 py-6 font-semibold text-lg leading-[100%] rounded-[0.5rem]"
               asChild
             >
-              <Link href={Routes.contact} className="flex items-center gap-4">
-                Schedule a Free Security Assessment
-                <MoveRightIcon className="size-6" />{" "}
+              <Link href={Routes.contact} className="flex items-center gap-2">
+                Get a Free Consultation{" "}
+                <MoveRightIcon className="w-6 h-6" />{" "}
               </Link>
             </Button>
           </div>
@@ -70,7 +71,7 @@ const SubService = ({
       </div>
       <div className="w-full bg-accent-foreground py-10">
         <div className="md:max-w-7xl  lg:px-0 px-4 mx-auto  space-y-4">
-          <h3 className="text-accent font-bold text-xl leading-7 text-center">
+           <h3 className="text-accent font-semibold md:leading-[100%] md:text-xl  text-base">
             Solution
           </h3>
           <ServiceSection
@@ -79,6 +80,7 @@ const SubService = ({
               heading: `Our ${data.service_name} Architecture`,
               para: "Enterprise-grade technology solutions designed to empower your business at every stage.",
             }}
+            className="text-start md:text-center"
           >
             <div className="flex flex-wrap gap-8 items-stretch justify-center  max-w-full w-full  ">
               {data.solutions &&

@@ -46,7 +46,7 @@ export default function RootLayout({
       <body
         className={`${headingFont.variable} ${bodyFont.variable} antialiased bg-[#F9FAFB] relative w-screen overflow-x-hidden`}
       >
-        <Header services={serviceCard} />
+      {serviceCard &&   <Header services={serviceCard} />}
         <Provider>
           <main className="max-w-full">{children}</main>
           <Toaster />

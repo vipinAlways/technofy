@@ -37,6 +37,8 @@ export const getAllParentServices = async () =>
           }),
         );
 
+        
+
         return {
           service,
           serviceCard,
@@ -51,7 +53,7 @@ export const getAllParentServices = async () =>
     },
     [`services:list`],
     {
-      revalidate: 60,
+      revalidate: 1,
       tags: ["services", `services:list`],
     },
   )();
@@ -69,7 +71,7 @@ export async function getSubService(slug: string): Promise<any> {
       },
     )
   ).json();
-
+  
   return data.data[0];
 }
 export async function getService(slug: string): Promise<Service> {

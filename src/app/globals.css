@@ -60,7 +60,7 @@
   --muted: #65758b; /* navlinks & para text*/
   --muted-foreground: #e5e7eb; /* hero para & why card whole  & CTA para*/
   --accent: #3853a4; /* highlight*/
-  --accent-foreground: #E7E9F2;
+  --accent-foreground: #e7e9f2;
   --destructive: oklch(0.577 0.245 27.325);
   --border: #d3d3d3; /*service card border & footer links*/
   --input: oklch(0.929 0.013 255.508);
@@ -138,12 +138,23 @@ p {
   font-weight: 400;
 }
 
-
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
 
 .no-scrollbar {
-  -ms-overflow-style: none;  /* IE & Edge */
-  scrollbar-width: none;     /* Firefox */
+  -ms-overflow-style: none; /* IE & Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.prose > h1,
+.prose > h2,
+.prose > h3,
+.prose > h4,
+.prose > h5 {
+  color: var(--primary);
+}
+
+.prose > p {
+  color: var(--muted);
 }

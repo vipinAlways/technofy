@@ -17,7 +17,7 @@ const WhyCard = ({
   const image = `${process.env.NEXT_PUBLIC_DIRECTUS_ASSETS_URL}/${whyCardData.image}`;
   return (
     <section id="whyUs" className="w-full flex items-center justify-center">
-      <div className="rounded-2xl w-full  bg-accent md:p-14 p-8 h-fit">
+      <div className="rounded-2xl w-full  bg-accent md:p-14 p-6 h-fit">
         <div
           className={cn(`flex ${className} items-stretch flex-1 gap-8 h-fit`)}
         >
@@ -25,12 +25,12 @@ const WhyCard = ({
             <img
               src={whyCardData.image ? image : "/images/root-why.png"}
               alt="why-us"
-              className="rounded-2xl object-cover h-full w-full"
+              className="rounded-2xl object-cover aspect-square h-full w-full"
               loading="lazy"
             />
           </div>
 
-          <div className="md:w-1/2 w-full text-muted-foreground gap-8 flex flex-col items-start max-md:text-center">
+          <div className="md:w-1/2 w-full text-muted-foreground gap-8 flex flex-col items-start ">
             <div className="flex flex-col gap-3">
               <h1 className="font-semibold md:text-4xl  text-2xl md:leading-10 text-white">
                 {whyCardData.heading}
@@ -55,10 +55,10 @@ const WhyCard = ({
                         loading="lazy"
                       />
                       <div>
-                        <h3 className="font-semibold md:text-xl text-base leading-7 text-white">
+                        <h3 className="font-semibold md:text-xl text-lg leading-7 text-white">
                           {feture.heading}
                         </h3>
-                        <p className="md:text-base text-sm font-normal text-muted-foreground md:leading-6 ">
+                        <p className="text-base  font-normal text-muted-foreground md:leading-6 ">
                           {feture.description}
                         </p>
                       </div>
@@ -73,7 +73,7 @@ const WhyCard = ({
               asChild
             >
               <Link href={Routes.contact}>
-                Schedule a Free Consultation <MoveRight className="size-6" />
+                Schedule a Free Consultation <MoveRight className="size-6 max-md:hidden" />
               </Link>
             </Button>
           </div>

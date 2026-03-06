@@ -15,7 +15,7 @@ const Service = ({ data, href }: { data: Service; href: string }) => {
   return (
     <div className="w-full flex flex-col md:gap-24 gap-12 md:py-32 py-28 pb-24">
       <div className="w-full">
-        <div className="md:max-w-7xl  lg:px-0 px-4 mx-auto w-full flex flex-col  md:gap-24 gap-12 items-stretch">
+        <div className="md:max-w-7xl lg:px-0 px-4 mx-auto w-full flex flex-col  md:gap-24 gap-12 items-stretch">
           {data?.heading && (
             <HeroSection heroSectionData={{
               heading:data.heading,
@@ -26,7 +26,7 @@ const Service = ({ data, href }: { data: Service; href: string }) => {
 
           {data.overview_heading && (
             <OverView
-              subTitle="Service OverView"
+              subTitle="Service Overview"
               overViewData={{
                 heading:data.overview_heading,
                 para:data.overview_description
@@ -36,7 +36,7 @@ const Service = ({ data, href }: { data: Service; href: string }) => {
         </div>
       </div>
 
-      <div className="bg-accent-foreground py-10 px-4">
+      <div className="bg-accent-foreground py-10 px-4 w-full">
         <ServiceSection
           id="service"
           data={{
@@ -44,6 +44,7 @@ const Service = ({ data, href }: { data: Service; href: string }) => {
             para: "Enterprise-grade technology solutions designed to empower your business at every stage.",
             Service: "Core IT",
           }}
+          className="text-center"
         >
           <div className="flex w-full flex-wrap gap-8 items-stretch justify-center">
             {data.sub_Services &&
