@@ -1,4 +1,5 @@
 import CustomLi from "@/components/common/CustomLi";
+import { ProblemIssue } from "@/index";
 import React from "react";
 
 const Problem = ({
@@ -6,7 +7,7 @@ const Problem = ({
   solutions = [],
 }: {
   heading: string;
-  solutions: { problem: string; solution: string;  }[];
+  solutions: ProblemIssue[];
 }) => {
   return (
     <div className="flex md:flex-row flex-col max-md:gap-6 md:justify-between ">

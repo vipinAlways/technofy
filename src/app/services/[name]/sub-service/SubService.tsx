@@ -62,7 +62,7 @@ const SubService = ({
         </div>
       </section>
       <div className="md:max-w-7xl  lg:px-0 px-4 w-full mx-auto flex flex-col  items-stretch">
-        <Problem heading={data.Problem_heading} solutions={data.problems} />
+        <Problem heading={data.problem_heading} solutions={data.problem_issues} />
       </div>
       <div className="w-full bg-accent-foreground py-10">
         <div className="md:max-w-7xl  lg:px-0 px-4 mx-auto  space-y-4">

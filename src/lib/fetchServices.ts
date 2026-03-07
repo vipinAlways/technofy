@@ -9,7 +9,7 @@ export const getAllParentServices = async () =>
     }> => {
       try {
         const res = await fetch(
-          `${process.env.DIRECTUS_URL}/items/services` +
+          `${process.env.DIRECTUS_URL}/items/technofy_services` +
             `?access_token=${process.env.DIRECTUS_ACCESS_TOKEN}` +
             `&sort=-date_created` +
             `&fields=*,faq.*,advantages.*,sub_Services.slug,sub_Services.service_name,sub_Services.service_icon,sub_Services.short_description`,
@@ -61,11 +61,11 @@ export const getAllParentServices = async () =>
 export async function getSubService(slug: string): Promise<any> {
   const data = await (
     await fetch(
-      `${process.env.DIRECTUS_URL}/items/subServices` +
+      `${process.env.DIRECTUS_URL}/items/technofy_subServices` +
         `?filter[slug][_eq]=${slug}` +
         `&access_token=${process.env.DIRECTUS_ACCESS_TOKEN}` +
         `&sort=-date_created` +
-        `&fields=*,faq.*,advantages.*,short_description,solutions.*,solutions.*`,
+        `&fields=*,faq.*,advantages.*,short_description,solutions.*`,
       {
         next: { revalidate: 60 },
       },
@@ -77,7 +77,7 @@ export async function getSubService(slug: string): Promise<any> {
 export async function getService(slug: string): Promise<Service> {
   const data = await (
     await fetch(
-      `${process.env.DIRECTUS_URL}/items/services` +
+      `${process.env.DIRECTUS_URL}/items/technofy_services` +
         `?filter[slug][_eq]=${slug}` +
         `&access_token=${process.env.DIRECTUS_ACCESS_TOKEN}` +
         `&sort=-date_created` +

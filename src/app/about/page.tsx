@@ -14,40 +14,40 @@ const vision = [
   {
     data: [
       {
-        problem: "Proactive IT Management",
-        solution: "Continuously monitor and optimize systems to prevent disruptions before they occur.",
+        heading: "Proactive IT Management",
+        description: "Continuously monitor and optimize systems to prevent disruptions before they occur.",
       },
       {
-        problem: "Enterprise-Grade Security",
-        solution: "Implement layered cybersecurity strategies to protect networks, devices, and data.",
+        heading: "Enterprise-Grade Security",
+        description: "Implement layered cybersecurity strategies to protect networks, devices, and data.",
       },
       {
-        problem: "Scalable Infrastructure Design",
-        solution: "Build flexible IT environments that support long-term growth and evolving needs.",
+        heading: "Scalable Infrastructure Design",
+        description: "Build flexible IT environments that support long-term growth and evolving needs.",
       },
       {
-        problem: "Operational Reliability",
-        solution: "Ensure stable, high-performance systems that minimize downtime and business risk..",
+        heading: "Operational Reliability",
+        description: "Ensure stable, high-performance systems that minimize downtime and business risk..",
       },
     ],
   },
   {
     data: [
       {
-        problem: "Trusted Technology Partnership",
-        solution: "Continuously monitor and optimize systems to prevent disruptions before they occur.",
+        heading: "Trusted Technology Partnership",
+        description: "Continuously monitor and optimize systems to prevent disruptions before they occur.",
       },
       {
-        problem: "Innovation with Purpose",
-        solution: "Implement layered cybersecurity strategies to protect networks, devices, and data.",
+        heading: "Innovation with Purpose",
+        description: "Implement layered cybersecurity strategies to protect networks, devices, and data.",
       },
       {
-        problem: "Digital Resilience",
-        solution: "Build flexible IT environments that support long-term growth and evolving needs.",
+        heading: "Digital Resilience",
+        description: "Build flexible IT environments that support long-term growth and evolving needs.",
       },
       {
-        problem: "Sustainable Growth Enablement",
-        solution: "Ensure stable, high-performance systems that minimize downtime and business risk..",
+        heading: "Sustainable Growth Enablement",
+        description: "Ensure stable, high-performance systems that minimize downtime and business risk..",
       },
     ],
   },

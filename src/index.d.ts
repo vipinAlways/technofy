@@ -51,7 +51,6 @@ export interface ServiceOverViewData {
 
 export type Blog = {
   title: string | undefined;
-  thumbnail: string | undefined;
   id: string;
   seo: {
     title: string;
@@ -68,7 +67,7 @@ export type Blog = {
   date_created: string;
   date_updated: string;
   slug: string;
-  author?:string
+  author?: string;
 };
 
 interface serviceNav {
@@ -125,9 +124,9 @@ export interface Service {
   advantages: Advantages[];
 }
 
-export interface Problem {
-  problem: string;
-  solution: string;
+export interface ProblemIssue {
+  heading: string;
+  description: string;
 }
 
 export interface Solution {
@@ -155,8 +154,8 @@ export interface SubService {
   short_description: string;
   heading: string;
   description: string;
-  Problem_heading: string;
-  problems: Problem[];
+  problem_heading: string;
+  problem_issues: ProblemIssue[];
   solutions: Solution[];
   whycard_description: string;
   whycard_image: string;
@@ -164,8 +163,8 @@ export interface SubService {
   faq: FAQ[];
 }
 
-export interface HowCardData{
-  icon:string;
-  heading:string;
-  para:string
+export interface HowCardData {
+  icon: string;
+  heading: string;
+  para: string;
 }

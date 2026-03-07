@@ -61,7 +61,7 @@ function ServiceSubMenu({ services }: { services: ServiceCardData[] }) {
           <NavigationMenuContent className="min-w-max border border-border bg-white text-muted  absolute  rounded-lg left-1/2 -translate-x-1/2 top-10">
             <div className="p-4 h-full w-full">
               <ul className="grid gap-4 h-full max-2xl md:grid-cols-2 ">
-                {services.map((serviceData) => (
+                {services ? services.map((serviceData) => (
                   <li key={serviceData.slug} className="relative  p-2 max-w-96">
                     {/* Service Trigger */}
                     <NavigationMenu className="relative  ">
@@ -117,7 +117,7 @@ function ServiceSubMenu({ services }: { services: ServiceCardData[] }) {
                       </NavigationMenuList>
                     </NavigationMenu>
                   </li>
-                ))}
+                )) : <h1>No Service Live Currently</h1>}
               </ul>
             </div>
           </NavigationMenuContent>

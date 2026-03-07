@@ -134,7 +134,7 @@ const Page = async ({
                     key={index}
                     blogCardData={{
                       heading: data.title ?? "",
-                      image: data.thumbnail ?? data.seo.og_image,
+                      image:  data.seo.og_image,
                       info: new Date(data.date_created).toLocaleDateString(
                         "en-US",
                         {
