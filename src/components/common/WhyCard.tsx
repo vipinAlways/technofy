@@ -21,16 +21,16 @@ const WhyCard = ({
         <div
           className={cn(`flex ${className} items-stretch flex-1 gap-8 h-fit`)}
         >
-          <div className="w-1/2 relative max-md:hidden">
+          <div className="w-1/2 relative max-lg:hidden">
             <img
               src={whyCardData.image ? image : "/images/root-why.png"}
-              alt="why-us"
+              alt={whyCardData.heading}
               className="rounded-2xl object-cover aspect-square h-full w-full"
               loading="lazy"
             />
           </div>
 
-          <div className="md:w-1/2 w-full text-muted-foreground gap-8 flex flex-col items-start ">
+          <div className="lg:w-1/2 w-full text-muted-foreground gap-8 flex flex-col items-start ">
             <div className="flex flex-col gap-3">
               <h1 className="font-semibold md:text-4xl  text-2xl md:leading-10 text-white">
                 {whyCardData.heading}
@@ -50,7 +50,7 @@ const WhyCard = ({
                     >
                       <img
                         src={"/right-sign.svg"}
-                        alt="right-sign.svg"
+                        alt={feture.heading}
                         className="aspect-square size-5"
                         loading="lazy"
                       />

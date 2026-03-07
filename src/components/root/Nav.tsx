@@ -14,7 +14,7 @@ import {
   NavigationMenuTrigger,
 } from "../ui/navigation-menu";
 import Routes from "@/lib/route";
-import { Cross, Menu, Plus } from "lucide-react";
+import { ChevronDownIcon, Cross, Menu, Plus } from "lucide-react";
 
 import {
   Sheet,
@@ -41,7 +41,7 @@ const navlinks: Navlinks[] = [
   },
   {
     title: "How It Works",
-    href: "#",
+    href: "#whoItWorks",
   },
   {
     title: "Blog",
@@ -141,17 +141,17 @@ export function NavSheet({ services }: { services: ServiceCardData[] }) {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button className="flex gap-1 p-1 aspect-square items-center bg-transparent ">
+        <Button className="flex gap-1 p-1 aspect-square items-center hover:bg-transparent bg-transparent ">
           <Menu className="size-8 stroke-[1.5px] stroke-primary" />
         </Button>
       </SheetTrigger>
 
       <SheetContent
         side="top"
-        className="w-full max-h-[90vh] transition-all duration-0 ease-linear no-scrollbar overflow-y-auto px-6 bg-white pb-5"
+        className="w-full max-h-[90vh]  transition-all duration-0 ease-linear no-scrollbar overflow-y-auto px-6 bg-white pb-5"
       >
         {/* Logo */}
-        <SheetHeader className="px-1">
+        <SheetHeader className="px-0">
           {" "}
           <SheetTitle>
             {" "}
@@ -159,7 +159,7 @@ export function NavSheet({ services }: { services: ServiceCardData[] }) {
               {" "}
               <img
                 src="/images/logo.png"
-                alt="Technofy logo"
+                alt="Technofy.com"
                 className="block w-full h-auto object-contain"
                 loading="lazy"
               />{" "}
@@ -168,16 +168,17 @@ export function NavSheet({ services }: { services: ServiceCardData[] }) {
         </SheetHeader>
 
         {/* Navigation */}
-        <div className="py-2 flex flex-col gap-3 no-scrollbar overflow-y-auto ">
+        <div className=" flex flex-col  no-scrollbar overflow-y-auto ">
           {/* Services Accordion */}
           <Accordion
             type="single"
             collapsible
-            className="w-full border-b border-border "
+            className="w-full  "
           >
             <AccordionItem value="services" className="border-none">
-              <AccordionTrigger className="text-lg font-medium text-primary">
-                <h1>Services</h1>
+              <AccordionTrigger className="text-base  flex items-center justify-start gap-0 hover:text-accent  text-primary">
+                <h1 className="font-light">Services</h1>{" "}
+                <ChevronDownIcon className="text-primary rounded-full  pointer-events-none  size-8 p-2  translate-y-0.5 transition-transform duration-200" />
               </AccordionTrigger>
 
               <AccordionContent className="pt-2 space-y-4 no-scrollbar overflow-y-auto">
@@ -186,36 +187,38 @@ export function NavSheet({ services }: { services: ServiceCardData[] }) {
                   className="w-full space-y-3"
                   collapsible
                 >
-                  {service.map((serviceData) => (
+                  {services.map((serviceData) => (
                     <AccordionItem
-                      key={serviceData.heading}
-                      value={serviceData.heading}
+                      key={serviceData.slug}
+                      value={serviceData.slug}
                       className="border-b border-border"
                     >
                       <AccordionTrigger className="p-0 hover:no-underline">
-                        <div className="flex w-full items-center justify-between py-3">
+                        <div className="flex w-full items-center justify-start gap-3 py-1.5 text-base">
                           <SheetClose asChild>
                             <Link
-                              href={Routes.service(serviceData.heading)}
-                              className="text-base font-normal"
+                              href={Routes.service(serviceData.slug)}
+                              className="font-light text-primary hover:text-accent"
                             >
-                              <p>{serviceData.heading}</p>
+                              <h1>{serviceData.service_name}</h1>
                             </Link>
                           </SheetClose>
+
+                          <ChevronDownIcon className="text-primary rounded-full pointer-events-none max-md:min-w-[10%] size-8 p-2 translate-y-0.5 transition-transform duration-200" />
                         </div>
                       </AccordionTrigger>
 
                       <AccordionContent className="pl-4 pt-2 space-y-2">
-                        {subService.subServices?.map((sub) => (
-                          <SheetClose asChild key={sub.heading}>
+                        {serviceData.subServicesSlug?.map((sub) => (
+                          <SheetClose asChild key={sub.slug}>
                             <Link
                               href={Routes.Subservice(
-                                serviceData.heading,
-                                sub.heading,
+                                serviceData.slug,
+                                sub.slug,
                               )}
                               className="block text-sm text-muted hover:text-primary font-medium transition-colors"
                             >
-                              <p> {sub.heading}</p>
+                              <h1> {sub.name}</h1>
                             </Link>
                           </SheetClose>
                         ))}
@@ -228,14 +231,14 @@ export function NavSheet({ services }: { services: ServiceCardData[] }) {
           </Accordion>
 
           {/* Other Nav Links */}
-          <div className="gap-3">
+          <div >
             {navlinks.map((links, index) => (
               <SheetClose asChild key={index}>
                 <Link
                   href={links.href}
-                  className="block text-lg font-medium text-primary hover:text-accent py-4 transition-colors border-b border-border"
+                  className="block text-base font-light text-primary hover:text-accent py-4 transition-colors "
                 >
-                  {links.title}
+                  <h1>{links.title}</h1>
                 </Link>
               </SheetClose>
             ))}
@@ -244,9 +247,9 @@ export function NavSheet({ services }: { services: ServiceCardData[] }) {
 
         <SheetClose
           asChild
-          className="py-3 text-xl w-full leading-6 font-semibold px-5 rounded-[0.5rem] bg-[#F79420] text-[#132039] hover:bg-[#D9730C]  "
+          className="px-8 py-4  font-medium text-lg leading-[100%] rounded-[0.5rem]  bg-[#F79420] text-[#132039] hover:bg-[#E67E00]  "
         >
-          <Link href={Routes.contact} className="text-center">
+          <Link href={Routes.contact} className="text-center font-[var(--font-heading)]">
             <h1>Contact</h1>
           </Link>
         </SheetClose>
@@ -256,11 +259,9 @@ export function NavSheet({ services }: { services: ServiceCardData[] }) {
 }
 
 const Nav = ({ services }: { services: ServiceCardData[] }) => {
- 
-
   return (
     <>
-      <nav className="py-3 lg:flex hidden px-6 ml-2    rounded-xl bg-white w-full md:max-w-7xl justify-between items-center border border-border relative">
+      <nav className="py-3 lg:flex hidden px-6 shadow-[0_4px_8px_rgba(0,0,0,0.12)]  rounded-lg bg-white w-full md:max-w-7xl justify-between items-center border border-border relative">
         <div>
           <Link href={"/"} className="block w-36 ">
             <img
@@ -282,7 +283,7 @@ const Nav = ({ services }: { services: ServiceCardData[] }) => {
           <Link href={Routes.contact}>Contact</Link>
         </Button>
       </nav>
-      <nav className="py-3 flex lg:hidden  px-4 rounded-md bg-white w-full  justify-between items-center border border-border relative">
+      <nav className="py-3 flex lg:hidden shadow-[0_4px_8px_rgba(0,0,0,0.12)]  px-4 rounded-md bg-white w-full  justify-between items-center border border-border relative">
         <div>
           <Link href="/" className="block w-32">
             <img

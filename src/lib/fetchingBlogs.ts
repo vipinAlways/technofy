@@ -10,6 +10,7 @@ export async function getBlog(slug: string): Promise<Blog> {
       },
     )
   ).json();
+
   return data.data.map((blog: Blog) =>
     blog.seo?.og_image
       ? {
@@ -25,7 +26,7 @@ export async function getBlog(slug: string): Promise<Blog> {
 
 const _getBlogs = async (
   limit: number = 12,
-  offset: number=0,
+  offset: number = 0,
 ): Promise<{ blogs: Blog[]; total: number }> => {
   const res = await fetch(
     `${process.env.DIRECTUS_URL}/items/check` +

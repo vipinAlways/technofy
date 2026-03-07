@@ -44,7 +44,7 @@ const Service = ({ data, href }: { data: Service; href: string }) => {
             para: "Enterprise-grade technology solutions designed to empower your business at every stage.",
             Service: "Core IT",
           }}
-          className="text-center"
+          className="items-center text-center"
         >
           <div className="flex w-full flex-wrap gap-8 items-stretch justify-center">
             {data.sub_Services &&

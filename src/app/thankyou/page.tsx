@@ -5,8 +5,11 @@ import React from "react";
 
 const Page = () => {
   return (
-    <div className="w-full  flex min-h-screen flex-col  items-center md:pt-32 pt-28 lg:px-0 md:max-w-7xl px-4 justify-center pb-24">
-      <div className="bg-accent w-full flex flex-col items-center justify-center rounded-2xl md:px-20 px-6 py-10 gap-4">
+    <div
+      className="w-full mmd:max-w-7xl mx-auto
+      flex min-h-screen flex-col  items-center md:pt-32 pt-28 lg:px-0 md:max-w-7xl px-4 justify-center pb-24"
+    >
+      <div className="bg-accent w-full flex flex-col items-center justify-center rounded-2xl lg:px-20 lg:py-10 p-6 gap-4">
         <h2 className="text-white font-bold md:text-5xl text-2xl leading-tight md:text-center">
           Let's Strengthen Your IT Together
         </h2>
@@ -23,14 +26,14 @@ const Page = () => {
             <img
               src="/images/thankyou.png"
               className="w-full h-auto"
-              alt="technofy thankyou page"
+              alt="technofy.com thankyou page"
               loading="lazy"
             />
           </div>
 
           <Button
             asChild
-            className="py-5 text-base leading-[100%] font-semibold px-5 rounded-[0.5rem]"
+            className="px-8 py-6  font-semibold text-lg leading-[100%] rounded-[0.5rem]"
           >
             <Link href="/" className="flex items-center gap-2">
               Back to Home Page

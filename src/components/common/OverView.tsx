@@ -14,8 +14,8 @@ const OverView = ({
       id="overview"
       className="w-full flex items-center justify-center max-h-fit"
     >
-      <div className="flex w-full md:flex-row flex-col max-md:gap-6 items-center justify-between ">
-        <div className="flex flex-col gap-6 items-start md:max-w-xl md:px-3">
+      <div className="flex w-full lg:flex-row flex-col max-lg:gap-6 items-center justify-between ">
+        <div className="flex flex-col gap-6 items-start lg:max-w-xl lg:px-3">
           <h3 className="text-accent font-semibold md:leading-[100%] md:text-xl  text-base">
             {subTitle}
           </h3>
@@ -26,7 +26,7 @@ const OverView = ({
         </div>
 
         <div
-          className="flex items-start gap-3 flex-col md:max-w-xl md:text-lg text-base text-muted leading-6 font-normal
+          className="flex items-start gap-3 flex-col lg:max-w-xl md:text-lg text-base text-muted leading-6 font-normal
         "
         >
           <p>{para}</p>

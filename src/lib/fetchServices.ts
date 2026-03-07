@@ -1,5 +1,5 @@
 import { unstable_cache } from "next/cache";
-import { Blog, Service, ServiceCardData } from "..";
+import { Service, ServiceCardData } from "..";
 
 export const getAllParentServices = async () =>
   unstable_cache(
@@ -65,13 +65,13 @@ export async function getSubService(slug: string): Promise<any> {
         `?filter[slug][_eq]=${slug}` +
         `&access_token=${process.env.DIRECTUS_ACCESS_TOKEN}` +
         `&sort=-date_created` +
-        `&fields=*,faq.*,advantages.*,short_description,solutions.*`,
+        `&fields=*,faq.*,advantages.*,short_description,solutions.*,solutions.*`,
       {
         next: { revalidate: 60 },
       },
     )
   ).json();
-  
+ 
   return data.data[0];
 }
 export async function getService(slug: string): Promise<Service> {
@@ -90,7 +90,4 @@ export async function getService(slug: string): Promise<Service> {
 
   return data.data[0];
 }
-/*
-  
-  https://cms.renovlange.de/items/city?access_token=${process.env.DIRECTUS_ACCESS_TOKEN}&fields=*,providers.providers_id.*,providers.providers_id.core_values,providers.providers_id.core_values.image,providers.providers_id.core_values.title,providers.providers_id.core_values.description,case_studies.*,case_studies.Title,case_studies.Content,case_studies.Image,districts_collection.districts_collection_id.*,districts_collection.districts_collection_id.providers.providers_id.*,districts_collection.districts_collection_id.providers.providers_id.core_values,districts_collection.districts_collection_id.providers.providers_id.core_values.image,districts_collection.districts_collection_id.providers.providers_id.core_values.title,districts_collection.districts_collection_id.providers.providers_id.core_values.description,districts_collection.districts_collection_id.case_studies.*,districts_collection.districts_collection_id.case_studies.Title,districts_collection.districts_collection_id.case_studies.Content,districts_collection.districts_collection_id.case_studies.Image,districts_collection.districts_collection_id.stone_carousel_images.directus_files_id,stone_carousel_images.directus_files_id,before_image.directus_files_id,after_image.directus_files_id,testimonials_image.directus_files_id,location_above_footer.*
-  */
+

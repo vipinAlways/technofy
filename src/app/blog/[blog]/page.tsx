@@ -31,6 +31,7 @@ const Page = async ({ params }: { params: Promise<{ blog: string }> }) => {
               day: "numeric",
             }),
             content: data.content,
+            ...(data.author && { author: `Posted by ${data.author}` }),
           }
           // {
           //   content: HTMLString.content,

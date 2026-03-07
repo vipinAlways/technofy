@@ -2,16 +2,16 @@ import React from "react";
 
 const Page = () => {
   return (
-    <div className="w-full flex flex-col md:gap-24 gap-12 pb-24">
-      <div className="w-full relative h-[50vh] pt-10  flex items-center justify-center">
+    <div className="w-full flex flex-col md:gap-24 gap-12 md:pb-24 pb-12">
+      <div className="w-full relative overflow-hidden h-[50vh] pt-10  flex items-center justify-center">
         <div className="absolute inset-0 bg-black/80 z-10"></div>
         {/*  */}
-      <div className="pointer-events-none absolute z-40 left-0 w-full -bottom-8 h-16  bg-white blur-md " />
-        {/* Content */}
+<div className="pointer-events-none absolute z-40 left-1/2 -translate-x-1/2 w-[150%] -bottom-8 h-16 bg-[#F9FAFB] blur-md" />        {/* Content */}
         <div className="w-full h-full absolute top-0 left-0">
           <img
             src="/images/about-hero.png"
-            alt=" Smart IT Solutions That Drive Business Growth"
+            alt=" We value your privacy and are committed to protecting your
+                  personal information with transparency and integrity."
             className="
           w-full h-full object-cover object-center -z-20"
             loading="eager"

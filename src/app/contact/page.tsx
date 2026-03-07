@@ -11,7 +11,7 @@ import { useAtomValue } from "jotai";
 import { entryUrlAtom, sessionIdAtom } from "@/components/root/Provider";
 import { useRouter } from "next/navigation";
 import { ChevronDownIcon } from "lucide-react";
-
+import "react-phone-input-2/lib/style.css";
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Please enter a valid email address"),
@@ -104,7 +104,7 @@ const Page = () => {
   return (
     <div className="w-full flex min-h-screen flex-col gap-24 items-center justify-center  md:pb-24 pb-12 md:pt-32 pt-28 ">
       <div className="md:max-w-7xl  lg:px-0 px-4 w-full mx-auto flex flex-col  md:gap-16 gap-10  items-stretch">
-        <div className="bg-accent w-full flex flex-col items-center justify-center rounded-2xl md:px-20 p-6 gap-4">
+        <div className="bg-accent w-full flex flex-col items-center justify-center rounded-2xl lg:px-20 lg:py-10 p-6 gap-4">
           <h2 className="text-white font-bold md:text-5xl text-2xl leading-tight md:text-center">
             Let's Strengthen Your IT Together
           </h2>
@@ -116,16 +116,16 @@ const Page = () => {
         </div>
 
         <div className="flex items-stretch justify-center flex-1 gap-8 h-fit">
-          <div className="w-1/2 relative aspect-43/50 max-md:hidden rounded-2xl">
+          <div className="w-1/2 relative aspect-43/50 max-lg:hidden rounded-2xl">
             <img
               src="/images/contact.png"
-              alt="contact"
+              alt=" Let's Strengthen Your IT Together"
               className="rounded-2xl object-cover h-full w-full"
               loading="lazy"
             />
           </div>
 
-          <div className="md:w-1/2 w-full text-muted-foreground gap-8  bg-white flex flex-col items-start border border-border p-6 rounded-2xl shadow-md">
+          <div className="lg:w-1/2 w-full text-muted-foreground gap-8  bg-white flex flex-col items-start border border-border p-6 rounded-2xl shadow-md">
             <div>
               <h1 className="font-medium text-primary md:text-2xl text-xl leading-7">
                 Let's Talk About Your IT Goals
@@ -150,7 +150,7 @@ const Page = () => {
                     {...register("name")}
                     placeholder="Name"
                     id="name"
-                    className="w-full rounded-lg border border-border md:p-4 max-md:px-4 max-md:py-3 md:text-sm focus:ring-1 focus:ring-accent focus:outline-none"
+                    className="w-full rounded-lg border selection:bg-white bg-white border-border md:p-4 max-md:px-4 max-md:py-3 md:text-sm focus:ring-1 focus:ring-accent focus:outline-none"
                   />
                   {errors.name && (
                     <p className="text-red-500 text-sm">
@@ -160,7 +160,7 @@ const Page = () => {
                 </div>
 
                 {/* Email */}
-                <div className="flex flex-col gap-2 w-full">
+                <div className="flex flex-col gap-2 w-full h-fit">
                   <label
                     className="md:text-lg text-base font-medium "
                     htmlFor="email"
@@ -171,7 +171,7 @@ const Page = () => {
                     type="email"
                     {...register("email")}
                     placeholder="Working email id"
-                    className="w-full rounded-lg border border-border md:p-4 max-md:px-4 max-md:py-3 md:text-sm focus:ring-1 focus:ring-accent focus:outline-none"
+                     className="w-full rounded-lg border selection:bg-white bg-white border-border md:p-4 max-md:px-4 max-md:py-3 md:text-sm focus:ring-1 focus:ring-accent focus:outline-none"
                     id="email"
                   />
                   {errors.email && (
@@ -183,6 +183,12 @@ const Page = () => {
 
                 {/* Phone */}
                 <div className="flex flex-col gap-2 w-full">
+                  <label
+                    className="md:text-lg text-base font-medium "
+                    htmlFor="email"
+                  >
+                    Phone Number
+                  </label>
                   <Controller
                     name="phone"
                     control={control}
@@ -190,11 +196,11 @@ const Page = () => {
                       <ReactPhoneInput
                         country={countryCode || "in"}
                         value={field.value}
-                        onChange={field.onChange}
-                        containerClass="w-full  md:text-lg text-base font-medium "
-                        inputClass="w-full mt-2 rounded-lg border border-border md:p-4 max-md:px-4 max-md:py-3 md:text-sm focus:ring-1 focus:ring-accent focus:outline-none"
-                        buttonClass="!border-border"
-                        specialLabel="Phone Number"
+                        onChange={(value) => field.onChange(value)}
+                        enableSearch
+                        containerClass="!w-full"
+                        inputClass="!w-full !rounded-lg !bg-white !border !border-border !md:py-7 !py-6  !text-primary  !max-md:px-4 !max-md:py-3 !md:text-sm focus:!ring-1 focus:!ring-accent !outline-none"
+                        buttonClass="!border-border !bg-transparent !rounded-l-lg"
                         placeholder="Enter phone number"
                       />
                     )}
@@ -231,7 +237,7 @@ const Page = () => {
                     </p>
                   )}
                   <span className="pointer-events-none absolute right-4 top-2/3 -translate-y-1/3 text-primary   transition-all duration-75 ease-linear">
-                   <ChevronDownIcon />
+                    <ChevronDownIcon className="stroke-[1.5px]" />
                   </span>
                 </div>
 
@@ -246,7 +252,7 @@ const Page = () => {
                   <textarea
                     {...register("message")}
                     placeholder="Tell us how we can help you..."
-                    className="w-full rounded-lg border border-border md:p-4 max-md:px-4 max-md:py-3 md:text-sm focus:ring-1 focus:ring-accent focus:outline-none"
+                    className="w-full rounded-lg border border-border md:p-4 max-md:px-4 max-md:py-3 h-24 md:text-sm focus:ring-1 focus:ring-accent focus:outline-none"
                     id="message"
                   />
                 </div>

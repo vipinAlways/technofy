@@ -22,7 +22,7 @@ const cardData: HowCardData[] = [
 const HowItWorks = ({ id }: { id: string }) => {
   return (
     <section
-      id={id}
+      id="whoItWorks"
       className="flex flec-col md:gap-20 gap-10 items-center flex-col max-w-full"
     >
       <div className="flex flex-col items-center gap-4">

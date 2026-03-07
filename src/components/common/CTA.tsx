@@ -11,7 +11,7 @@ const CTA = () => {
         <div className="w-full h-full absolute top-0 left-0">
           <img
             src="/images/technology-background.png"
-            alt=" Smart IT Solutions That Drive Business Growth"
+            alt="Let's discuss how Technofy can help you achieve your technology goals. No pressure, no obligations — just a conversation."
             className="
           w-full h-full object-cover object-center -z-40 rounded-2xl"
             loading="eager"

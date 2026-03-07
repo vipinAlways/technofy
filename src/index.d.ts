@@ -68,6 +68,7 @@ export type Blog = {
   date_created: string;
   date_updated: string;
   slug: string;
+  author?:string
 };
 
 interface serviceNav {
@@ -133,8 +134,8 @@ export interface Solution {
   heading: string;
   description: string;
   includes: {
-    data: string[];
-  };
+    text: string;
+  }[];
 }
 
 export interface SubService {

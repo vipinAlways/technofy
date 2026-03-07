@@ -17,10 +17,10 @@ const BlogCard = ({
   const { heading, image, info, para, slug ,page} = blogCardData;
   return (
     <Link
-      href={Routes.blog_post(slug,page)}
-      className="w-full max-w-md rounded-2xl p-4 flex flex-col justify-center border border-border group hover:shadow-[0_4px_8px_rgba(0,0,0,0.2)] transition-all duration-100 ease-linear"
+      href={Routes.blog_post(slug)}
+      className="w-full md:max-w-md max-w-full lg:min-w-96 rounded-2xl p-6 flex flex-col justify-center border border-border group hover:shadow-[0_4px_8px_rgba(0,0,0,0.2)] shadow-[0_4px_8px_rgba(0,0,0,0.12)] transition-all duration-100 ease-linear"
     >
-      <div className=" rounded-lg">
+      <div className=" rounded-lg aspect-video">
         <img src={`${process.env.NEXT_PUBLIC_DIRECTUS_ASSETS_URL}/${image}`} alt={heading} className="w-full aspect-video object-cover mx-auto sm:mx-0 rounded-lg" loading="lazy"/>
       </div>
 

@@ -78,7 +78,7 @@ const Footer = () => {
     </ul>
 
     {/* Social Links */}
-    <ul className="flex justify-center md:justify-end gap-5 ">
+    <ul className="flex justify-center md:justify-end md:gap-3 gap-3 ">
       {socialLink.map((link, index) => {
         const Icon = link.icon
         return (

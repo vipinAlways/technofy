@@ -79,10 +79,10 @@ const WhyCardData: WhycardData = {
 
 const Page = () => {
   return (
-    <div className="w-full flex flex-col gap-24 items-center pb-24">
+    <div className="w-full flex flex-col md:gap-24 gap-12 items-center pb-24">
       <section
         id="#hero"
-        className="relative w-full lg:h-[90vh]  md:h-[60vh] h-[75vh] lg:px-0 px-6 flex  justify-center"
+        className="relative w-full lg:h-[90vh] overflow-hidden md:h-[60vh] h-[75vh] lg:px-0 px-6 flex  justify-center"
       >
         {/* Dark Overlay */}
         <div
@@ -90,11 +90,10 @@ const Page = () => {
         "
         ></div>
         {/*  */}
-       <div className="pointer-events-none absolute z-40 left-0 w-full -bottom-8 h-16  bg-white blur-md " />
-        <div className="w-full h-full absolute top-0 left-0">
+<div className="pointer-events-none absolute z-40 left-1/2 -translate-x-1/2 w-[150%] -bottom-8 h-16 bg-[#F9FAFB] blur-md" />        <div className="w-full h-full absolute top-0 left-0">
           <img
             src="/images/about-hero.png"
-            alt=" Smart IT Solutions That Drive Business Growth"
+            alt="  Building Secure & Scalable IT Foundations"
             className="
           w-full h-full object-cover object-center -z-20"
             loading="eager"
@@ -153,12 +152,12 @@ const Page = () => {
               heading: `Our Mission & Vision`,
               para: "We are driven by a clear purpose and a long-term outlook — delivering secure, scalable IT solutions today while building a foundation for sustainable digital growth tomorrow.",
             }}
-            className="md:items-center items-start"
+            className="md:items-center items-start md:text-center"
           >
             <div className="flex flex-wrap gap-8 justify-center items-stretch  w-full ">
               {vision.map((item, index: any) => {
                 return (
-                  <div className="max-w-[39rem] w-full border " key={index}>
+                  <div className="lg:max-w-[39rem] w-full border " key={index}>
                     <div className="bg-white rounded-2xl border-border  p-6 flex flex-col gap-8 w-full">
                       <h2 className="text-accent font-semibold md:text-xl  text-base ">
                         Our Vision

@@ -16,7 +16,7 @@ const HeroSection = ({
     <section className="max-w-full flex items-center justify-center">
       <div className="flex items-center bg-accent justify-center md:p-10 p-6 rounded-2xl h-fit gap-8 max-w-full">
         {/* Text */}
-        <div className="flex flex-col items-start gap-8 md:flex-[3] w-full">
+        <div className="flex flex-col items-start gap-8 lg:flex-[3] w-full">
           <div className="flex flex-col items-start gap-3">
             <h1 className="font-bold md:text-5xl text-3xl  md:leading-[4.25rem] text-white">
               {heading}
@@ -35,7 +35,7 @@ const HeroSection = ({
         </div>
 
         {/* Image */}
-        <div className="md:flex-[2] max-md:hidden h-full relative">
+        <div className="md:flex-[2] max-lg:hidden h-full relative">
           <img
             src={`${process.env.NEXT_PUBLIC_DIRECTUS_ASSETS_URL}/${image}`}
             alt={heading}

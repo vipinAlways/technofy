@@ -1,15 +1,10 @@
+import { Solution } from "@/index";
 import React from "react";
 
 const SolutionCard = ({
   solutions,
 }: {
-  solutions: {
-    heading: string;
-    description: string;
-    includes: {
-      data: string[];
-    };
-  };
+  solutions: Solution;
 }) => {
   const { includes, heading, description } = solutions;
 
@@ -27,17 +22,13 @@ const SolutionCard = ({
 
         <div className="flex flex-col gap-3 items-start">
           <h2 className="text-primary md:text-xl text-lg leading-6 font-medium flex gap-2 items-center">
-            <img
-              src="/images/hand.png"
-              alt={heading}
-              className="w-7 h-7"
-            />{" "}
+            <img src="/images/hand.png" alt={heading} className="w-7 h-7" />{" "}
             They Includes
           </h2>
           <ul className="flex flex-col gap-2 pl-5 list-disc">
-            {includes.data.map((item, index) => (
+            {includes.map((item, index) => (
               <li className="text-muted text-base leading-6" key={index}>
-                {item}
+                {item.text}
               </li>
             ))}
           </ul>

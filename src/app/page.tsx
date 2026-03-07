@@ -25,7 +25,6 @@ import WhyCard from "@/components/common/WhyCard";
 import HowItWorks from "@/components/common/HowItWorks";
 import CTA from "@/components/common/CTA";
 
-
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Routes from "@/lib/route";
@@ -96,12 +95,12 @@ export default async function Home() {
   return (
     <div className="w-full flex flex-col items-center">
       <section
-        id="#hero"
-        className="relative w-full lg:h-[90vh]  md:h-[50vh] h-[75vh]  flex justify-center"
+        id="hero"
+        className="relative w-full lg:h-[90vh]  md:h-[60vh] h-[75vh] overflow-hidden flex justify-center"
       >
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/75 backdrop-blur-[0.1rem] z-10"></div>
-        <div className="w-full h-full absolute top-0 left-0">
+        <div className="inset-0 absolute top-0 left-0">
           <img
             src="/images/hero-background.png"
             alt=" Smart IT Solutions That Drive Business Growth"
@@ -111,14 +110,14 @@ export default async function Home() {
           />
         </div>
         {/*  */}
-       <div className="pointer-events-none absolute z-40 left-0 w-full -bottom-8 h-16  bg-white blur-md " />
+        <div className="pointer-events-none absolute z-40 left-1/2 -translate-x-1/2 w-[150%] -bottom-8 h-16 bg-[#F9FAFB] blur-md" />
         {/* Content */}
         <div
           className={
             "relative z-10 text-white flex justify-center md:max-w-7xl  lg:px-0 px-6  items-center flex-col gap-8"
           }
         >
-          <div className="text-center flex flex-col gap-3 max-md:pt-16">
+          <div className="text-center flex flex-col gap-3 max-md:pt-10">
             <h1 className="md:text-6xl text-4xl md:leading-[4.25rem] font-bold text-white">
               Smart IT Solutions That Drive <br /> Business Growth
             </h1>
@@ -166,7 +165,7 @@ export default async function Home() {
           <ServiceSection
             id="services"
             data={serviceData}
-            className="text-center"
+            className="items-center text-center"
           >
             <div className="flex w-full flex-wrap gap-8 items-stretch justify-center">
               {serviceCard.map((item, index) => {

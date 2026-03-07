@@ -6,6 +6,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { ChevronDownIcon } from "lucide-react";
 
 const items = [
   {
@@ -48,8 +49,8 @@ function AccordionBasic() {
           value={item.value}
           className="flex flex-col gap-4 rounded-xl bg-white p-4 px-6 border-border"
         >
-          <AccordionTrigger className="md:text-lg text-base lg:w-[36rem] text-primary w-full font-medium md:leading-7">
-            {item.trigger}
+          <AccordionTrigger className="md:text-lg flex items-center justify-between text-base lg:w-[36rem] text-primary w-full font-medium md:leading-7">
+            {item.trigger} <ChevronDownIcon className="text-white bg-accent rounded-full  pointer-events-none  max-md:min-w-[10%] size-8 p-2  translate-y-0.5 transition-transform duration-200" />
           </AccordionTrigger>
           <AccordionContent className="text-base max-w-max font-normal text-muted">
             {item.content}
